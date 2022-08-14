@@ -1,0 +1,18 @@
+---
+import SimplePageLayout from '../layouts/SimplePageLayout.astro';
+
+let title = "Test simple page"
+---
+
+<SimplePageLayout title={title}>
+	<Fragment slot="head">
+	</Fragment>
+
+	<div class="bio wrapper wrapper__readable mt8">
+		<p>
+			Cream cheese say cheese stinking bishop. Brie fondue hard cheese bocconcini feta camembert
+			de normandie babybel airedale. Red leicester swiss manchego mascarpone pepper jack
+			airedale fromage frais ricotta. Cheese and biscuits cauliflower cheese boursin.
+		</p>
+	</div>
+</SimplePageLayout>
