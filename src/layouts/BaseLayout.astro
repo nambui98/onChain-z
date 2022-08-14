@@ -1,0 +1,28 @@
+---
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+
+import "../styles/global.scss"
+---
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <slot name="head" />
+</head>
+
+<body>
+    <Nav />
+    <main>
+        <div class="container mx-auto my-4">
+            <slot />
+        </div>
+    </main>
+    <Footer />
+</body>
+
+</html>

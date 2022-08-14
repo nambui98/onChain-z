@@ -1,0 +1,15 @@
+---
+import SEOHead from '../components/Site/SEOHead.astro';
+import BaseLayout from './BaseLayout.astro'
+
+import AppConfig from "../AppConfig"
+const { title } = Astro.props;
+---
+
+<BaseLayout>
+    <Fragment slot="head">
+        <SEOHead title={`${title} | ${AppConfig.SiteName}`}>
+        </SEOHead>
+    </Fragment>
+    <slot />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import BaseSEOLayout from './BaseSEOLayout.astro'
+let {
+    title,
+    frontmatter
+} = Astro.props;
+
+title = title || frontmatter?.title || 'Simple page layout'
+---
+
+<BaseSEOLayout title={title}>
+    <div class="wrapper">
+        <h1>{title}</h1>
+        <slot />
+    </div>
+</BaseSEOLayout>
