@@ -3,13 +3,13 @@ import SEOHead from '../components/Site/SEOHead.astro';
 import BaseLayout from './BaseLayout.astro'
 
 import AppConfig from "../AppConfig"
-let { title, frontmatter } = Astro.props;
+let { lang, title, description, frontmatter } = Astro.props;
 title = title || frontmatter?.title || "";
 ---
 
-<BaseLayout>
+<BaseLayout lang={lang}>
     <Fragment slot="head">
-        <SEOHead title={`${title} | ${AppConfig.SiteName}`}>
+        <SEOHead title={`${title} | ${AppConfig.SiteName}`} description={description}>
         </SEOHead>
     </Fragment>
     <slot />
