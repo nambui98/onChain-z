@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../../layout/BaseLayout.astro"
-import SingleBlogItem from "../../components/SingleBlogItem.jsx"
+import SimplePageLayout from "../../../layouts/SimplePageLayout.astro"
+import ItemDetail from "../../../components/Article/ItemDetail"
 
 /**
  * returning all the names of the files/pages it should generate. 
@@ -11,17 +11,16 @@ import SingleBlogItem from "../../components/SingleBlogItem.jsx"
  * 
  */
 export async function getStaticPaths() {
-
-
-
     const posts = await fetch(`https://jsonplaceholder.typicode.com/posts`).then(res => res.json())
-    return posts.map(post => ({ params: { slug: post.slug } }))
+    return posts.map(post => ({ params: { slug: post.id } }))
 }
 
-const { slug } = Astro.request.params
-const postItem = await fetch(`http://localhost:1337/posts?slug=${slug}`).then(x => x.json())
+const { slug } = Astro.params
+
+const postItems = await fetch(`https://jsonplaceholder.typicode.com/posts`).then(x => x.json())
+const content = postItems.find(x => x.id.toString() === slug)
 ---
 
-<BaseLayout title={postItem[0]?.title}>
-    <SingleBlogItem post={postItem[0]} />
-</BaseLayout>
+<SimplePageLayout title={slug}>
+    <ItemDetail post={content} />
+</SimplePageLayout>

@@ -1,8 +1,8 @@
 import { formatDistance, format } from "date-fns"
-import ReactMarkdown from "react-markdown"
+// import ReactMarkdown from "react-markdown"
 
 export default function SingleBlog({ post }) {
-  const { title, content, featuredImage, created_at, updated_at, readingTime, author } = post || {}
+  const { title, body, content, featuredImage, created_at = Date.now(), updated_at, readingTime, author } = post || {}
   return (
     <>
       <div className="my-4 text-center">
@@ -26,7 +26,8 @@ export default function SingleBlog({ post }) {
         <img className="object-cover w-full h-full" src={featuredImage ? `http://localhost:1337${featuredImage.url}` : "https://via.placeholder.com/1080"} />
       </div>
       <article className="prose  max-w-full w-full my-4">
-        <ReactMarkdown
+        {body}
+        {/* <ReactMarkdown
           components={{
             img: (props) => {
               const copyProps = { ...props }
@@ -38,7 +39,7 @@ export default function SingleBlog({ post }) {
           }}
         >
           {content}
-        </ReactMarkdown>
+        </ReactMarkdown> */}
       </article>
     </>
   )
