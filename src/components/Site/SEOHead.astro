@@ -1,0 +1,10 @@
+---
+import '../../styles/global.scss';
+const {
+	title = 'Gurucore: Landing page',
+	description = 'The landing site template of Gurucore',
+} = Astro.props;
+---
+
+<meta name="description" property="og:description" content={description} />
+<title>{title}</title>
