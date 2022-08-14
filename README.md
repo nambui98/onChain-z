@@ -21,6 +21,10 @@ All commands are run from the root of the project, from a terminal:
 
 ## add more
 
+### i18n for page and data
+
+https://github.com/DefinedNet/nebula-docs
+
 ### Integrations
 
 https://astro.build/integrations
