@@ -1,0 +1,25 @@
+{
+  "name": "@lockevn/jamsite",
+  "version": "0.0.1",
+  "description": "Lakdak, Tina on Astro.build for a blazing fast site",
+  "type": "module",
+  "private": true,
+  "author": "lockevn",
+  "license": "copyright XCapital",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@astrojs/preact": "^1.0.2",
+    "astro": "^1.0.5",
+    "sass": "^1.52.2"
+  },
+  "dependencies": {
+    "preact": "^10.7.3"
+  }
+}
