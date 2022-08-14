@@ -1,0 +1,1 @@
+Components are reusable units of code for your HTML pages. These could be Astro components, or Frontend components like React or Vue. It is common to group and organize all of your project components together in this folder.
