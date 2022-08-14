@@ -1,5 +1,5 @@
 {
-  "name": "@lockevn/jamsite",
+  "name": "@lockevn/gurucore-jam-site",
   "version": "0.0.1",
   "description": "Lakdak, Tina on Astro.build for a blazing fast site",
   "type": "module",
@@ -16,10 +16,12 @@
   },
   "devDependencies": {
     "@astrojs/preact": "^1.0.2",
+    "@astrojs/vercel": "^1.0.0",
     "astro": "^1.0.5",
     "sass": "^1.52.2"
   },
   "dependencies": {
+    "date-fns": "^2.29.1",
     "preact": "^10.7.3"
   }
 }
