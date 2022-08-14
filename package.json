@@ -1,11 +1,12 @@
 {
   "name": "@lockevn/gurucore-jam-site",
-  "version": "0.0.1",
-  "description": "Lakdak, Tina on Astro.build for a blazing fast site",
+  "version": "0.0.2",
+  "description": "Tina on Astro.build for a blazing fast site",
+  "productName": "Lakdak",
   "type": "module",
   "private": true,
-  "author": "lockevn",
-  "license": "copyright XCapital",
+  "author": "Lockevn",
+  "license": "copyright Lockevn",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
