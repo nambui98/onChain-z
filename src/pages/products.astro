@@ -1,10 +1,9 @@
 ---
-import MainHead from '../components/Site/MainHead.astro';
-import Footer from '../components/Footer/index.jsx';
-import Nav from '../components/Nav/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import SimplePageLayout from '../layouts/SimplePageLayout.astro'
+const title = "All Products in shop"
 
-const products = (await Astro.glob('./products/**/*.md'))
+const list = (await Astro.glob('./products/**/*.md'))
 	.filter(({ frontmatter }) => !!frontmatter.publishDate)
 	.sort(
 		(a, b) =>
@@ -12,28 +11,19 @@ const products = (await Astro.glob('./products/**/*.md'))
 	);
 ---
 
-<html lang="en">
+<SimplePageLayout title={title}>
 
-<head>
-	<MainHead title="All Products | Gurucore" description="Learn about Gurucore's most recent products" />
-	<style lang="scss">
-		.grid {
-			display: grid;
-			grid-gap: 3rem;
-		}
-	</style>
-</head>
+	<Fragment slot="head">
+		<style lang="scss">
+			.grid {
+				display: grid;
+				grid-gap: 3rem;
+			}
+		</style>
+	</Fragment>
 
-<body>
-	<Nav />
-	<div class="wrapper">
-		<h1 class="title mt4 mb4">All Products</h1>
-		<div class="grid">
-			{products.map((project) =>
-			<PortfolioPreview project={project} />)}
-		</div>
+	<div class="grid">
+		{list.map((project) =>
+		<PortfolioPreview project={project} />)}
 	</div>
-	<Footer />
-</body>
-
-</html>
+</SimplePageLayout>
