@@ -1,6 +1,9 @@
 ---
+import Hero from '../components/Article/Hero.jsx';
 import Button from '../components/Button/index.jsx';
 import SimplePageLayout from '../layouts/SimplePageLayout.astro'
+
+
 
 const { content } = Astro.props;
 ---
@@ -9,19 +12,6 @@ const { content } = Astro.props;
 
 	<Fragment slot="head">
 		<style lang="scss">
-			.hero {
-				padding: 8rem;
-				display: flex;
-				background-color: var(--t-fg);
-				background-repeat: no-repeat;
-				background-size: cover;
-				min-height: 25vw;
-				color: white;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
-
 			.tag {
 				margin-left: 0.5em;
 				margin-right: 0.5em;
@@ -44,13 +34,6 @@ const { content } = Astro.props;
 				}
 			}
 
-			.title {
-				font-size: var(--f-u10);
-				font-weight: 900;
-				text-transform: uppercase;
-				letter-spacing: 0.0625em;
-			}
-
 			.leadIn {
 				color: var(--t-bg);
 				background-color: var(--t-fg);
@@ -69,10 +52,7 @@ const { content } = Astro.props;
 		</style>
 	</Fragment>
 
-
-	<header style={`background-image:url(${content.img})`} class="hero">
-		<h1 class="title">{content.title}</h1>
-	</header>
+	<Hero post={content}></Hero>
 	<div class="leadIn">
 		<div class="wrapper pt8 pb8 mb8 tac">
 			{content.tags.map((t) => <span class="tag">{t}</span>)}
@@ -86,7 +66,7 @@ const { content } = Astro.props;
 	</div>
 	<footer class="tac mt6">
 		<a href="/products">
-			<Button>View More</Button>
+			<Button>View All</Button>
 		</a>
 	</footer>
 
