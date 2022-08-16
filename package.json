@@ -1,6 +1,6 @@
 {
   "name": "@lockevn/gurucore-jam-site",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tina on Astro.build for a blazing fast site",
   "productName": "Lakdak",
   "type": "module",
