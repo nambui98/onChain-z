@@ -1,3 +1,3 @@
 export default {
-  SiteName: "Gurucore",
+  SiteName: "OnChainZ",
 }

@@ -7,7 +7,7 @@ import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 
 // Data Fetching: List all Markdown posts in the repo.
 const products = await Astro.glob('./products/**/*.md');
-const featuredProject = products[0];
+const featuredProducts = products.slice(0, 2);
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -17,8 +17,8 @@ const featuredProject = products[0];
 // import ArticleGrid from "../components/Article/Grid"
 // const posts = await fetch(`https://jsonplaceholder.typicode.com/posts`).then(res => res.json())
 
-const title = "Gurucore: Personal Site"
-const description = "Gurucore: Developer, Speaker, and Writer..."
+const title = "OnChainZ: Personal Site"
+const description = "OnChainZ: Developer, Speaker, and Writer..."
 ---
 
 <BaseSEOLayout title={title} description={description}>
@@ -201,7 +201,7 @@ const description = "Gurucore: Developer, Speaker, and Writer..."
 		<div class="gradient2"></div>
 		<div class="overlay">
 			<h1 class="title">
-				<small class="subtitle">The landing page of</small>Gurucore
+				<small class="subtitle">The landing page of</small>OnChainZ
 			</h1>
 			<div>
 				<span class="role">👩‍💻 Developer <span class="invert">👩‍💻 Developer</span></span>&nbsp;
@@ -215,7 +215,11 @@ const description = "Gurucore: Developer, Speaker, and Writer..."
 		<div class="grid">
 			<div class="section">
 				<h3 class="sectionTitle">Selected Work</h3>
-				<PortfolioPreview project={featuredProject} />
+
+				{featuredProducts.map((product, i) =>
+				<PortfolioPreview project={product} />
+				)}
+
 				<div class="tac mt4">
 					<a href="/products">
 						<Button>View All</Button>
@@ -225,7 +229,7 @@ const description = "Gurucore: Developer, Speaker, and Writer..."
 			<div class="section">
 				<h3 class="sectionTitle">About me</h3>
 				<p class="bio">
-					<span>Hello!</span> I’m GurucoreAuthor, and this is my website. It was made using{' '}
+					<span>Hello!</span> I’m OnChainZ, and this is my website. It was made using{' '}
 					<a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro</a>,
 					a new way to build static sites. This is just an example template for you to modify.
 				</p>
