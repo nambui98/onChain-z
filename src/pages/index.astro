@@ -4,6 +4,7 @@ import BaseSEOLayout from '../layouts/BaseSEOLayout.astro';
 // Component Imports
 import Button from '../components/Button/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import AppConfig from '../AppConfig';
 
 // Data Fetching: List all Markdown posts in the repo.
 const products = await Astro.glob('./products/**/*.md');
@@ -196,7 +197,8 @@ const description = "OnChainZ: Developer, Speaker, and Writer..."
 		<img width="1600" height="1131" class="img"
 			src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75"
 			srcset="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75 800w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75 1200w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=75 1600w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=2400&q=75 2400w"
-			sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px" />
+			sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
+			alt={`${AppConfig.SiteName}`} />
 		<div class="gradient"></div>
 		<div class="gradient2"></div>
 		<div class="overlay">
@@ -213,8 +215,8 @@ const description = "OnChainZ: Developer, Speaker, and Writer..."
 	</header>
 	<main class="wrapper mt4 mb4">
 		<div class="grid">
+			<h2 class="sectionTitle">Selected Work</h2>
 			<div class="section">
-				<h3 class="sectionTitle">Selected Work</h3>
 
 				{featuredProducts.map((product, i) =>
 				<PortfolioPreview project={product} />
@@ -226,16 +228,14 @@ const description = "OnChainZ: Developer, Speaker, and Writer..."
 					</a>
 				</div>
 			</div>
+			<h2 class="sectionTitle">About me</h2>
 			<div class="section">
-				<h3 class="sectionTitle">About me</h3>
 				<p class="bio">
 					<span>Hello!</span> I’m OnChainZ, and this is my website. It was made using{' '}
 					<a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro</a>,
 					a new way to build static sites. This is just an example template for you to modify.
 				</p>
-				<p>
-					<a href="/about">Read more</a>
-				</p>
+				<p>Check out all of our <a href="/about">builders</a>.</p>
 			</div>
 		</div>
 	</main>

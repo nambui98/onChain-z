@@ -1,6 +1,6 @@
 {
   "name": "@lockevn/gurucore-jam-site",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Tina on Astro.build for a blazing fast site",
   "productName": "Lakdak",
   "type": "module",
@@ -19,6 +19,7 @@
     "@astrojs/preact": "^1.0.2",
     "@astrojs/vercel": "^1.0.0",
     "astro": "^1.0.5",
+    "astro-robots-txt": "^0.3.7",
     "sass": "^1.52.2"
   },
   "dependencies": {

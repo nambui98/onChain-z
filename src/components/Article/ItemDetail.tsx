@@ -23,7 +23,7 @@ export default function SingleBlog({ post }) {
         </div>
       </div>
       <div className="rounded-md h-56 w-full overflow-hidden">
-        <img className="object-cover w-full h-full" src={featuredImage ? `http://localhost:1337${featuredImage.url}` : "https://via.placeholder.com/1080"} />
+        <img className="object-cover w-full h-full" src={featuredImage ? `http://localhost:1337${featuredImage.url}` : "https://via.placeholder.com/1080"} alt={title} />
       </div>
       <article className="prose  max-w-full w-full my-4">
         {body}

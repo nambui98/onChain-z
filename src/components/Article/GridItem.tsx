@@ -5,7 +5,7 @@ export default function GridItem({ post }) {
     <div className="rounded-md overflow-hidden shadow-sm p-4  transition-transform h-auto">
       <a href={`/post/${slug}`}>
         <div className="rounded-md h-48 w-full overflow-hidden">
-          <img className="object-cover w-full h-full" src={featuredImage ? `http://localhost:1337${featuredImage.url}` : "https://via.placeholder.com/1080"} />
+          <img className="object-cover w-full h-full" src={featuredImage ? `http://localhost:1337${featuredImage.url}` : "https://via.placeholder.com/1080"} alt={slug} />
         </div>
         <div>
           <h1 className="my-2 font-bold text-xl text-gray-900">{title}</h1>

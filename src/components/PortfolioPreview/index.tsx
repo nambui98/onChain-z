@@ -6,7 +6,7 @@ function PortfolioPreview({ project }) {
   return (
     <div className={Styles.card}>
       <div className={Styles.titleCard} style={`background-image:url(${frontmatter.img})`}>
-        <h1 className={Styles.title}>{frontmatter.title}</h1>
+        <h3 className={Styles.title}>{frontmatter.title}</h3>
       </div>
       <div className="pa3">
         <p className={`${Styles.desc} mt0 mb2`}>{frontmatter.description}</p>
