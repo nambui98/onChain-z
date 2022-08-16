@@ -1,4 +1,4 @@
-import styles from "./hero.module.scss"
+import styles from "./Hero.module.scss"
 
 export default function Hero({ post }) {
   const { img, title } = post || {}
