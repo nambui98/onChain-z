@@ -1,20 +1,23 @@
 ---
-layout: ../../layouts/product.astro
-id: article-1660587952751-xbTzNBe5n
-medium: false
-devto: false
+layout: ../../layouts/Product.astro
 title: How to use Astro Devblog
-author:
-  - value: author-1660337033199-jpFG6u1fX
-    label: Christopher Kapic
+client: Self
+img: https://images.unsplash.com/photo-1547234935-80c7145ec969?fit=crop&w=1400&h=700&q=75
 summary: Use Astro devblog to host your own developer blog for free and
   automatically republish to Medium and Dev.to.
-image: /cms/veeterzy-smqil_2v4vs-unsplash.jpg
+description: |
+  We built an unofficial Mars Rover Landing site in celebration of NASA’s Perseverance Rover.
 tags:
+  - design
+  - dev
+  - branding
   - astro
 publishDate: 2022-08-15T18:25:52.846Z
 updateDate: 2022-08-15T18:25:52.857Z
+medium: false
+devto: false
 ---
+
 See the [YouTube video](https://youtu.be/8c7_vX3XPDc) or the [git repo](https://github.com/christopher-kapic/astro-devblog).
 
 For those of you who just want instructions, scroll down to the *instructions* section.
@@ -58,8 +61,6 @@ That being said, I encourage you to modify the template. Adjust the UI theme to 
 Astro Devblog is just a template--there are improvements that you can make which I have not done with the template itself which may help improve functionality, performance, and/or aesthetics. Here are the main ones that come to mind:
 - Optimize picture hosting
   - This could be done using an image transformation API endpoint, service, or an optimization at build time. The template simply serves the images as you upload them to NetlifyCMS, which might result in poor load times.
-- Improve the UI/styling
-  - Specifically, I think that the `src/layouts/Article.astro` styling can be improved--I had some trouble getting styles to pass to `<slot/>`, and I believe (though am not 100% sure) that my use of global styling is adversely affecting the styling of the navbar and footer.
 - Improve security
   - It would be good to enable a better security for your API keys. Some options would be to use environment variables (if your site is a single-author site) or encrypt the API keys so that they are not stored in the database as raw strings.
   - Add error handling to the `republish.ts` script. As it stands, the only way to tell if there was an error is to read the build output on Netlify.

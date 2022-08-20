@@ -13,9 +13,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "republish": "node republish.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@astrojs/netlify": "^1.0.1",
     "@astrojs/preact": "^1.0.2",
     "@astrojs/vercel": "^1.0.0",
     "astro": "^1.0.5",
@@ -24,6 +26,7 @@
   },
   "dependencies": {
     "date-fns": "^2.29.1",
+    "lodash": "^4.17.21",
     "preact": "^10.7.3"
   }
 }

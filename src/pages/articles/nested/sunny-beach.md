@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/product.astro
+layout: ../../../layouts/Product.astro
 title: Sunny Beach
 client: Self
 publishDate: 2020-03-04 00:00:00

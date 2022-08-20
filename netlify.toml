@@ -1,0 +1,9 @@
+[build]
+  command = 'npx pnpm i --store=node_modules/.pnpm-store && npm run republish; npm run build'
+  publish = 'dist'
+  
+[template.environment]
+  DATABASE_URL = "MOCK CockroachDB Connection String"
+
+[build.environment]
+  NPM_FLAGS = "--version" # prevent Netlify npm install 

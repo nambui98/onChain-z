@@ -1,0 +1,1 @@
+A static `admin` folder contains all Netlify CMS files, stored at the root of your published site.

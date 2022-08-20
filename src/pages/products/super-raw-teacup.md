@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/product.astro
+layout: ../../layouts/Product.astro
 title: Super Raw Teacup
 client: Self
 publishDate: 2020-03-02 00:00:00
