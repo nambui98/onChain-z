@@ -17,6 +17,9 @@ function Nav() {
       <a className={Styles.link} href="/blog">
         Blog
       </a>
+      <a className={Styles.link} href="/tags">
+        Tags
+      </a>
 
       <a className={Styles.social} href="https://twitter.com/me" aria-label="Visit our Twitter">
         <svg alt="twitter" className={Styles.socialicon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
