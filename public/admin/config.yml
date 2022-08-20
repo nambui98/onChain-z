@@ -18,41 +18,41 @@ media_library:
 # Editorial Workflow adds an interface for drafting, reviewing, and approving posts.
 publish_mode: editorial_workflow
 
-# provide a URL to published site. May be used by the CMS for various functionality. 
+# provide a URL to published site. May be used by the CMS for various functionality.
 # Used together with a collection's preview_path to create links to live content.
 site_url: https://your-site.com
-display_url: https://your-site.com  # Defaults to site_url.
+display_url: https://your-site.com # Defaults to site_url.
 logo_url: https://your-site.com/images/logo.svg
 # https://www.netlifycms.org/docs/configuration-options/#slug-type
 slug:
-  encoding: "ascii"
+  encoding: 'ascii'
   clean_accents: true
 
 # Collections define the structure for the different content types on your static site.
 collections:
-- name: "articles" # Used in routes, must be unique. e.g., /admin/collections/blog
-    label: "Articles" # Used in the Editor/Admin UI
+  - name: 'articles' # Used in routes, must be unique. e.g., /admin/collections/blog
+    label: 'Articles' # Used in the Editor/Admin UI
     label_singular: 'Article' # Used in the UI, ie: "New Post"
-    folder: "src/pages/articles" # The path to the folder where the documents are stored, relate to repo root
+    folder: 'src/pages/articles' # The path to the folder where the documents are stored, relate to repo root
     create: true # Allow users to create new documents in this collection
     description: >
       The description is a great place for tone setting, high level information, and editing
       guidelines that are specific to a collection.
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md, Can use {{fields.author}}
-    preview_path: "{{dirname}}/{{year}}/{{month}}/{{slug}}" # https://www.netlifycms.org/docs/configuration-options/#preview_path
-    preview_path_date_field: "publishDate"
-    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'  # for list view of this collection
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md, Can use {{fields.author}}
+    preview_path: '{{dirname}}/{{year}}/{{month}}/{{slug}}' # https://www.netlifycms.org/docs/configuration-options/#preview_path
+    preview_path_date_field: 'publishDate'
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}' # for list view of this collection
     # The fields for each document, usually in front matter
     # UI label, field name (key), widget (UI type or value type https://www.netlifycms.org/docs/widgets/)
-    fields: 
-      - { label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/Article.astro" }
-      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }  # basically is slug creation
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: '../../layouts/Article.astro' }
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' } # basically is slug creation
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
-      - { label: "Summary", name: "summary", widget: "string" }
-      - {label: "Featured Image", name: "thumbnail", widget: "image" , required: false, tagname: ''}
-      - { label: "Main Image", name: "image", widget: "image", allow_multiple: false }
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Language", name: "language", widget: "string", default: "en"}
+      - { label: 'Summary', name: 'summary', widget: 'string' }
+      - { label: 'Featured Image', name: 'thumbnail', widget: 'image', required: false, tagname: '' }
+      - { label: 'Main Image', name: 'image', widget: 'image', allow_multiple: false }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - { label: 'Language', name: 'language', widget: 'string', default: 'en' }
 
       - label: ID
         name: id
@@ -60,38 +60,20 @@ collections:
         prefix: article
         timestamp: true
         # hint: This widget generates a unique read-only id
-      - { label: "Publish to Medium", name: "medium", widget: "boolean", default: true }
-      - { label: "Publish to Dev.to", name: "devto", widget: "boolean", default: true }
-      - label: "Author"
-        name: "author"
-        widget: "ncw-file-relation"
-        collection: "authors"
+      - { label: 'Publish to Medium', name: 'medium', widget: 'boolean', default: true }
+      - { label: 'Publish to Dev.to', name: 'devto', widget: 'boolean', default: true }
+      - label: 'Author'
+        name: 'author'
+        widget: 'ncw-file-relation'
+        collection: 'authors'
         file: authors
         target_field: authors
         id_field: id
-        display_fields: ["title"]
-      - {
-          label: "Tags",
-          name: "tags",
-          widget: list
-        }
-      - {
-          label: 'Publish Date',
-          name: 'publishDate',
-          widget: 'datetime',
-          date_format: 'YYYY-MM-DD',
-          time_format: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
-        }
-      - {
-          label: 'Update Date',
-          name: 'updateDate',
-          widget: 'datetime',
-          date_format: 'YYYY-MM-DD',
-          time_format: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
-        }
-      - {label: "Body", name: "body", widget: "markdown"}
+        display_fields: ['title']
+      - { label: 'Tags', name: 'tags', widget: list }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
+      - { label: 'Update Date', name: 'updateDate', widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
     # The entries for any collection can be filtered based on the value of a single field. The example collection below only shows post entries with the value en in the language field.
     filter:
       field: language
@@ -113,23 +95,22 @@ collections:
       - label: Drafts
         field: draft
 
-- name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - label: "Home"
-        name: "home"
-        file: "src/pages"
+      - label: 'Home'
+        name: 'home'
+        file: 'src/pages'
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Publish Date", name: "date", widget: "datetime" }
-          - { label: "Body", name: "body", widget: "markdown" }
-  
-    
-- name: "authors"
-    label: "Authors"
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'authors'
+    label: 'Authors'
     files:
-      - label: "Authors"
-        name: "authors"
+      - label: 'Authors'
+        name: 'authors'
         file: src/pages/_cms/authors.json
         fields:
           - label: Authors
@@ -143,9 +124,9 @@ collections:
                 prefix: author
                 timestamp: true
                 # hint: This widget generates a unique read-only id
-              - { label: "Name", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-              - { label: "Profile Photo", name: "profilePhoto", widget: "image", allow_multiple: false }
-              - { label: "Portrait", name: "portraitPhoto", widget: "image", allow_multiple: false }
-              - { label: "Twitter Handle", name: "twitter", widget: "string" }
-              - { label: "Website", name: "website", widget: "string" }
+              - { label: 'Name', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'string' }
+              - { label: 'Profile Photo', name: 'profilePhoto', widget: 'image', allow_multiple: false }
+              - { label: 'Portrait', name: 'portraitPhoto', widget: 'image', allow_multiple: false }
+              - { label: 'Twitter Handle', name: 'twitter', widget: 'string' }
+              - { label: 'Website', name: 'website', widget: 'string' }
