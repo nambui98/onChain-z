@@ -12,11 +12,110 @@
     <!-- Backup https://cdn.jsdelivr.net/npm/netlify-cms@^2.0.0/dist/netlify-cms.js -->
     <script>
       CMS.registerPreviewStyle('/admin/cms.css')
+
+      // source code for those preview component https://github.com/netlify/netlify-cms/blob/master/dev-test/index.html
+      var ArticlePreview = createClass({
+        render: function () {
+          var entry = this.props.entry
+
+          return h(
+            'main',
+            { className: 'pageBody' },
+            h('div', { className: 'cover' }, h('h1', {}, entry.getIn(['data', 'title'])), this.props.widgetFor('image')),
+            h('p', {}, h('small', {}, 'Written ' + entry.getIn(['data', 'publishDate']))),
+            h('div', { className: 'text' }, this.props.widgetFor('body')),
+            h('div', { className: 'relation' }, this.props.widgetFor('relation'))
+          )
+        },
+      })
+
+      const RelationArticlePreview = createClass({
+        render: function () {
+          // When a post is selected from the relation field, all of it's data
+          // will be available in the field's metadata nested under the collection name,
+          // and then further nested under the value specified in `value_field`.
+          // In this case, the post would be nested under "posts" and then under
+          // the title of the selected post, since our `value_field` in the config
+          // is "title".
+
+          const { value, fieldsMetaData } = this.props
+          const article = fieldsMetaData && fieldsMetaData.getIn(['articles', value])
+          const style = { border: '2px solid #ccc', borderRadius: '8px', padding: '20px' }
+          return article
+            ? h(
+                'div',
+                { style: style },
+                h('h2', {}, 'Related Post'),
+                h('h3', {}, article.get('title')),
+                h('img', { src: article.get('image') }),
+                h('p', {}, article.get('body', '').slice(0, 100) + '...')
+              )
+            : null
+        },
+      })
+
+      // function uuidv4() {
+      //   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      //     var r = (Math.random() * 16) | 0,
+      //       v = c == 'x' ? r : (r & 0x3) | 0x8
+      //     return v.toString(16)
+      //   })
+      // }
+
+      /** https://github.com/ai/nanoid
+       *  A tiny, secure, URL-friendly, unique string ID generator for JavaScript.
+       */
+      function nanoid(t = 21) {
+        return crypto.getRandomValues(new Uint8Array(t)).reduce((t, e) => (t += (e &= 63) < 36 ? e.toString(36) : e < 62 ? (e - 26).toString(36).toUpperCase() : e > 62 ? '-' : '_'), '')
+      }
+
+      const UuidWidget = createClass({
+        componentDidMount() {
+          const { value, onChange } = this.props
+          if (!value) {
+            onChange(nanoid())
+          }
+        },
+
+        render() {
+          const { value, classNameWrapper, forID } = this.props
+          return h(
+            'span',
+            {
+              id: forID,
+              //className: classNameWrapper
+              style: { fontFamily: 'monospace', marginLeft: '1rem' },
+            },
+            value
+          )
+        },
+      })
+
+      CMS.registerPreviewTemplate('articles', ArticlePreview)
+      // https://www.netlifycms.org/docs/custom-widgets/#registerwidget
+      // Pass the name of a registered control to reuse with a new widget preview.
+      CMS.registerWidget('relationArticle', 'relation', RelationArticlePreview)
+
+      // https://github.com/netlify/netlify-cms/issues/1975#issuecomment-1221579538
+      CMS.registerWidget('uuid', UuidWidget)
+
+      CMS.registerEditorComponent({
+        id: 'youtube',
+        label: 'Youtube',
+        fields: [{ name: 'id', label: 'Youtube Video ID' }],
+        pattern: /^{{<\s?youtube (\S+)\s?>}}/,
+        fromBlock: function (match) {
+          return {
+            id: match[1],
+          }
+        },
+        toBlock: function (obj) {
+          return '{{< youtube ' + obj.id + ' >}}'
+        },
+        toPreview: function (obj) {
+          return '<img src="http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" alt="Youtube Video"/>'
+        },
+      })
     </script>
-
-    <!-- Mount the NetlifyCMS here -->
-    <div id="nc-root"></div>
-
-    <footer>This is Gurucore implementation to use Netlify CMS in an Astro site</footer>
   </body>
 </html>
