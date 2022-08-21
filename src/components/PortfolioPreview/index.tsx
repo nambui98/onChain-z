@@ -1,11 +1,11 @@
-import { h } from "preact"
-import Styles from "./styles.module.scss"
+import { h } from 'preact'
+import Styles from './styles.module.scss'
 
 function PortfolioPreview({ project }) {
   const { frontmatter } = project
   return (
     <div className={Styles.card}>
-      <div className={Styles.titleCard} style={`background-image:url(${frontmatter.img})`}>
+      <div className={Styles.titleCard} style={`background-image:url(${frontmatter.image})`}>
         <h3 className={Styles.title}>{frontmatter.title}</h3>
       </div>
       <div className="pa3">

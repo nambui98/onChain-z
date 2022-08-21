@@ -1,6 +1,6 @@
 ---
-img: https://images.unsplash.com/photo-1548391350-1a529f6ea42d?fit=crop&w=1400&h=700&q=75
-layout: ../../../layouts/Article.astro
+image: https://images.unsplash.com/photo-1548391350-1a529f6ea42d?fit=crop&w=1400&h=700&q=75
+layout: ../../layouts/Article.astro
 title: Lunar Eclipse is something we expect in this month
 tags:
   - design

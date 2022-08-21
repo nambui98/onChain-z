@@ -1,6 +1,5 @@
 ---
-img: https://images.unsplash.com/photo-1548391350-1a529f6ea42d?fit=crop&w=1400&h=700&q=75
-layout: ../../../layouts/Product.astro
+layout: ../../layouts/Product.astro
 relation: aRqze1JzXKQtwOxm_XU77
 client: Self
 title: Sunny Beach with a good cocktail is greate for Summer
