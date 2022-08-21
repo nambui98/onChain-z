@@ -1,15 +1,19 @@
 ---
-layout: ../../../layouts/Article.astro
-title: Lunar Eclipse
-client: Self
-publishDate: 2020-03-04 00:00:00
 img: https://images.unsplash.com/photo-1548391350-1a529f6ea42d?fit=crop&w=1400&h=700&q=75
-description: |
-  We took some cool pictures of the moon and made a website about it.
+layout: ../../../layouts/Product.astro
+relation: aRqze1JzXKQtwOxm_XU77
+client: Self
+title: Sunny Beach with a good cocktail is greate for Summer
+thumbnail: ""
+image: https://ucarecdn.com/be140e36-503c-4e7c-95a3-9f1e22917fe4/
 tags:
   - design
-  - dev
   - branding
+uuid: 6sMEt-FSQpSDQqK-eteBt
+updateDate: 2022-08-21 22:28
+description: |
+  We took some cool pictures of the moon and made a website about it.
+publishDate: 2020-03-04 00:00:00
 ---
 
 Rubber cheese mascarpone cut the cheese. Jarlsberg parmesan cheesy grin cream cheese port-salut stinking bishop ricotta brie. Roquefort when the cheese comes out everybody's happy goat cheese triangles stilton cheese and biscuits goat babybel. Bocconcini roquefort queso danish fontina pecorino.

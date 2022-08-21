@@ -8,12 +8,23 @@ All commands are run from the root of the project, from a terminal:
 
 | Command                | Action                                           |
 | :--------------------- | :----------------------------------------------- |
-| `pnpm install`          | Installs dependencies                            |
+| `pnpm install`         | Installs dependencies                            |
 | `pnpm dev`          | Starts local dev server at `localhost:3000`      |
 | `pnpm build`        | Build your production site to `./dist/`          |
 | `pnpm preview`      | Preview your build locally, before deploying     |
 | `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro --help` | Get help using the Astro CLI                     |
+
+
+
+
+### NetlifyCMS
+
+ local_backend: true in admin/config.yml, 
+
+Step 1: Add local_backend: true in your config.yml file in your admin folder. 
+Step 2: Run npx netlify-cms-proxy-server from the root directory of your repository
+Step 3: Run pnpm dev as usual, and navigate to /admin/index.html
 
 ## Prod
 
@@ -51,4 +62,6 @@ Articles are republished as part of the build step. Astro Devblog uses NetlifyCM
 ## NetlifyCMS
 
 hook up Netlify CMS to your website, you're basically adding a tool for content editors to make commits to your site repository without touching code or learning Git.
+RelatedPost work via UUID
+UUID is generated randomly (with `nanoid`)
 

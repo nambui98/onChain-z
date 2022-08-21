@@ -1,21 +1,23 @@
 ---
-layout: ../../layouts/Product.astro
-title: How to use Astro Devblog
-client: Self
+draft: false
 img: https://images.unsplash.com/photo-1547234935-80c7145ec969?fit=crop&w=1400&h=700&q=75
+layout: ../../layouts/Product.astro
 summary: Use Astro devblog to host your own developer blog for free and
   automatically republish to Medium and Dev.to.
-description: |
-  We built an unofficial Mars Rover Landing site in celebration of NASA’s Perseverance Rover.
+client: Self
+title: How to use Astro Devblog Whow, a bad title
 tags:
   - design
   - dev
   - branding
   - astro
 publishDate: 2022-08-15T18:25:52.846Z
-updateDate: 2022-08-15T18:25:52.857Z
+updateDate: 2022-07-16 01:25
 medium: false
 devto: false
+description: >
+  We built an unofficial Mars Rover Landing site in celebration of NASA’s
+  Perseverance Rover.
 ---
 
 See the [YouTube video](https://youtu.be/8c7_vX3XPDc) or the [git repo](https://github.com/christopher-kapic/astro-devblog).

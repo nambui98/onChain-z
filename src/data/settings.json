@@ -1,0 +1,10 @@
+{
+  "siteTitle": "Gurucore Inc",
+  "siteSlogan": "The premium group of geeks",
+  "posts": {
+    "front_limit": 5
+  },
+  "homePageSettings": {
+    "frontPagePostLimit": 5
+  }
+}

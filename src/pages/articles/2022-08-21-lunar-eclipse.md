@@ -1,14 +1,18 @@
 ---
-layout: ../../../layouts/Product.astro
-title: Sunny Beach
-client: Self
-publishDate: 2020-03-04 00:00:00
 img: https://images.unsplash.com/photo-1548391350-1a529f6ea42d?fit=crop&w=1400&h=700&q=75
-description: |
-  We took some cool pictures of the moon and made a website about it.
+layout: ../../../layouts/Article.astro
+title: Lunar Eclipse is something we expect in this month
 tags:
   - design
+  - dev
   - branding
+relation: 6sMEt-FSQpSDQqK-eteBt
+client: Self
+uuid: aRqze1JzXKQtwOxm_XU77
+publishDate: 2020-03-04 00:00:00
+updateDate: 2022-08-21 23:52
+description: |
+  We took some cool pictures of the moon and made a website about it.
 ---
 
 Rubber cheese mascarpone cut the cheese. Jarlsberg parmesan cheesy grin cream cheese port-salut stinking bishop ricotta brie. Roquefort when the cheese comes out everybody's happy goat cheese triangles stilton cheese and biscuits goat babybel. Bocconcini roquefort queso danish fontina pecorino.
