@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Article.astro
+layout: ~/layouts/ArticleLayout.astro
 title: A sample article created by NC fỏ chủng tá tà ta
 image: https://images.pexels.com/photos/289225/pexels-photo-289225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 tags:

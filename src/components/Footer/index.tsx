@@ -2,6 +2,8 @@ import { h } from 'preact'
 import styles from './styles.module.scss'
 import packagejson from '../../../package.json'
 
+console.log(packagejson)
+
 function Footer() {
   return (
     <footer className={styles.footer}>
@@ -26,7 +28,7 @@ function Footer() {
         </a>
       </div>
       &copy; {new Date().getFullYear()} OnChainZ
-      <small className={styles.byline}>
+      <small className={styles.byline} title={packagejson.releasenote}>
         🚀 Gurucore.com {packagejson.productName} v{packagejson.version}
       </small>
     </footer>

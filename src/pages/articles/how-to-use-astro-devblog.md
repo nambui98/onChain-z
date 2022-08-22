@@ -1,7 +1,7 @@
 ---
 draft: false
 image: https://images.unsplash.com/photo-1547234935-80c7145ec969?fit=crop&w=1400&h=700&q=75
-layout: ../../layouts/Product.astro
+layout: ~/layouts/Product.astro
 summary: Use Astro devblog to host your own developer blog for free and
   automatically republish to Medium and Dev.to.
 client: Self

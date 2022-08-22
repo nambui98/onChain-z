@@ -1,5 +1,5 @@
 ---
-layout: ~/layouts/Product.astro
+layout: ~/layouts/ArticleLayout.astro
 relation: aRqze1JzXKQtwOxm_XU77
 client: Self
 title: Sunny Beach with a good cocktail is greate for Summer

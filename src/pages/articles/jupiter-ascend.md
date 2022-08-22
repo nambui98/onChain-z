@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Product.astro
+layout: ~/layouts/Product.astro
 title: Jupiter Ascend
 client: Self
 publishDate: 2020-03-02 00:00:00

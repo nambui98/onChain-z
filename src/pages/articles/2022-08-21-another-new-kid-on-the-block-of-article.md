@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Article.astro
+layout: ~/layouts/ArticleLayout.astro
 title: Another new kid on the block of article today hôm nay that
 image: https://images.pexels.com/photos/2806150/pexels-photo-2806150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 tags:

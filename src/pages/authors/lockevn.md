@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/AuthorLayout.astro
+layout: ~/layouts/AuthorLayout.astro
 title: Lockevn
 summary: The engineer and tech blogger with fast-food type
 tags:

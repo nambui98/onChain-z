@@ -1,29 +1,24 @@
 ---
-import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
-import SimplePageLayout from '../layouts/SimplePageLayout.astro'
-const title = "All Products in shop"
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx'
+import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
+const title = 'All Products in shop'
 
 const list = (await Astro.glob('./products/**/*.md'))
-	.filter(({ frontmatter }) => !!frontmatter.publishDate)
-	.sort(
-		(a, b) =>
-			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
-	);
+  .filter(({ frontmatter }) => !!frontmatter.publishDate)
+  .sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
 ---
 
 <SimplePageLayout title={title}>
+  <Fragment slot="head">
+    <style lang="scss">
+      .grid {
+        display: grid;
+        grid-gap: 3rem;
+      }
+    </style>
+  </Fragment>
 
-	<Fragment slot="head">
-		<style lang="scss">
-			.grid {
-				display: grid;
-				grid-gap: 3rem;
-			}
-		</style>
-	</Fragment>
-
-	<div class="grid">
-		{list.map((project) =>
-		<PortfolioPreview project={project} />)}
-	</div>
+  <div class="grid">
+    {list.map((project) => <PortfolioPreview project={project} />)}
+  </div>
 </SimplePageLayout>

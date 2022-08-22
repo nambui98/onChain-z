@@ -61,7 +61,7 @@ collections:
     # The fields for each document, usually in front matter
     # UI label, field name (key), widget (UI type or value type https://www.netlifycms.org/docs/widgets/)
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: '../../layouts/Article.astro' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: '~/layouts/ArticleLayout.astro' }
       - {
           label: 'Title',
           name: 'title',
@@ -129,7 +129,7 @@ collections:
     preview_path: '{{dirname}}/{{slug}}'
     summary: "{{title | upper}} ~ {{body | truncate(50, '...') }}"
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: '../../layouts/Article.astro' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: '~/layouts/AuthorLayout.astro' }
       - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' } # basically is slug creation
       - { label: 'Summary', name: 'summary', widget: 'string', required: false }
       - { label: 'Main Image', name: 'image', widget: 'image', allow_multiple: false, required: false }

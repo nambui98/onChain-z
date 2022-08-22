@@ -1,50 +1,42 @@
 ---
-import SimplePageLayout from '../layouts/SimplePageLayout.astro';
+import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
 
-let title = "Contact Us"
+let title = 'Contact Us'
 ---
 
 <SimplePageLayout title={title}>
-	<Fragment slot="head">
-		<style lang="scss">
-			.heroImg {
-				max-height: 24rem;
-				object-fit: cover;
-				overflow: hidden;
+  <Fragment slot="head">
+    <style lang="scss">
+      .heroImg {
+        max-height: 24rem;
+        object-fit: cover;
+        overflow: hidden;
 
-				img {
-					width: 100%;
-				}
-			}
+        img {
+          width: 100%;
+        }
+      }
 
-			.bio {
-				font-size: var(--f-u1);
-				line-height: 2;
-			}
-		</style>
-	</Fragment>
+      .bio {
+        font-size: var(--f-u1);
+        line-height: 2;
+      }
+    </style>
+  </Fragment>
 
-
-	<div class="heroImg">
-		<img width="1400" height="350"
-			src="https://images.unsplash.com/photo-1581977012607-4091712d36f9?auto=format&fit=crop&w=1400&h=350&q=75"
-			alt={`${title}`} />
-	</div>
-	<div class="bio wrapper wrapper__readable mt8">
-		<h2>Ron Nguyen</h2>
-		<p>
-			the goat squirty cheese cut the cheese. Cheese and wine cheddar fondue airedale cottage
-			cheese
-			camembert de normandie feta babybel. Rubber cheese melted cheese pecorino port-salut
-			fondue gouda cheese on toast cheesy feet. Feta edam everyone loves cheese strings
-			camembert de normandie.
-		</p>
-		<h2>Thach Nguyen</h2>
-		<p>
-			Caerphilly monterey jack goat. Squirty cheese cheesy grin hard cheese cheese strings
-			cheese and biscuits croque monsieur smelly cheese danish fontina. Swiss cheese triangles
-			everyone loves mascarpone cheese on toast who moved my cheese lancashire cheeseburger.
-			Fromage frais fromage frais cheese and biscuits stinking bishop cauliflower cheese.
-		</p>
-	</div>
+  <div class="heroImg">
+    <img width="1400" height="350" src="https://images.unsplash.com/photo-1581977012607-4091712d36f9?auto=format&fit=crop&w=1400&h=350&q=75" alt={`${title}`} />
+  </div>
+  <div class="bio wrapper wrapper__readable mt8">
+    <h2>Ron Nguyen</h2>
+    <p>
+      the goat squirty cheese cut the cheese. Cheese and wine cheddar fondue airedale cottage cheese camembert de normandie feta babybel. Rubber cheese melted cheese pecorino port-salut fondue gouda
+      cheese on toast cheesy feet. Feta edam everyone loves cheese strings camembert de normandie.
+    </p>
+    <h2>Thach Nguyen</h2>
+    <p>
+      Caerphilly monterey jack goat. Squirty cheese cheesy grin hard cheese cheese strings cheese and biscuits croque monsieur smelly cheese danish fontina. Swiss cheese triangles everyone loves
+      mascarpone cheese on toast who moved my cheese lancashire cheeseburger. Fromage frais fromage frais cheese and biscuits stinking bishop cauliflower cheese.
+    </p>
+  </div>
 </SimplePageLayout>

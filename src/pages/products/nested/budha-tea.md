@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Product.astro
+layout: ~/layouts/Product.astro
 title: Budha Tea
 client: Self
 publishDate: 2020-03-04 00:00:00

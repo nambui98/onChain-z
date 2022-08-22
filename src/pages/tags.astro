@@ -1,49 +1,44 @@
 ---
-import ProjectCard from '../components/ProjectCard/index.jsx';
-import SimplePageLayout from '../layouts/SimplePageLayout.astro'
-import uniq from "lodash/uniq"
+import ProjectCard from '../components/ProjectCard/index.jsx'
+import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
+import uniq from 'lodash/uniq'
 
-const title = "All Tags/Topics"
+const title = 'All Tags/Topics'
 
 const list = (await Astro.glob('./articles/**/*.md'))
-	.filter(({ frontmatter }) => !!frontmatter.publishDate)
-	.sort(
-		(a, b) =>
-			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
-	);
+  .filter(({ frontmatter }) => !!frontmatter.publishDate)
+  .sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
 
 let tags = uniq(list.map(({ frontmatter }) => frontmatter.tags).flat())
-	.sort()
-	.map(tag => ({
-		title: tag,
-		path: `/tags/${tag}`,
-		items: list.filter(({ frontmatter }) => frontmatter.tags.includes(tag))
-	}));
+  .sort()
+  .map((tag) => ({
+    title: tag,
+    path: `/tags/${tag}`,
+    items: list.filter(({ frontmatter }) => frontmatter.tags.includes(tag)),
+  }))
 ---
 
 <SimplePageLayout title={title}>
-	<div class="grid">
-		{tags.map((tag) =>
-		<>
-			<h2>
-				{tag.title}
-			</h2>
+  <div class="grid">
+    {
+      tags.map((tag) => (
+        <>
+          <h2>{tag.title}</h2>
 
-			<div class="grid">
-				{
-				tag.items.map((item) =>
-				<ProjectCard project={item} />
-				)
-				}
-			</div>
-		</>
-		)}
-	</div>
+          <div class="grid">
+            {tag.items.map((item) => (
+              <ProjectCard project={item} />
+            ))}
+          </div>
+        </>
+      ))
+    }
+  </div>
 </SimplePageLayout>
 
 <style lang="scss">
-	.grid {
-		display: grid;
-		grid-gap: 3rem;
-	}
+  .grid {
+    display: grid;
+    grid-gap: 3rem;
+  }
 </style>
