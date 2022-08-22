@@ -60,9 +60,8 @@
 body {
   margin: 0;
   color: var(--t-fg);
-  font-family: "Inter", "system-ui", sans-serif;
+  font-family: 'Cambria', 'system-ui', sans-serif;
 }
-
 * {
   box-sizing: content-box;
 }
@@ -74,6 +73,13 @@ img {
 
 a {
   color: var(--t-active);
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    color: var(--t-active);
+    background-color: var(--c-gray);
+  }
 }
 
 h1 {
@@ -83,7 +89,7 @@ h1 {
 // Utils
 
 // color
-$colors: "black", "blue", "white";
+$colors: 'black', 'blue', 'white';
 @each $color in $colors {
   // text color
   .tc-#{$color} {
