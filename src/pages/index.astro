@@ -1,14 +1,16 @@
 ---
-import BaseSEOLayout from '../layouts/BaseSEOLayout.astro';
+import BaseSEOLayout from '~/layouts/BaseSEOLayout.astro'
 
 // Component Imports
-import Button from '../components/Button/index.jsx';
-import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
-import HeroCTA from '../components/HeroCTA.astro';
+import Button from '~/components/Button/index.jsx'
+import PortfolioPreview from '~/components/PortfolioPreview/index.jsx'
+import HeroCTA from '~/components/HeroCTA.astro'
+
+import settings from '~/data/settings.json'
 
 // Data Fetching: List all Markdown posts in the repo.
-const products = await Astro.glob('./products/**/*.md');
-const featuredProducts = products.slice(0, 2);
+const products = await Astro.glob('./products/**/*.md')
+const featuredProducts = products.slice(0, 2)
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -18,66 +20,61 @@ const featuredProducts = products.slice(0, 2);
 // import ArticleGrid from "../components/Article/Grid"
 // const posts = await fetch(`https://jsonplaceholder.typicode.com/posts`).then(res => res.json())
 
-const title = "OnChainZ: Personal Site"
-const description = "OnChainZ: Developer, Speaker, and Writer..."
+const title = settings.siteTitle
+const description = settings.siteSlogan
 ---
 
-<BaseSEOLayout title={title} description={description}>
-	<HeroCTA />
+<BaseSEOLayout title={description} description={description}>
+  <HeroCTA />
 
-	<main class="wrapper mt4 mb4">
-		<div class="grid">
-			<h2 class="">Selected Work</h2>
-			<div class="section">
+  <main class="wrapper mt4 mb4">
+    <div class="grid">
+      <h2 class="">Selected Work</h2>
+      <div class="section">
+        {featuredProducts.map((product, i) => <PortfolioPreview project={product} />)}
 
-				{featuredProducts.map((product, i) =>
-				<PortfolioPreview project={product} />
-				)}
-
-				<div class="tac mt4">
-					<a href="/products">
-						<Button>View All</Button>
-					</a>
-				</div>
-			</div>
-			<h2 class="">About me</h2>
-			<div class="section">
-				<p class="bio">
-					<span>Hello!</span> I’m OnChainZ, and this is my website. It was made using{' '}
-					<a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro</a>,
-					a new way to build static sites. This is just an example template for you to modify.
-				</p>
-				<p>Check out all of our <a href="/about">builders</a>.</p>
-			</div>
-		</div>
-	</main>
+        <div class="tac mt4">
+          <a href="/products">
+            <Button>View All</Button>
+          </a>
+        </div>
+      </div>
+      <h2 class="">About {title}</h2>
+      <div class="section">
+        <p class="bio">
+          <span>Hello!</span> I’m {title}, and this is my website. It was made using{' '}
+          <a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro</a>, a new way to build static sites. This is just an example template for you to modify.
+        </p>
+        <p>Check out all of our <a href="/about">builders</a>.</p>
+      </div>
+    </div>
+  </main>
 </BaseSEOLayout>
 
 <style lang="scss">
-	$w-s: 750px;
+  $w-s: 750px;
 
-	.grid {
-		display: grid;
-		grid-gap: 2rem;
-	}
+  .grid {
+    display: grid;
+    grid-gap: 2rem;
+  }
 
-	.desc {
-		font-size: var(--f-u2);
-		margin-top: 1.5rem;
-		margin-bottom: 0;
-	}
+  .desc {
+    font-size: var(--f-u2);
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
 
+  .bio {
+    line-height: 2;
+    margin-bottom: 2rem;
 
-	.bio {
-		line-height: 2;
-		margin-bottom: 2rem;
-
-		>span:first-of-type {
-			line-height: 1;
-			margin-bottom: 0.5em;
-			display: block;
-			font-weight: 700;
-			font-size: var(--f-u4);
-		}
-	}
+    > span:first-of-type {
+      line-height: 1;
+      margin-bottom: 0.5em;
+      display: block;
+      font-weight: 700;
+      font-size: var(--f-u4);
+    }
+  }
 </style>
