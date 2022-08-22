@@ -1,0 +1,17 @@
+.container {
+  display: inline-block;
+  padding: 0.5em 1em;
+}
+
+ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 0 0.2rem;
+  }
+}
