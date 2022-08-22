@@ -6,10 +6,10 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div>
-        <a className={styles.link} href="/products">
+        <a className={styles.link} role="button" href="/products">
           Shop
         </a>
-        <a className={styles.link} href="/tags">
+        <a className={styles.link} role="button" href="/tags">
           Tags
         </a>
 

@@ -75,8 +75,8 @@ a {
   color: var(--t-active);
   text-decoration: none;
 
-  &:focus,
-  &:hover {
+  &:focus[role='button'],
+  &:hover[role='button'] {
     color: var(--t-active);
     background-color: var(--c-gray);
   }
