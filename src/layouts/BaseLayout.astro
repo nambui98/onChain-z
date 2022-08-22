@@ -1,28 +1,25 @@
 ---
-import MainHead from '../components/Site/MainHead.astro';
-import Footer from '../components/Footer/index.jsx';
-import Nav from '../components/Nav/index.jsx';
+import MainHead from '../components/Site/MainHead.astro'
+import Footer from '../components/Footer/index.jsx'
+import Nav from '../components/Nav/index.jsx'
+import AppConfig from '~/AppConfig'
 
-import "../styles/global.scss"
+import '../styles/global.scss'
 
-const { lang } = Astro.props
+const { lang, className = '' } = Astro.props
 ---
 
-<html lang={lang || 'en' }>
-
-<head>
-    <MainHead title="OnChainZ: Personal Site" description="OnChainZ: Developer, Speaker, and Writer..." />
+<html lang={lang || 'en'}>
+  <head>
+    <MainHead title={AppConfig.siteTitle} description={AppConfig.siteSlogan} />
     <slot name="head" />
-</head>
+  </head>
 
-<body class="BaseLayout">
+  <body class="BaseLayout">
     <Nav />
-    <main>
-        <div class="container mx-auto my-4">
-            <slot />
-        </div>
-    </main>
+    <section class={`${className} container mx-auto my-4`}>
+      <slot />
+    </section>
     <Footer />
-</body>
-
+  </body>
 </html>

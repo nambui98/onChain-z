@@ -1,16 +1,15 @@
 ---
-import SEOHead from '../components/Site/SEOHead.astro';
+import SEOHead from '../components/Site/SEOHead.astro'
 import BaseLayout from './BaseLayout.astro'
 
-import AppConfig from "../AppConfig"
-let { lang, title, description, frontmatter } = Astro.props;
-title = title || frontmatter?.title || "";
+import AppConfig from '../AppConfig'
+let { lang, title, description, frontmatter, className } = Astro.props
+title = title || frontmatter?.title || ''
 ---
 
-<BaseLayout lang={lang}>
-    <Fragment slot="head">
-        <SEOHead title={`${title} | ${AppConfig.SiteName}`} description={description}>
-        </SEOHead>
-    </Fragment>
-    <slot />
+<BaseLayout lang={lang} className={className}>
+  <Fragment slot="head">
+    <SEOHead title={`${title} | ${AppConfig.SiteName}`} description={description} />
+  </Fragment>
+  <slot />
 </BaseLayout>
