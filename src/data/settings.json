@@ -1,9 +1,6 @@
 {
   "siteTitle": "OnChainZ",
-  "siteSlogan": "The premium group of Web3 geeks",
-  "posts": {
-    "front_limit": 5
-  },
+  "siteSlogan": "The geek group for Web3 insights",
   "homePageSettings": {
     "frontPagePostLimit": 5
   }
