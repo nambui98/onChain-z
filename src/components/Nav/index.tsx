@@ -10,7 +10,6 @@ function Nav() {
       <a className={styles.link} role="button" href="/about">
         About
       </a>
-
       <a className={styles.link} role="button" href="/blog">
         Blog
       </a>

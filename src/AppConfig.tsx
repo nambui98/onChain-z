@@ -1,3 +1,6 @@
+import settings from '~/data/settings.json'
+
 export default {
-  SiteName: "OnChainZ",
+  SiteName: 'OnchainZ',
+  ...settings,
 }
