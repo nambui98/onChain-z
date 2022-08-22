@@ -1,0 +1,48 @@
+---
+import Button from '../components/Button'
+import Breadcrumbs from '../components/Breadcrumbs'
+import ArticleHero from '../components/Article/ArticleHero'
+import ArticleMetadata from '../components/Article/ArticleMetadata'
+import BaseSEOLayout from './BaseSEOLayout.astro'
+
+const { content } = Astro.props
+
+const title = content?.title || 'Article layout'
+const links = [
+  {
+    name: 'Home',
+    href: '/',
+  },
+  {
+    name: 'Blog',
+    href: '/blog',
+  },
+]
+---
+
+<BaseSEOLayout lang={content.lang} title={title} description={content.description} className={'ArticleLayout'}>
+  <Breadcrumbs links={links} />
+
+  <h1>{title}</h1>
+  <ArticleHero content={content} />
+  <ArticleMetadata content={content} />
+
+  <div class="wrapper wrapper__readable">
+    <div class="content">
+      <slot />
+    </div>
+  </div>
+
+  <footer class="tac mt6">
+    <a href="/blog">
+      <Button>View Related</Button>
+    </a>
+  </footer>
+</BaseSEOLayout>
+
+<style lang="scss">
+  .content {
+    font-size: var(--f-u1);
+    line-height: 2;
+  }
+</style>
