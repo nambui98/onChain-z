@@ -1,5 +1,5 @@
 ---
-import PortfolioPreview from '../components/PortfolioPreview/index.jsx'
+import ArticleCardView from '~/components/Article/ArticleCardView.jsx'
 import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
 const title = 'All Articles'
 
@@ -9,16 +9,14 @@ const list = (await Astro.glob('./articles/**/*.md'))
 ---
 
 <SimplePageLayout title={title}>
-  <Fragment slot="head">
-    <style lang="scss">
-      .grid {
-        display: grid;
-        grid-gap: 3rem;
-      }
-    </style>
-  </Fragment>
-
   <div class="grid">
-    {list.map((project) => <PortfolioPreview project={project} />)}
+    {list.map((r) => <ArticleCardView project={r} />)}
   </div>
 </SimplePageLayout>
+
+<style lang="scss">
+  .grid {
+    display: grid;
+    grid-gap: 2rem;
+  }
+</style>

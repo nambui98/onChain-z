@@ -9,16 +9,14 @@ const list = (await Astro.glob('./products/**/*.md'))
 ---
 
 <SimplePageLayout title={title}>
-  <Fragment slot="head">
-    <style lang="scss">
-      .grid {
-        display: grid;
-        grid-gap: 3rem;
-      }
-    </style>
-  </Fragment>
-
   <div class="grid">
     {list.map((project) => <PortfolioPreview project={project} />)}
   </div>
 </SimplePageLayout>
+
+<style lang="scss">
+  .grid {
+    display: grid;
+    grid-gap: 3rem;
+  }
+</style>
