@@ -1,7 +1,7 @@
 ---
-layout: ../../layouts/Article.astro
+layout: ../../layouts/AuthorLayout.astro
 title: Lockevn
-summary: Lockevn the engineer and tech blogger with fast-food type
+summary: The engineer and tech blogger with fast-food type
 tags:
   - engineer
   - blogger
