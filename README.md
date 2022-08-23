@@ -65,3 +65,9 @@ hook up Netlify CMS to your website, you're basically adding a tool for content 
 RelatedPost work via UUID
 UUID is generated randomly (with `nanoid`)
 
+
+## TODO: Dev use import with absoluted path https://stackblitz.com/edit/github-mhrqb7-6mx7rn?file=src%2Fcomponents%2FTest.tsx,src%2Fcomponents%2FCounter.tsx
+
+Don't know why we cannot use import from tsx to tsx
+
+https://discordapp.com/channels/830184174198718474/1011122115379990558
