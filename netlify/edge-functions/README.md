@@ -12,3 +12,5 @@ Add personalization to static HTML with Netlify Edge Functions — no browser Ja
 
 https://www.netlify.com/blog/add-personalization-to-static-html-with-edge-functions-no-browser-javascript/
 
+
+

@@ -59,6 +59,23 @@ How are my articles republished?
 Articles are republished as part of the build step. Astro Devblog uses NetlifyCMS, which updates your Git repository when you publish a post. This, in turn, triggers a Netlify build, updating your site. The script republish.ts is run as part of the build step. republish.ts checks each post to see whether it has already been published (using a database—I suggest using *CockroachDB’s free serverless tier). If the post has not been republished and the author’s API keys are known, the post is published using Medium and Dev.to’s APIs.
 
 
+## Netlify
+
+> 🧠 Just a heads up, you will not be able to see the function data or redirect output until you run locally with `netlify dev` (info below in [Netlify CLI section](#running-locally-with-the-netlify-cli))
+
+### Running locally with the Netlify CLI
+
+When using this template, you might want to see Netlify features such as redirects, functions, or preview the deploy locally first. To do, this you can install and use the Netlify CLI!
+
+```
+npm install -g netlify-cli # to install the Netlify CLI tool globally
+netlify dev
+```
+
+And now your project should be running on <http://localhost:8888>.
+
+
+
 ## NetlifyCMS
 
 hook up Netlify CMS to your website, you're basically adding a tool for content editors to make commits to your site repository without touching code or learning Git.

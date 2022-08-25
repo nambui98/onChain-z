@@ -15,6 +15,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "republish": "node republish.mjs",
+    "lint": "npm run lint:prettier && npm run lint:eslint",
+    "lint:prettier": "prettier --write \"src/**/*.{css,astro}\"",
+    "lint:eslint": "eslint \"src/**/*.{css,js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -22,7 +25,7 @@
     "@astrojs/preact": "^1.0.2",
     "@astrojs/vercel": "^1.0.0",
     "astro": "^1.0.5",
-    "astro-robots-txt": "^0.3.7",
+    "cypress": "^10.6.0",
     "sass": "^1.52.2"
   },
   "dependencies": {

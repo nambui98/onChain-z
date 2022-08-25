@@ -166,4 +166,8 @@ $colors: 'black', 'blue', 'white';
 }
 .wrapper__readable {
   max-width: 50em;
+
+  .content {
+    line-height: 2;
+  }
 }
