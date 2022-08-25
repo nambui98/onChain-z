@@ -1,0 +1,29 @@
+---
+import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
+
+let title = 'Submission Received!'
+---
+
+<SimplePageLayout title={title}>
+  <h3>Thank you for your feedback! Head back to the <a href="/">home page!</a></h3>
+  <a class="jokes-link" href="/functions/joke">
+    <h3>or click here for some jokes!</h3>
+  </a>
+</SimplePageLayout>
+
+<style lang="scss">
+  .heroImg {
+    max-height: 24rem;
+    object-fit: cover;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .bio {
+    font-size: var(--f-u1);
+    line-height: 2;
+  }
+</style>
