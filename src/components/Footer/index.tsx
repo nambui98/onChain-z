@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import packagejson from '../../../package.json'
+import * as packagejson from '../../../package.json'
 import AppConfig from '~/AppConfig'
 
 function Footer() {
