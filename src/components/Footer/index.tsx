@@ -1,5 +1,6 @@
 import styles from './styles.module.scss'
 import packagejson from '../../../package.json'
+import AppConfig from '~/AppConfig'
 
 function Footer() {
   return (
@@ -24,7 +25,7 @@ function Footer() {
           </svg>
         </a>
       </div>
-      &copy; {new Date().getFullYear()} OnChainZ
+      &copy; {new Date().getFullYear()} {AppConfig.SiteName}
       <small className={styles.byline} title={packagejson.releasenote}>
         🚀 Gurucore.com {packagejson.productName} v{packagejson.version}
       </small>
