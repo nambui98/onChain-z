@@ -18,14 +18,14 @@
 
 
 # For our testing, we use [Cypress](https://www.cypress.io/) for end-to-end testing. This makes sure that we can validate that our templates are rendering and displaying as we’d expect. By default, we have Cypress not generate deploy links if our tests don’t pass. If you’d like to keep Cypress and still generate the deploy links, go into your `netlify.toml` and delete the plugin configuration lines:
-[[plugins]] 
-  package = "netlify-plugin-cypress"
+#[[plugins]] 
+#  package = "netlify-plugin-cypress"
 
-  [plugins.inputs.postBuild]
-    enable = true
+#  [plugins.inputs.postBuild]
+#    enable = true
   
-  [plugin.inputs]
-    enable = false
+#  [plugin.inputs]
+#    enable = false
     
 [[redirects]]
   from = "/functions/*" # simplify all calls to serverless functions
