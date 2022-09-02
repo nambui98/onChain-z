@@ -1,6 +1,6 @@
 {
   "name": "@lockevn/gurucore-jam-site",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "releasenote": "Disable cypress netlify. use absoluted import path",
   "description": "NetlifyCMS on Astro.build for a blazing fast site",
   "productName": "Lakdak",
@@ -26,7 +26,9 @@
     "@astrojs/vercel": "^1.0.0",
     "astro": "^1.0.5",
     "cypress": "^10.6.0",
-    "sass": "^1.52.2"
+    "sass": "^1.52.2",
+    "vite-plugin-windicss": "^1.8.7",
+    "windicss": "^3.5.6"
   },
   "dependencies": {
     "date-fns": "^2.29.1",

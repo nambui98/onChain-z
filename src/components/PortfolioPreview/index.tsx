@@ -1,4 +1,3 @@
-import { h } from 'preact'
 import Styles from './styles.module.scss'
 
 function PortfolioPreview({ project }) {
@@ -18,6 +17,7 @@ function PortfolioPreview({ project }) {
             </div>
           ))}
         </div>
+
         <a className={Styles.link} href={project.url}>
           <span className={Styles.linkInner}>View</span>
         </a>

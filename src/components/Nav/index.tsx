@@ -1,9 +1,8 @@
-import { h } from 'preact'
 import styles from './styles.module.scss'
 
 function Nav() {
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} bg="indigo-200">
       <a className={styles.logolink} href="/">
         <div className={styles.monogram}>OZ</div>
       </a>
