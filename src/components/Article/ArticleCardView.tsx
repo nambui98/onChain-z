@@ -3,7 +3,7 @@ import Styles from './ArticleCardView.module.scss'
 function ArticleCardView({ project }) {
   const { frontmatter } = project
   return (
-    <div className={Styles.card}>
+    <div className={`ArticleCardView ${Styles.card}`} m="2">
       <div className={Styles.titleCard} style={`background-image:url(${frontmatter.image})`}>
         <span className={Styles.title}>{frontmatter.title}</span>
       </div>
