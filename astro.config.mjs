@@ -4,6 +4,7 @@
 import { defineConfig } from 'astro/config'
 import preact from '@astrojs/preact'
 import WindiCSS from 'vite-plugin-windicss'
+// @ts-ignore
 import netlify from '@astrojs/netlify/functions'
 // import vercel from "@astrojs/vercel/serverless"
 
@@ -15,6 +16,7 @@ export default defineConfig({
   // Set "renderers" to "[]" to disable all default, builtin component support.
   // renderers: [],
   // https://github.com/windicss/vite-plugin-windicss
+  // https://windicss.org/integrations/vite.html
   vite: {
     plugins: [WindiCSS()],
   },
