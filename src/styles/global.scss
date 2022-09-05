@@ -82,7 +82,8 @@ a {
 }
 
 h1 {
-  font-size: var(--f-u8);
+  // windicss, inject class to this https://windicss.org/features/directives.html
+  @apply font-sans font-semibold text-4xl text-left uppercase align-middle break-all;
 }
 
 // Utils
