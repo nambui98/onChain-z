@@ -26,6 +26,7 @@ export default defineConfig({
   shortcuts: {
     btn: 'py-2 px-4 font-semibold rounded-lg shadow-md',
 
+    heading1: 'font-sans font-semibold text-4xl text-left uppercase align-middle break-all',
     heading2: 'font-sans font-semibold text-3xl text-left uppercase align-middle break-all',
     title: 'font-sans text-2xl text-left uppercase align-middle break-all',
     'reading-content': 'leading-relaxed font-sans break-all',

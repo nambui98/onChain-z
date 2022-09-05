@@ -6,7 +6,7 @@ export default function SingleBlog({ post }) {
   return (
     <>
       <div className="my-4 text-center">
-        <h1 className="text-center text-4xl leading-tight text-gray-900 my-4 font-bold">{title}</h1>
+        <h1 className="heading1 text-center text-4xl leading-tight text-gray-900 my-4 font-bold">{title}</h1>
         <div className="text-gray-500 flex justify-center items-center space-x-2">
           <span className="flex space-x-2 items-center overflow-hidden">
             <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src={author?.bioImage?.url ? author?.bioImage?.url : 'https://via.placeholder.com/200'} alt="author picture" />
