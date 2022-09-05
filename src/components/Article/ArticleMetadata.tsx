@@ -3,7 +3,7 @@ import styles from './ArticleMetadata.module.scss'
 export default function ArticleMetadata({ content }) {
   return (
     <div className={`${styles.container} ArticleMetadata`}>
-      <div class="wrapper pt8 pb8 mb8 tac">
+      <div class="wrapper pt8 pb8 mb8 text-center">
         {content.tags.map((t) => (
           <span class="tag">{t}</span>
         ))}

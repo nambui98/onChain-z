@@ -9,7 +9,7 @@ const { content } = Astro.props
 <SimplePageLayout lang={content.lang} title={content.title} description={content.description}>
   <ArticleHero content={content} />
   <div class="leadIn">
-    <div class="wrapper pt8 pb8 mb8 tac">
+    <div class="wrapper pt-8 pb-8 mb-8 text-center">
       {content.tags.map((t) => <span class="tag">{t}</span>)}
       <h3 class="tagline">{content.description}</h3>
     </div>
@@ -17,7 +17,7 @@ const { content } = Astro.props
   <div class="wrapper wrapper__readable">
     <slot />
   </div>
-  <footer class="tac mt6">
+  <footer class="text-center mt-6">
     <a href="/products">
       <Button>View All</Button>
     </a>

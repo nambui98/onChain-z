@@ -20,18 +20,18 @@ const description = AppConfig.siteSlogan
 <BaseSEOLayout title={description} description={description} className="HomePage">
   <HeroCTA />
 
-  <main class="wrapper mt4 mb4">
+  <main class="HomePage wrapper mt4 mb4">
     <div class="grid">
-      <h2 class="">Insight</h2>
+      <h2 class="heading2">Insight</h2>
       <div class="section">
         {featuredArticles.map((product, i) => <PortfolioPreview project={product} />)}
 
-        <div class="tac mt4">
+        <div class="text-center mt-4">
           <Button href="/blog">View All</Button>
         </div>
       </div>
 
-      <h2 class="">About {title}</h2>
+      <h2 class="heading2">About {title}</h2>
       <div class="section">
         <p class="bio">
           Hello! We’re {title}, and this is my website. It was made using{' '}

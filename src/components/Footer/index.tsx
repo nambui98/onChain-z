@@ -4,12 +4,12 @@ import AppConfig from '~/AppConfig'
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={'AppFooter ' + styles.footer}>
       <div>
-        <a className={styles.link} role="button" href="/products">
+        <a className={'btn ' + styles.link} role="button" href="/products">
           Shop
         </a>
-        <a className={styles.link} role="button" href="/tags">
+        <a className={'btn ' + styles.link} role="button" href="/tags">
           Tags
         </a>
 

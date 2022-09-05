@@ -3,7 +3,7 @@ import Styles from './styles.module.scss'
 function PortfolioPreview({ project }) {
   const { frontmatter } = project
   return (
-    <div className={'PortfolioPreview ' + Styles.card}>
+    <div className={'PortfolioPreview title ' + Styles.card}>
       <div className={Styles.titleCard} style={`background-image:url(${frontmatter.image})`}>
         <h3 className={Styles.title}>{frontmatter.title}</h3>
       </div>

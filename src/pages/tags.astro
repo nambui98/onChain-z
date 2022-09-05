@@ -23,7 +23,7 @@ let tags = uniq(list.map(({ frontmatter }) => frontmatter.tags).flat())
     {
       tags.map((tag) => (
         <>
-          <h2>{tag.title}</h2>
+          <h2 class="heading2">{tag.title}</h2>
 
           <div class="grid">
             {tag.items.map((item) => (
