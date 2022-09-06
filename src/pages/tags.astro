@@ -19,13 +19,13 @@ let tags = uniq(list.map(({ frontmatter }) => frontmatter.tags).flat())
 ---
 
 <SimplePageLayout title={title}>
-  <div class="grid">
+  <div class="">
     {
       tags.map((tag) => (
         <>
-          <h2 class="heading2">{tag.title}</h2>
+          <h2 class="heading2 mt-5 mb-3">{tag.title}</h2>
 
-          <div class="grid">
+          <div class="grid grid-col-3 gap-5">
             {tag.items.map((item) => (
               <ProjectCard project={item} />
             ))}
@@ -36,9 +36,8 @@ let tags = uniq(list.map(({ frontmatter }) => frontmatter.tags).flat())
   </div>
 </SimplePageLayout>
 
-<style lang="scss">
-  .grid {
-    display: grid;
-    grid-gap: 3rem;
-  }
+<!-- Example scoped style -->
+<style lang="scss" scoped>
+  
+  
 </style>

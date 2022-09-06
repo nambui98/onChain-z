@@ -86,6 +86,23 @@ h1 {
   @apply font-sans font-semibold text-4xl text-left uppercase align-middle break-all;
 }
 
+.tag {
+  @apply font-sans text-left uppercase align-middle break-all inline-block ml-3;
+
+  &:nth-of-type(1n) {
+    color: var(--c-green);
+  }
+  &:nth-of-type(2n) {
+    color: var(--c-orange);
+  }
+  &:nth-of-type(3n) {
+    color: var(--c-blue);
+  }
+  &:nth-of-type(4n) {
+    color: var(--c-pink);
+  }
+}
+
 // Utils
 
 // color

@@ -8,9 +8,9 @@ function ArticleCardView({ project }) {
         <span className={Styles.title}>{frontmatter.title}</span>
       </div>
       <div className="pa3">
-        <div className={Styles.tags}>
+        <div className={'tags'}>
           {frontmatter.tags.map((t) => (
-            <div className={Styles.tag} data-tag={t}>
+            <div className={'tag ' + Styles.tag} data-tag={t}>
               {t}
             </div>
           ))}

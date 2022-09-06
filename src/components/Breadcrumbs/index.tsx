@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 
 export default function Breadcrumbs({ links }) {
   return (
-    <nav className={`Breadcrumbs ${styles.container} my-5 text-xs py-3 mt-28 `} aria-label="breadcrumb">
+    <nav className={`Breadcrumbs ${styles.container} my-4 text-xs`} aria-label="breadcrumb">
       <ol class="">
         {links.map((link, index) => {
           return (

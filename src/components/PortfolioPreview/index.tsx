@@ -3,24 +3,22 @@ import Styles from './styles.module.scss'
 function PortfolioPreview({ project }) {
   const { frontmatter } = project
   return (
-    <div className={'PortfolioPreview title ' + Styles.card}>
-      <div className={Styles.titleCard} style={`background-image:url(${frontmatter.image})`}>
-        <h3 className={Styles.title}>{frontmatter.title}</h3>
-      </div>
-      <div className="pa3">
-        <p className={`${Styles.desc} mt0 mb2`}>{frontmatter.description}</p>
-        <div className={Styles.tags}>
-          Tagged:
-          {frontmatter.tags.map((t) => (
-            <div className={Styles.tag} data-tag={t}>
-              {t}
-            </div>
-          ))}
+    <div className={'PortfolioPreview '}>
+      <a href={project.url}>
+        <div className={Styles.titleCard} style={`background-image:url(${frontmatter.image})`}>
+          <h3 className={'title ' + Styles.title}>{frontmatter.title}</h3>
         </div>
+        <div className="pa3">
+          <p className={`${Styles.desc} mt0 mb2`}>{frontmatter.description}</p>
+        </div>
+      </a>
 
-        <a className={Styles.link} href={project.url}>
-          <span className={Styles.linkInner}>View</span>
-        </a>
+      <div>
+        {frontmatter.tags.map((t) => (
+          <div className={'tag ' + Styles.tag} data-tag={t}>
+            {t}
+          </div>
+        ))}
       </div>
     </div>
   )

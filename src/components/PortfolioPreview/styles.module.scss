@@ -1,10 +1,3 @@
-.card {
-  position: relative;
-  color: var(--t-bg);
-  background: var(--t-fg);
-  border: 1px solid #f0f0f0;
-}
-
 .title {
   position: absolute;
   top: 0;
@@ -69,29 +62,4 @@
 .nav {
   display: flex;
   justify-content: flex-end;
-}
-
-.tags {
-  font-size: var(--f-d2);
-  text-transform: uppercase;
-}
-
-.tag {
-  display: inline-block;
-  color: var(--c-yellow);
-  text-transform: uppercase;
-  margin-left: 0.5em;
-
-  &:nth-of-type(1n) {
-    color: var(--c-green);
-  }
-  &:nth-of-type(2n) {
-    color: var(--c-orange);
-  }
-  &:nth-of-type(3n) {
-    color: var(--c-blue);
-  }
-  &:nth-of-type(4n) {
-    color: var(--c-pink);
-  }
 }
