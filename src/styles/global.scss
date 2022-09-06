@@ -82,11 +82,11 @@ a {
 }
 
 h1 {
-  // windicss, inject class to this https://windicss.org/features/directives.html
   @apply font-sans font-semibold text-4xl text-left uppercase align-middle break-all;
 }
 
 .tag {
+  // windicss, inject class to this https://windicss.org/features/directives.html
   @apply font-sans text-left uppercase align-middle break-all inline-block ml-3;
 
   &:nth-of-type(1n) {
