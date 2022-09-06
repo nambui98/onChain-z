@@ -1,27 +1,13 @@
 .footer {
   text-align: center;
-  padding-top: 8rem;
+  padding-top: 6rem;
   padding-right: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
   padding-left: 2rem;
-
-  :global(a) {
-    text-transform: uppercase;
-    padding: 0.3rem 0.3rem;
-    line-height: 1.6rem;
-    margin: 0.3rem;
-  }
-}
-
-.byline {
-  display: block;
-  margin-top: 1rem;
-  color: var(--t-subdue);
-  font-size: var(--f-d2);
-  text-transform: uppercase;
 }
 
 .socialicon {
+  display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
   transition: fill linear 150ms;
