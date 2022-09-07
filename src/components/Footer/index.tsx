@@ -5,7 +5,7 @@ import AppConfig from '~/AppConfig'
 function Footer() {
   return (
     <footer className={'AppFooter ' + styles.footer}>
-      <div class="leading-loose">
+      <div class="leading-loose mb-6">
         <a className={'btn '} role="button" href="/products">
           Shop
         </a>

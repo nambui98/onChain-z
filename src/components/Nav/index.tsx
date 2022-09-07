@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 
 function Nav() {
   return (
-    <nav className={'AppNav ' + styles.nav} bg="indigo-200">
+    <nav className={'AppNav ' + styles.nav} bg="indigo-300">
       <a className={styles.logolink} href="/">
         <div className={styles.monogram}>OZ</div>
       </a>

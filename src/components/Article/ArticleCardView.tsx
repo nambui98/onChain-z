@@ -4,14 +4,13 @@ function ArticleCardView({ project }) {
   const { frontmatter } = project
   return (
     <div className={`ArticleCardView ${Styles.card}`} m="2">
-      <div className={Styles.titleCard} style={`background-image:url(${frontmatter.image})`}>
-        <span className={Styles.title}>{frontmatter.title}</span>
-      </div>
-      <div className="pa3">
+      <div className={Styles.titleCard} style={`background-image:url(${frontmatter.image})`}></div>
+      <h3 className={'title ml-2'}>{frontmatter.title}</h3>
+      <div className="p-3">
         <div className={'tags'}>
-          {frontmatter.tags.map((t) => (
-            <div className={'tag ' + Styles.tag} data-tag={t}>
-              {t}
+          {frontmatter.tags.map((tag) => (
+            <div className={'tag '} data-tag={tag}>
+              {tag}
             </div>
           ))}
         </div>

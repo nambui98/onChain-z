@@ -15,15 +15,15 @@ import AppConfig from '~/AppConfig'
   <div class="gradient"></div>
   <div class="gradient2"></div>
   <div class="overlay">
-    <h1 class="title">
-      <small class="subtitle"></small>{AppConfig.siteTitle}
+    <h1 class="text-6xl font-extrabold my-5">
+      <small class="text-xl block font-bold">{AppConfig.siteSummary}</small>{AppConfig.siteTitle}
     </h1>
     <div>
       <span class="role">👩‍💻 Developer <span class="invert">👩‍💻 Developer</span></span>&nbsp;
       <span class="role">🎤 Builder <span class="invert">🎤 Builder</span></span>&nbsp;
       <span class="role">✏️ Writer <span class="invert">✏️ Writer</span></span>
     </div>
-    <p class="desc">{AppConfig.siteSlogan}</p>
+    <p class="my-5">{AppConfig.siteSlogan}</p>
   </div>
 </header>
 
@@ -82,16 +82,7 @@ import AppConfig from '~/AppConfig'
     }
   }
 
-  .title {
-    font-weight: 900;
-    font-size: var(--f-u8);
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-
-    @media (min-width: $w-s) {
-      font-size: var(--f-u12);
-    }
-  }
+  
 
   .role {
     position: relative;
@@ -147,18 +138,5 @@ import AppConfig from '~/AppConfig'
     pointer-events: none;
     clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
     transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
-  }
-
-  .desc {
-    font-size: var(--f-u2);
-    margin-top: 1.5rem;
-    margin-bottom: 0;
-  }
-
-  .subtitle {
-    display: block;
-    font-weight: 400;
-    font-size: var(--f-d6);
-    letter-spacing: -0.0625em;
   }
 </style>
