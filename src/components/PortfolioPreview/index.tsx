@@ -1,4 +1,5 @@
 import Styles from './styles.module.scss'
+import Tag from '~/components/Tag/index.jsx'
 
 function PortfolioPreview({ project }) {
   const { frontmatter } = project
@@ -6,20 +7,17 @@ function PortfolioPreview({ project }) {
     <div className={'PortfolioPreview '}>
       <a href={project.url}>
         <div className={Styles.titleCard} style={`background-image:url(${frontmatter.image})`}>
-          <h3 className={'title ' + Styles.title}>{frontmatter.title}</h3>
-        </div>
-        <div className="pa3">
-          <p className={`${Styles.desc} mt0 mb2`}>{frontmatter.description}</p>
+          <h3 className={'title '}>{frontmatter.title}</h3>
+          <div>
+            {frontmatter.tags.map((t) => (
+              <Tag text={t} />
+            ))}
+          </div>
+          <div className="p-3">
+            <p className={`mt-0 mb-2`}>{frontmatter.description}</p>
+          </div>
         </div>
       </a>
-
-      <div>
-        {frontmatter.tags.map((t) => (
-          <div className={'tag ' + Styles.tag} data-tag={t}>
-            {t}
-          </div>
-        ))}
-      </div>
     </div>
   )
 }
