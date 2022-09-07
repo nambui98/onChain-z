@@ -18,9 +18,7 @@
 
 // Base
 body {
-  margin: 0;
-  color: var(--t-fg);
-  font-family: 'Cambria', 'system-ui', sans-serif;
+  @apply font-sans;
 }
 * {
   box-sizing: content-box;
@@ -62,12 +60,12 @@ a {
     @apply font-sans text-2xl uppercase align-middle break-all;
   }
   .reading-content {
-    @apply leading-relaxed font-sans break-all;
+    @apply text-base leading-8 font-serif w-2/3 break-all;
   }
 
   .tag {
     // windicss, inject class to this https://windicss.org/features/directives.html
-    @apply font-sans text-base text-left uppercase align-middle break-all inline-block ml-3;
+    @apply font-mono text-base text-center uppercase align-middle break-all inline-block mr-3;
 
     &:nth-of-type(1n) {
       color: var(--c-green);
@@ -108,7 +106,7 @@ $colors: 'black', 'blue', 'white';
   }
 }
 
-// wrapper
+// wrapper center
 .wrapper {
   max-width: 80em;
   margin-left: auto;
@@ -118,8 +116,4 @@ $colors: 'black', 'blue', 'white';
 }
 .wrapper__readable {
   max-width: 50em;
-
-  .content {
-    line-height: 2;
-  }
 }
