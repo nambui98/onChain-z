@@ -158,6 +158,7 @@ collections:
         label: 'Site Settings'
         file: 'src/data/settings.json'
         fields:
+          - { label: 'Summary', name: 'siteSummary', widget: 'string' }
           - { label: 'Global title', name: 'siteTitle', widget: 'string' }
           - { label: 'Slogan', name: 'siteSlogan', widget: 'string' }
           - { label: 'Default Thumbnail', name: thumb, widget: image, class: 'thumb', required: false }
