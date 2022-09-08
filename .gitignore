@@ -2,6 +2,7 @@
 dist/
 .vercel/
 .netlify/
+.history/
 
 # dependencies
 node_modules/

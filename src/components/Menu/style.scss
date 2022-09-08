@@ -1,0 +1,146 @@
+@use '../../styles/variables' as var;
+$menu-items: 4;
+$background-color: var.$black-color;
+$indicator-color:  var.$primary-color;
+$transition-speed: 0.3s;
+$width: calc(100 / $menu-items) * 1%; // makes each item the right size
+$menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
+
+.PrimaryNav {
+    @extend %cf; // clear the floats
+    list-style: none;
+    height: 100%;
+}
+
+.Nav-item {
+    background: #fff;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: $width; //dynamic width
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover > a {
+            color: $indicator-color;
+        }
+    &:first-child {
+        border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child {
+        border-radius: 0 3px 3px 0;
+    }
+
+    &.is-active > a {
+        color: $indicator-color;
+    }
+
+    a {
+        color: $background-color;
+        display: block;
+        text-decoration: none;
+        transition: all $transition-speed;
+    }
+}
+
+.with-indicator {
+    position: relative;// the menu is "relative" to the absolute position last-child pseudo elements.
+    z-index: 0;
+    flex:1;
+    .Nav-item {
+        &:last-child {
+            &:before, &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                pointer-events: none;
+                transition: left #{$transition-speed} ease;
+            }
+    //          &:before {
+    //     border: 2px solid $indicator-color;
+    //     // border-color: $indicator-color;
+    //     width: 50px;
+    //     height: 0;
+    //     top: 0;
+    //     left: (($width/2));
+    //     transform: translateX(-25px);
+    //     margin-left: -3px;
+    //   }
+            &:after {
+                background: $indicator-color;
+                // border: 2px solid black;
+                // top: -6px;
+                bottom: -2px;
+                width: 34px;
+                z-index: 1;
+                height: 2px;
+                border-radius: 2px;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                  transform: translateX(calc($width + 55px));
+                // left: ($width * 3) !important;
+            }
+        }
+    }
+
+    @for $i from 1 through $menu-items-loop-offset {
+        .Nav-item:nth-child(#{$i}).is-active ~ .Nav-item:last-child:after {
+        left:($width*$i)-$width;
+        }
+        .Nav-item:nth-child(#{$i}).is-active ~ .Nav-item:last-child:before
+        {
+        left:($width*$i)+ calc($width / 2)-$width; // this ensures the triangle lines up to the menu.
+        }
+    }
+    @for $i from 1 through $menu-items-loop-offset {
+        // We have to use !important to make the hovers overide if the last:child is the active or hovered
+        .Nav-item:nth-child(#{$i}):hover ~ .Nav-item:last-child:after {
+        left:($width*$i)-$width !important;
+        }
+        .Nav-item:nth-child(#{$i}):hover ~ .Nav-item:last-child:before{
+        left:($width*$i)+calc($width/2)-$width !important;
+        }
+    }
+
+    .Nav-item {
+        &:last-child {
+        // make sure the last-child talks to itself
+        &:hover, &.is-active {
+            &:before {
+            // we have to use important because the sibling selctor is more specific.
+            left: (100%-$width)+calc($width/2) !important;
+            }
+            &:after{
+            left: 100%-$width !important;
+            }
+        }        
+        }
+    }
+
+}
+
+%cf:before,
+%cf:after {
+    content: " ";
+    display: table;
+}
+%cf:after {
+    clear: both;
+}
+   li > ul {
+        transform: translateX(100%) scale(0);
+      }
+      li:hover > ul {
+        transform: translateX(101%) scale(1);
+      }
+      li > button svg {
+        transform: rotate(-90deg);
+      }
+      li:hover > button svg {
+        transform: rotate(-270deg);
+      }

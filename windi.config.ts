@@ -12,6 +12,12 @@ export default defineConfig({
   },
   theme: {
     extend: {
+      backgroundColor: {
+        primary: '#6F41FF',
+      },
+      textColor: {
+        primary: colors.fuchsia,
+      },
       colors: {
         blue: colors.sky,
         red: colors.rose,
@@ -21,6 +27,13 @@ export default defineConfig({
         sans: ['Segoe UI', 'sans-serif'],
         serif: ['Cambria', 'serif'],
       },
+      borderColor: theme => ({
+        ...theme('colors'),
+        DEFAULT: theme('colors.gray.300', 'currentColor'),
+        primary: '#6F41FF',
+        secondary: 'rgba(111,65,255, 0.2)',
+        danger: '#e3342f',
+      }),
     },
   },
 

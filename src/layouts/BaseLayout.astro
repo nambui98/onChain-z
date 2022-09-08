@@ -19,9 +19,10 @@ const { lang, className = '' } = Astro.props
 
   <body class="Layout BaseLayout">
     <Nav />
-    <section class={`${className} AppSection container mx-auto`}>
+      <section class={`${className} md:container w-screen-lg md:mx-auto`}>
       <slot />
     </section>
     <Footer />
+    
   </body>
 </html>

@@ -14,6 +14,10 @@
   --t-fg: var(--c-black);
   --t-bg: var(--c-white);
   --t-active: #216797;
+
+  --primary-color: #6F41FF;
+  --secondary-color: #151515;
+  --tertiary-color: #646D84;
 }
 
 // Base
@@ -39,81 +43,18 @@ a {
     background-color: var(--c-gray);
   }
 }
+/* variables */
+@import './variables';
 
-.Layout {
-  h1 {
-    @apply font-sans font-semibold uppercase align-middle break-all;
-  }
-
-  h2 {
-    @apply font-sans font-semibold uppercase align-middle break-all;
-  }
-
-  h3 {
-    @apply font-sans font-semibold uppercase align-middle break-all;
-  }
-
-  .btn {
-    @apply py-2 px-4 font-semibold rounded-lg shadow-md;
-  }
-  .title {
-    @apply font-sans text-2xl uppercase align-middle break-all;
-  }
-  .reading-content {
-    @apply text-base leading-8 font-serif w-2/3 break-all;
-  }
-
-  .tag {
-    // windicss, inject class to this https://windicss.org/features/directives.html
-    @apply font-mono text-base text-center uppercase align-middle break-all inline-block mr-3 hover:bg-blue-100 hover:text-black border-2 border-blue-200  rounded p-1;
-
-    &:nth-of-type(1n) {
-      color: var(--c-green);
-    }
-    &:nth-of-type(2n) {
-      color: var(--c-orange);
-    }
-    &:nth-of-type(3n) {
-      color: var(--c-blue);
-    }
-    &:nth-of-type(4n) {
-      color: var(--c-pink);
-    }
-  }
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.heading1 {
-  @apply text-4xl text-left;
-}
-.heading2 {
-  @apply text-3xl text-left;
-}
-.heading3 {
-  @apply text-xl text-left;
+.Layout{
+  background-color: $white-color;
+   @apply font-sans font-semibold uppercase align-middle break-all;
 }
 
-// Utils
-
-// color
-$colors: 'black', 'blue', 'white';
-@each $color in $colors {
-  // text color
-  .tc-#{$color} {
-    color: var(--c-#{color});
-  }
-  // background color
-  .bg-#{$color} {
-    background-color: var(--c-#{color});
-  }
-}
-
-// wrapper center
-.wrapper {
-  max-width: 80em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-.wrapper__readable {
-  max-width: 50em;
-}
