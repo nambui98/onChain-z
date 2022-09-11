@@ -6,7 +6,7 @@ export default function Menu({ }: Props) {
     return (
         <div className="h-full flex items-center">
 
-            <ul className="PrimaryNav with-indicator uppercase font-600">
+            <ul className="PrimaryNav with-indicator uppercase font-600 z-10">
                 <li className="Nav-item"><a href="#">Tin tức coin</a></li>
                 <li className="Nav-item"><a href="#">Tin tức nổi bật</a></li>
                 <li className="Nav-item  is-active"><a href="#" className="h-full ">

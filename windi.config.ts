@@ -16,7 +16,9 @@ export default defineConfig({
         primary: '#6F41FF',
       },
       textColor: {
-        primary: colors.fuchsia,
+        primary: '#6F41FF',
+        white: colors.white,
+        grey: '#151515',
       },
       colors: {
         blue: colors.sky,
