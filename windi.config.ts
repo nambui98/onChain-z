@@ -19,6 +19,7 @@ export default defineConfig({
         primary: '#6F41FF',
         white: colors.white,
         grey: '#151515',
+        grey80: '#646D84',
       },
       colors: {
         blue: colors.sky,

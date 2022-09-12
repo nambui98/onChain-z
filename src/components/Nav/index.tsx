@@ -8,7 +8,7 @@ function Nav() {
 
 
 
-      <div className="w-screen-lg md:mx-auto flex justify-between items-center">
+      <div className="max-w-1120px md:mx-auto flex justify-between items-center">
         <a href="/">
           <img src="/assets/images/logo.svg" alt="" />
         </a>
@@ -17,7 +17,7 @@ function Nav() {
         </div>
       </div>
       <div className={`h-62px border-1 border-primary border-opacity-20 ` + styles.borderY}>
-        <div className="h-full w-screen-lg md:mx-auto">
+        <div className="h-full max-w-1120px md:mx-auto">
           <Menu />
         </div>
       </div>

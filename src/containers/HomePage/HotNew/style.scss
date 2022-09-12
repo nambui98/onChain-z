@@ -1,0 +1,74 @@
+#infinite .buttons {
+  padding: 10px 0px;
+  text-align: center;
+}
+#infinite .buttons button {
+  padding: 10px 15px;
+  background: #eee;
+  border: 0;
+  margin: 0px 2px;
+}
+#infinite .buttons button:hover {
+  background: #ccc;
+}
+#infinite .panel,
+#infinite .infinite {
+  font-weight: bold;
+}
+#infinite .flicking2 .infinite {
+  transition: background ease 1s;
+}
+#infinite .flicking .infinite.placeholder {
+  background: #ddd;
+  color: transparent;
+}
+.flicking {
+  width: 500px;
+  height: 130px;
+  margin: 0px auto;
+  background: #eee;
+//   background: rgba(55, 55, 55 0.1);
+  border-radius: 5px;
+}
+.flicking .panel,
+.flicking .infinite {
+  position: relative;
+  display: block;
+  border-radius: 5px;
+  width: 200px;
+  margin-top: 5px;
+  background: #f55;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+}
+.flicking .panel:nth-child(5n + 1) {
+  background: #f47071;
+}
+.flicking .panel:nth-child(5n + 2) {
+  background: #f69462;
+}
+.flicking .panel:nth-child(5n + 3) {
+  background: #ede484;
+}
+.flicking .panel:nth-child(5n + 4) {
+  background: #90f290;
+}
+.flicking .panel:nth-child(5n + 5) {
+  background: #78caff;
+}
+.flicking .infinite0 {
+  background: #f47071;
+}
+.flicking .infinite1 {
+  background: #f69462;
+}
+.flicking .infinite2 {
+  background: #ede484;
+}
+.flicking .infinite3 {
+  background: #90f290;
+}
+.flicking .infinite4 {
+  background: #78caff;
+}

@@ -4,9 +4,13 @@ import BaseSEOLayout from '~/layouts/BaseSEOLayout.astro'
 import Button from '~/components/Button/index.jsx'
 import PortfolioPreview from '~/components/PortfolioPreview/index.jsx'
 import HeroCTA from '~/components/HeroCTA.astro'
-import HomePage from '~/containers/HomePage'
-
+// import HomePage from '~/containers/HomePage'
+// Or, if you have to support IE9
+// import "@egjs/preact-flicking/dist/flicking-inline.css";
+// import "@egjs/flicking-plugins/dist/flicking-plugins.css";
 import AppConfig from '~/AppConfig'
+import MainNew from '~/containers/HomePage/MainNew'
+import HotNew from '~/containers/HomePage/HotNew'
 const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List all Markdown posts in the repo.
 const featuredArticles = articles.slice(0, AppConfig.homePageSettings.frontPagePostLimit || 3)
 
@@ -19,10 +23,10 @@ const description = AppConfig.siteSlogan
 ---
 
 <BaseSEOLayout title={description} description={description} className="HomePage">
-  <HomePage/>
+  <MainNew />
+  <HotNew client:load />
   <!-- <HeroCTA /> -->
 
-  
   <!-- <main class="HomePage wrapper mt4 mb4">
     <div class="grid">
       <h2 class="heading2">Insights</h2>

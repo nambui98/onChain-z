@@ -7,6 +7,12 @@ import AppConfig from '~/AppConfig'
 // apply windicss for the site
 import 'virtual:windi.css'
 import '../styles/global.scss'
+// apply carousel for the site
+import "@egjs/preact-flicking/dist/flicking.css";
+// Or, if you have to support IE9
+import "@egjs/preact-flicking/dist/flicking-inline.css";
+import "@egjs/flicking-plugins/dist/flicking-plugins.css";
+import "@egjs/flicking-plugins/dist/pagination.css";
 
 const { lang, className = '' } = Astro.props
 ---
@@ -19,7 +25,7 @@ const { lang, className = '' } = Astro.props
 
   <body class="BaseLayout">
     <Nav />
-      <section class={`${className} md:container w-screen-lg md:mx-auto`}>
+      <section class={`${className} md:container max-w-1120px md:mx-auto`}>
       <slot />
     </section>
     <Footer />
