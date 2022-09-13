@@ -14,6 +14,7 @@ export default defineConfig({
     extend: {
       backgroundColor: {
         primary: '#6F41FF',
+        white: '#FFFFFF',
       },
       textColor: {
         primary: '#6F41FF',

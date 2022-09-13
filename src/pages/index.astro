@@ -11,6 +11,7 @@ import HeroCTA from '~/components/HeroCTA.astro'
 import AppConfig from '~/AppConfig'
 import MainNew from '~/containers/HomePage/MainNew'
 import HotNew from '~/containers/HomePage/HotNew'
+import Tivi from '~/containers/HomePage/Tivi'
 const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List all Markdown posts in the repo.
 const featuredArticles = articles.slice(0, AppConfig.homePageSettings.frontPagePostLimit || 3)
 
@@ -25,6 +26,10 @@ const description = AppConfig.siteSlogan
 <BaseSEOLayout title={description} description={description} className="HomePage">
   <MainNew />
   <HotNew client:load />
+  <div class="bg-primary w-9/12 h-90px mx-auto mt-20 uppercase text-2xl flex items-center justify-center text-white">Your ads here</div>
+  <Tivi />
+  <div class="bg-primary w-9/12 h-90px mx-auto mt-20 uppercase text-2xl flex items-center justify-center text-white">Your ads here</div>
+
   <!-- <HeroCTA /> -->
 
   <!-- <main class="HomePage wrapper mt4 mb4">

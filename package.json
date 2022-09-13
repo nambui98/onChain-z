@@ -33,6 +33,7 @@
   "dependencies": {
     "@egjs/flicking-plugins": "^4.4.0",
     "@egjs/preact-flicking": "^4.9.4",
+    "@player.js/core": "https://github.com/Jamie0/player.js",
     "date-fns": "^2.29.1",
     "lodash": "^4.17.21",
     "preact": "^10.7.3"

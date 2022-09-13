@@ -58,3 +58,17 @@ a {
    @apply font-sans font-semibold uppercase align-middle break-all;
 }
 
+.flicking-arrow-prev{
+  width:40px !important;
+  height: 40px !important;
+  &::after, &::before{
+    content: none !important;
+  }
+}
+.flicking-arrow-next{
+  width:40px !important;
+  height: 40px !important;
+  &::after, &::before{
+    content: none !important;
+  }
+}
