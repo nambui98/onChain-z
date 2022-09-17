@@ -1,4 +1,4 @@
-import rectangle from '/assets/icons/rectangle.svg'
+import rectangle from '../../../public/assets/icons/rectangle.svg'
 
 type Props = {
     name: String
