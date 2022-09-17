@@ -24,3 +24,17 @@ export default class PostService {
 // https://i.pravatar.cc/300?u=${item.game}`
 // https://picsum.photos/800/300
 // https://picsum.photos/id/55/300/300
+
+export interface Author {
+  id: string
+  name: string
+  image: string
+}
+
+export interface Post {
+  id: string
+  order?: number
+  title: string
+  image: string
+  author?: Author
+}

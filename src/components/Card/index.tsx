@@ -1,7 +1,9 @@
+import { Post } from '~/services/PostService'
+
 type Props = {
   // className: String;
   // key: number
-  entry: any
+  entry: Post
 }
 
 export default function Card({ entry }: Props) {

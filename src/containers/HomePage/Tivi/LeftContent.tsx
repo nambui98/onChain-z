@@ -1,5 +1,7 @@
+import { Post } from '~/services/PostService'
+
 type Props = {
-  entry: any
+  entry: Post
 }
 
 export default function LeftContent({ entry }: Props) {

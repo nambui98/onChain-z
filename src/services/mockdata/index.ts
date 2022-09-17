@@ -29,77 +29,63 @@ const investorNames = [
   'Otohime',
 ]
 
-export const texts = `Some nights I stay up cashing in my bad luck
-Some nights I call it a draw
-Some nights I wish that my lips could build a castle
-Some nights I wish they'd just fall off
-
-But I still wake up, I still see your ghost
-Oh, Lord, I'm still not sure what I stand for oh
-Whoa oh oh (What do I stand for?)
-Whoa oh oh (What do I stand for?)
-Most nights I don't know anymore...
-Oh, whoa, oh, whoa, oh, whoa, oh, oh,
-Oh, whoa, oh, whoa, oh, whoa, oh, oh
-
-This is it, boys, this is war - what are we waiting for?
-Why don't we break the rules already?
-I was never one to believe the hype
-Save that for the black and white
-I try twice as hard and I'm half as liked,
-But here they come again to jack my style
-
-That's alright (that's alright)
-I found a martyr in my bed tonight
-She stops my bones from wondering just who I am, who I am, who I am
-Oh, who am I? Mmm... Mmm...
-
-Well, some nights I wish that this all would end
-'Cause I could use some friends for a change.
-And some nights I'm scared you'll forget me again
-Some nights I always win, I always win...
-
-But I still wake up, I still see your ghost
-Oh, Lord, I'm still not sure what I stand for, oh
-Whoa oh oh (What do I stand for?)
-Whoa oh oh (What do I stand for?)
-Most nights I don't know... (oh, come on)
-
-So this is it. I sold my soul for this?
-Washed my hands of that for this?
-I miss my mom and dad for this?
-
-(Come on)
-
-No. When I see stars, when I see, when I see stars, that's all they are
-When I hear songs, they sound like a swan, so come on.
-Oh, come on. Oh, come on. Oh, come on!
-
-Well, that is it guys, that is all - five minutes in and I'm bored again
-Ten years of this, I'm not sure if anybody understands
-This one is not for the folks at home;
-Sorry to leave, mom, I had to go
-Who the fuck wants to die alone all dried up in the desert sun?
-
-My heart is breaking for my sister and the con that she called "love"
-When I look into my nephew's eyes...
-Man, you wouldn't believe the most amazing things that can come from...
-Some terrible nights... ah...
-
-Oh, whoa, oh, whoa, oh, whoa, oh, oh,
-Oh, whoa, oh, whoa, oh, whoa, oh, oh
-
-The other night you wouldn't believe the dream I just had about you and me
-I called you up but we'd both agree
-
-It's for the best you didn't listen
-It's for the best we get our distance... Oh...
-It's for the best you didn't listen
-It's for the best we get our distance... Oh...
-
+export const texts = `
 100+ thuật ngữ Blockchain và Crypto quan trọng cần biết!',
 If you could change careers right this second, what would you do?
 Tableau for Beginners: Get CA Certified, Grow Your Career
+
+It still feels like our first night together
+Feels like the first kiss
+It's getting better baby
+No one can better this
+Still holding on
+You're still the one
+First time our eyes met
+Same feeling I get
+Only feels much stronger
+I want to love you longer
+Do you still turn the fire on?
+So if you're feeling lonely, don't
+You're the only one I'll ever want
+I only want to make it good
+So if I love you, a little more than I should
+Please forgive me, I know not what I do
+Please forgive me, I can't stop loving you
+Don't deny me, this pain I'm going through
+
+Please forgive me, if I need you like I do
+Please believe me, every word I say is true
+Please forgive me, I can't stop loving you
+
+Still feels like our best times are together
+Feels like the first touch
+We're still getting closer baby
+Can't get closer enough
+Still holding on
+You're still number one
+I remember the smell of your skin
+I remember everything
+I remember all your moves
+I remember you yeah
+I remember the nights, you know I still do
+So if you're feeling lonely, don't
+You're the only one I'll ever want
+I only want to make it good
+So if I love you a little more than I should
+
+
+The one thing I'm sure of
+Is the way we make love
+The one thing I depend on
+Is for us to stay strong
+With every word and every breath I'm praying
+That's why I'm saying,
+
+Babe believe it, every word I say is true
+Please forgive me, if I can't stop loving you
+No, believe me, I don't know what I do
+Please forgive me, I can't stop loving you
+I can't stop, loving you
 `
 
 export const MF_USDT = 3.33

@@ -1,4 +1,4 @@
-import PostService from '~/services/PostService'
+import PostService, { Post } from '~/services/PostService'
 import img from '../../../../../public/assets/images/main-new.png'
 
 const postService = new PostService()

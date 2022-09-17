@@ -1,7 +1,7 @@
-import PostService from '~/services/PostService'
+import PostService, { Post } from '~/services/PostService'
 
 type Props = {
-  entries: any[]
+  entries: Post[]
 }
 
 const RightWidgetListItem = ({ entry }) => {
