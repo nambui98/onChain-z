@@ -1,4 +1,5 @@
 import Menu from '../Menu'
+import { AdsInline } from '~/components/Ads'
 import styles from './styles.module.scss'
 
 function Nav() {
@@ -10,7 +11,8 @@ function Nav() {
         <a href="/">
           <img src="/assets/images/logo.svg" alt="" />
         </a>
-        <div className="text-white bg-primary uppercase text-2xl px-131px py-31px">Your ads here</div>
+
+        <AdsInline>Top Ads here</AdsInline>
       </div>
       <div className={`h-62px border-1 border-primary border-opacity-20 ` + styles.borderY}>
         <div className="h-full max-w-1120px md:mx-auto">

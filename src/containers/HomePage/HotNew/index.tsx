@@ -1,6 +1,6 @@
 // import Flicking from "@egjs/preact-flicking";
 import { useState } from 'preact/hooks'
-import Title from '~/components/Title'
+import Heading2 from '~/components/Heading'
 import InfiniteFlicking from './InfiniteFlicking'
 
 import Flicking from '@egjs/preact-flicking'
@@ -25,7 +25,7 @@ export default function HotNew({}: Props) {
 
   return (
     <div className="mt-120px relative">
-      <Title name="Tin tức nổi bật" />
+      <Heading2 name="Tin tức nổi bật" />
       <Flicking className="mt-6" gap={20} bound={true} infinite={true} infiniteThreshold={50} plugins={plugins}>
         {panels.map((index) => (
           <div className="flicking-panel w-1/3 px-3" key={index}>
