@@ -28,10 +28,14 @@ export default defineConfig({
         pink: colors.fuchsia,
       },
       fontFamily: {
-        sans: ['Segoe UI', 'sans-serif'],
+        sans: ['Gilroy', 'Segoe UI', 'sans-serif'],
+        semibold: ['Gilroy-SemiBold', 'Segoe UI', 'sans-serif'],
+        bold: ['Gilroy-Bold', 'Segoe UI', 'sans-serif'],
+        extrabold: ['Gilroy-ExtraBold', 'Segoe UI', 'sans-serif'],
+
         serif: ['Cambria', 'serif'],
       },
-      borderColor: theme => ({
+      borderColor: (theme) => ({
         ...theme('colors'),
         DEFAULT: theme('colors.gray.300', 'currentColor'),
         primary: '#6F41FF',

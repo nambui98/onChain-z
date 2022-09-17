@@ -1,19 +1,22 @@
 ---
+import AppConfig from '~/AppConfig'
+
 import MainHead from '../components/Site/MainHead.astro'
 import Footer from '../components/Footer/index.jsx'
 import Nav from '../components/Nav/index.jsx'
-import AppConfig from '~/AppConfig'
 
 // apply windicss for the site
 import 'virtual:windi.css'
 import '../styles/global.scss'
 // apply carousel for the site
 import "@egjs/preact-flicking/dist/flicking.css";
+
 // Or, if you have to support IE9
 import "@egjs/preact-flicking/dist/flicking-inline.css";
 import "@egjs/flicking-plugins/dist/flicking-plugins.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
 import "@egjs/flicking-plugins/dist/arrow.css";
+
 
 
 const { lang, className = '' } = Astro.props
