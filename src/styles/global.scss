@@ -15,17 +15,44 @@
   --t-bg: var(--c-white);
   --t-active: #216797;
 
-  --primary-color: #6F41FF;
+  --primary-color: #6f41ff;
   --secondary-color: #151515;
-  --tertiary-color: #646D84;
+  --tertiary-color: #646d84;
 }
+
+@font-face {
+  font-display: swap;
+  font-family: Gilroy;
+  src: url(/static/fonts/Gilroy-Regular.woff2?v=1) format('woff2'), url(/assets/fonts/Gilroy-Regular.woff?v=1) format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Gilroy-SemiBold;
+  src: url(/static/fonts/Gilroy-SemiBold.woff2?v=1) format('woff2'), url(/assets/fonts/Gilroy-SemiBold.woff?v=1) format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Gilroy-Bold;
+  src: url(/static/fonts/Gilroy-Bold.woff2?v=1) format('woff2'), url(/assets/fonts/Gilroy-Bold.woff?v=1) format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Gilroy-ExtraBold;
+  src: url(/static/fonts/Gilroy-ExtraBold.woff2?v=1) format('woff2'), url(/assets/fonts/Gilroy-ExtraBold.woff?v=1) format('woff');
+}
+
+// html {
+//   font-size: 13px;
+//   overflow-y: scroll;
+// }
 
 // Base
 body {
   @apply font-sans;
-}
-* {
-  box-sizing: content-box;
+  // background-color: #141618;
 }
 
 img {
@@ -41,8 +68,10 @@ a {
   &:hover[role='button'] {
     color: var(--t-active);
     background-color: var(--c-gray);
+    text-decoration: underline;
   }
 }
+
 /* variables */
 @import './variables';
 
@@ -53,22 +82,25 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.Layout{
+
+.Layout {
   background-color: $white-color;
-   @apply font-sans font-semibold uppercase align-middle break-all;
+  @apply font-sans font-semibold uppercase align-middle break-all;
 }
 
-.flicking-arrow-prev{
-  width:40px !important;
+.flicking-arrow-prev {
+  width: 40px !important;
   height: 40px !important;
-  &::after, &::before{
+  &::after,
+  &::before {
     content: none !important;
   }
 }
-.flicking-arrow-next{
-  width:40px !important;
+.flicking-arrow-next {
+  width: 40px !important;
   height: 40px !important;
-  &::after, &::before{
+  &::after,
+  &::before {
     content: none !important;
   }
 }
