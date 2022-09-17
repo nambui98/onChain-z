@@ -7,13 +7,9 @@ import Flicking from '@egjs/preact-flicking'
 import { AutoPlay, Arrow } from '@egjs/flicking-plugins'
 import './style.scss'
 import Card from '~/components/Card'
+import { ArticleListProp } from '~/types/ArticleComponentProps.type'
 
-import PostService from '~/services/PostService'
-const postService = new PostService()
-
-type Props = {}
-
-export default function HotNew({}: Props) {
+export default function HotNew({ articles }: ArticleListProp) {
   const [panels, setPanels] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
   let plugins
 
@@ -21,7 +17,7 @@ export default function HotNew({}: Props) {
     plugins = [new AutoPlay({ duration: 2000, direction: 'NEXT', stopOnHover: false }), new Arrow({ parentEl: document.body })]
   }
 
-  const list = postService.getHomeHighlightItems()
+  const list = articles
 
   return (
     <div className="mt-120px relative">
@@ -29,7 +25,7 @@ export default function HotNew({}: Props) {
       <Flicking className="mt-6" gap={20} bound={true} infinite={true} infiniteThreshold={50} plugins={plugins}>
         {panels.map((index) => (
           <div className="flicking-panel w-1/3 px-3" key={index}>
-            <Card entry={list[index]} />
+            <Card article={list[index]} />
           </div>
         ))}
         {/* {panels.map(index => <Card className="flicking-panel w-500px" key={index}>{index + 1}</Card>)} */}

@@ -4,7 +4,7 @@ type Props = {
 }
 
 /** Ads, show full width of container */
-export function AdsFullWidth({ name, children }: Props) {
+export function AdsFullWidth({ children }: Props) {
   return <div class="AdsFullWidth Ads bg-primary w-9/12 h-90px mx-auto mt-20 uppercase text-2xl flex items-center justify-center text-white">{children}</div>
 }
 

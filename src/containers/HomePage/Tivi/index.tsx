@@ -1,20 +1,17 @@
 import Heading2 from '~/components/Heading'
-import PostService from '~/services/PostService'
+import { ArticleListProp } from '~/types/ArticleComponentProps.type'
 import LeftContent from './LeftContent'
 import RightContent from './RightContent'
-type Props = {}
 
-const postService = new PostService()
+export default function Tivi({ articles }: ArticleListProp) {
+  const list = articles
 
-const list = postService.getHomeTVWidgetItems()
-
-export default function Tivi({}: Props) {
   return (
     <div className="mt-80px">
       <Heading2 name="OnChainZ TV" />
       <div className="flex gap-x-8 mt-6">
-        <LeftContent entry={list[0]} />
-        <RightContent entries={list.slice(1, 6)} />
+        <LeftContent article={list[0]} />
+        <RightContent articles={list.slice(1, 6)} />
       </div>
     </div>
   )

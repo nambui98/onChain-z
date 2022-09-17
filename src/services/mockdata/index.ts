@@ -200,6 +200,9 @@ export let persons = Array(100)
     }
   })
 
+// //i.pravatar.cc/300?u=${item.game}`
+// https: //picsum.photos/800/300
+// https: //picsum.photos/id/55/300/300
 export let itemArticles = texts
   .split(/\n/)
   .filter((line) => line.trim())
@@ -225,7 +228,7 @@ function makeid(length) {
  * return some random items
  * @param count
  */
-export function getRandomItems(items: any[], count: number) {
+export function getRandomItems(items: any[], count: number): any[] {
   return _shuffle(items).slice(0, count)
 }
 
