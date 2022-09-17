@@ -13,10 +13,11 @@ import MainNew from '~/containers/HomePage/MainNew'
 import HotNew from '~/containers/HomePage/HotNew'
 import Tivi from '~/containers/HomePage/Tivi'
 import { AdsFullWidth } from '~/components/Ads'
-import PostService from '~/services/PostService'
 
 
 const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List all Markdown posts in the repo.
+
+import PostService from '~/services/PostService'
 const postService = new PostService(articles)
 const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
 const highlightArticles = postService.getHomeHighlightItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
@@ -30,10 +31,11 @@ const description = AppConfig.siteSlogan
 <BaseSEOLayout title={description} description={description} className="HomePage">
   <main class="HomePage wrapper mt4 mb4">
     <MainNew articles={mainArticles} />
-    <!-- <HotNew client:load articles={highlightArticles}  /> -->
+    <HotNew client:load  
+    articles={highlightArticles} className="mt-20" />
     
     <AdsFullWidth>First ads here</AdsFullWidth>
-    <Tivi articles={tiviArticles}  />
+    <Tivi articles={tiviArticles} className="mt-20" />
     <AdsFullWidth>Second ads here</AdsFullWidth>
   </main>
 </BaseSEOLayout>

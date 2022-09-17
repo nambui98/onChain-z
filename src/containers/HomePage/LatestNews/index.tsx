@@ -3,7 +3,7 @@ type Props = {}
 
 export default function Tivi({}: Props) {
   return (
-    <div className="mt-80px">
+    <div className="LatestNews">
       <Heading2 name="Tin tức MỚI NHẤT" />
     </div>
   )

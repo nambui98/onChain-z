@@ -1,10 +1,10 @@
 import { ArticleListProp } from '~/types/ArticleComponentProps.type'
 
-export default function MainNew({ articles }: ArticleListProp) {
+export default function MainNews({ articles }: ArticleListProp) {
   const list = articles
 
   return (
-    <div className="flex gap-8 h-360px mt-12">
+    <div className="MainNews flex gap-8 h-360px mt-12">
       {/* {
                 dataMainNew.map((item)=>{
                     if(item.order===1){

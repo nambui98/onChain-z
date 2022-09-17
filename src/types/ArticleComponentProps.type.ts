@@ -1,8 +1,14 @@
 import { Post } from '~/services/PostService'
 
-export type ArticleProp = {
+export type CommonProp = {
+  className?: string
+  children?: any
+}
+
+export type ArticleProp = CommonProp & {
   article: Post
 }
-export type ArticleListProp = {
+
+export type ArticleListProp = CommonProp & {
   articles: Post[]
 }

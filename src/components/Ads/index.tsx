@@ -1,7 +1,6 @@
-type Props = {
-  name: String
-  children: any
-}
+import { CommonProp } from '~/types/ArticleComponentProps.type'
+
+type Props = CommonProp
 
 /** Ads, show full width of container */
 export function AdsFullWidth({ children }: Props) {
