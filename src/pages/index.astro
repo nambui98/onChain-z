@@ -30,7 +30,7 @@ const description = AppConfig.siteSlogan
 
 <BaseSEOLayout title={description} description={description} className="HomePage">
   <main class="HomePage wrapper mt4 mb4">
-    <MainNew articles={mainArticles} />
+    <MainNew articles={mainArticles} className="mt-12"/>
     <HotNew client:load  
     articles={highlightArticles} className="mt-20" />
     
