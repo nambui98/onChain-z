@@ -1,3 +1,29 @@
+/* This CSS apply for preview panel when editting content with Netlify CMS */
+
+@font-face {
+  font-display: swap;
+  font-family: Gilroy;
+  src: url(/assets/fonts/Gilroy-Regular.woff2?v=1) format('woff2'), url(/assets/fonts/Gilroy-Regular.woff?v=1) format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Gilroy-SemiBold;
+  src: url(/assets/fonts/Gilroy-SemiBold.woff2?v=1) format('woff2'), url(/assets/fonts/Gilroy-SemiBold.woff?v=1) format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Gilroy-Bold;
+  src: url(/assets/fonts/Gilroy-Bold.woff2?v=1) format('woff2'), url(/assets/fonts/Gilroy-Bold.woff?v=1) format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Gilroy-ExtraBold;
+  src: url(/assets/fonts/Gilroy-ExtraBold.woff2?v=1) format('woff2'), url(/assets/fonts/Gilroy-ExtraBold.woff?v=1) format('woff');
+}
+
 html,
 body {
   color: rgb(31, 31, 31);
@@ -6,7 +32,7 @@ body {
 }
 
 body {
-  padding: 20px;
+  padding: 1rem;
 }
 
 p {
@@ -50,6 +76,7 @@ h6 {
   font-size: 1.15rem;
   line-height: 1.25rem;
 }
+
 a,
 a:visited,
 a:hover,
