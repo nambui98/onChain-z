@@ -1,4 +1,6 @@
+import { ButtonInline } from '../Button'
 import styles from './styles.module.scss'
+
 import * as packagejson from '../../../package.json'
 import AppConfig from '~/AppConfig'
 
@@ -12,6 +14,8 @@ function Footer() {
         <a className={'btn '} role="button" href="/tags">
           Tags
         </a>
+        <ButtonInline href="/categories">Categories</ButtonInline>
+        <ButtonInline href="/categories/tv">TV</ButtonInline>
 
         <a className={'btn '} href="https://github.com/me" aria-label="Visit our Github">
           <svg alt="github" className={styles.socialicon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
