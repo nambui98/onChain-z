@@ -12,3 +12,6 @@ export type ArticleProp = CommonProp & {
 export type ArticleListProp = CommonProp & {
   articles: Post[]
 }
+export type CardProps = ArticleProp & {
+  isNotShowAuthor?: boolean
+}
