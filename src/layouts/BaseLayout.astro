@@ -20,6 +20,7 @@ import "@egjs/flicking-plugins/dist/arrow.css";
 
 
 const { lang, className = '' } = Astro.props
+const pathname = Astro.url.pathname
 ---
 
 <html lang={lang || 'en'}>
@@ -28,12 +29,12 @@ const { lang, className = '' } = Astro.props
     <slot name="head" />
   </head>
 
-  <body class="BaseLayout">
-    <Nav />
+  <body class="BaseLayout relative">
+    <Nav client:load pathname={pathname}/>
     <section class={`${className} md:container max-w-1120px md:mx-auto`}>
       <slot />
     </section>
-    <Footer />
+    <Footer className="mt-20 z-2 relative"/>
     
   </body>
 </html>

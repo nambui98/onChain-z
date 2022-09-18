@@ -1,4 +1,5 @@
-import { CardProps } from '~/types/ArticleComponentProps.type'
+import { CardProps } from "~/types/CardComponentProps.type"
+
 
 export default function Card({ article, isNotShowAuthor }: CardProps) {
   const author = article?.author
@@ -20,13 +21,7 @@ export default function Card({ article, isNotShowAuthor }: CardProps) {
       ) : (
         <></>
       )}
-      {/* <hr className="border-primary border-2 my-6"></hr>
-      <ul>
-        <li className="before:content-['*'] before:ml-0.5 before:text-red-500 block text-sm font-medium text-slate-700">Adele</li>
-        <li>Agnes</li>
-        <li>Billy</li>
-        <li>Bob</li>
-      </ul> */}
+
     </div>
   )
 }

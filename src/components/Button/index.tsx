@@ -1,10 +1,10 @@
-/** Primary link button */
-function Button({ children }: { href?: string; children: any }) {
-  return (
-    <button bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600" text="uppercase sm white" font="light" p="y-2 x-4" border="2 rounded blue-200">
-      {children}
-    </button>
-  )
-}
+import { CommonProp } from "~/types/ArticleComponentProps.type";
 
-export default Button
+type Props = CommonProp & {
+  onClick: Function
+}
+export function ButtonPrimary({ onClick, children }: Props) {
+  return <button className="absolute right-8px top-8px bottom-8px rounded-[32px] bg-primary w-108px  flex justify-center items-center text-white text-base font-semibold cursor-pointer transition duration-300 ease-out hover:text-primary hover:bg-transparent hover:border-1 border-primary">
+    {children}
+  </button>
+}

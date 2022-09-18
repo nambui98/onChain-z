@@ -2,11 +2,10 @@ import Menu from '../Menu'
 import { AdsInline } from '~/components/Ads'
 import styles from './styles.module.scss'
 
-function Nav() {
-  return (
-    <nav className="bg-transparent ">
-      {/* <div class="group"> */}
+function Nav({ pathname }: { pathname: string }) {
 
+  return (
+    <nav className="bg-transparent relative z-2">
       <div className="max-w-1120px md:mx-auto flex justify-between items-center">
         <a href="/">
           <img src="/assets/images/logo.svg" alt="" />
@@ -16,10 +15,9 @@ function Nav() {
       </div>
       <div className={`h-62px border-1 border-primary border-opacity-20 ` + styles.borderY}>
         <div className="h-full max-w-1120px md:mx-auto">
-          <Menu />
+          <Menu currentPath={pathname} />
         </div>
       </div>
-      {/* </div> */}
     </nav>
   )
 }

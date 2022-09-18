@@ -1,5 +1,5 @@
 // import Flicking from "@egjs/preact-flicking";
-import Heading2 from '~/components/Heading'
+
 import InfiniteFlicking from './InfiniteFlicking'
 
 import Flicking from '@egjs/preact-flicking'
@@ -9,6 +9,7 @@ import './style.scss'
 
 import { ArticleListProp } from '~/types/ArticleComponentProps.type'
 import { AdsFullWidth } from '~/components/Ads'
+import { Heading2 } from '~/components/Heading'
 
 export default function HotNew({ articles, className }: ArticleListProp) {
   let plugins

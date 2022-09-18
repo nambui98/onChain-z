@@ -4,10 +4,10 @@ type Props = CommonProp
 
 /** Ads, show full width of container */
 export function AdsFullWidth({ children }: Props) {
-  return <div class="AdsFullWidth Ads bg-primary w-9/12 h-90px mx-auto mt-20 uppercase text-2xl flex items-center justify-center text-white">{children}</div>
+  return <div class="AdsFullWidth Ads bg-primary w-9/12 h-90px mx-auto mt-20 uppercase text-2xl flex items-center justify-center text-white z-1">{children}</div>
 }
 
 /** Ads, show full width of container */
 export function AdsInline({ children }: Props) {
-  return <div className="AdsInline Ads text-white bg-primary uppercase text-2xl px-131px py-31px">{children}</div>
+  return <div className="AdsInline Ads text-white bg-primary uppercase text-2xl px-131px py-31px z-1s">{children}</div>
 }

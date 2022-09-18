@@ -1,17 +1,10 @@
 ---
 import BaseSEOLayout from '~/layouts/BaseSEOLayout.astro'
-
-import Button from '~/components/Button/index.jsx'
-import PortfolioPreview from '~/components/PortfolioPreview/index.jsx'
-import HeroCTA from '~/components/HeroCTA.astro'
-// import HomePage from '~/containers/HomePage'
-// Or, if you have to support IE9
-// import "@egjs/preact-flicking/dist/flicking-inline.css";
-// import "@egjs/flicking-plugins/dist/flicking-plugins.css";
 import AppConfig from '~/AppConfig'
 import MainNew from '~/containers/HomePage/MainNew'
 import HotNew from '~/containers/HomePage/HotNew'
 import Tivi from '~/containers/HomePage/Tivi'
+import BackGround from '~/components/BackGround'
 import { AdsFullWidth } from '~/components/Ads'
 
 
@@ -19,6 +12,8 @@ const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List a
 
 import PostService from '~/services/PostService'
 import LatestNews from '~/containers/HomePage/LatestNews'
+import Subscribe from '~/containers/HomePage/Subscribe/index'
+
 const postService = new PostService(articles)
 const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
 const highlightArticles = postService.getHomeHighlightItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
@@ -27,16 +22,30 @@ const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homeP
 
 const title = AppConfig.siteTitle
 const description = AppConfig.siteSlogan
+
 ---
 
-<BaseSEOLayout title={description} description={description} className="HomePage">
-  <main class="HomePage wrapper mt4 mb4">
+<BaseSEOLayout title={description} description={description} className="HomePage ">
+  <div class="absolute inset-0 overflow-hidden">
+
+    <BackGround className="-top-127px -right-127px bg-opacity-30 z-0 " />
+    <BackGround className="h-758px w-758px top-1264px -left-132px bg-opacity-30 z-0 bg-pink" />
+    <BackGround className="h-938px w-938px -bottom-29px -right-400px bg-opacity-30 z-0 bg-green" />
+      <div class="absolute inset-0 backdrop-filter backdrop-blur-120px z-0">
+  </div>
+  </div>
+  
+  <main class="HomePage wrapper mt4 mb4 z-1 relative">
     <MainNew articles={mainArticles} className="mt-12"/>
     <HotNew client:load  
     articles={highlightArticles} className="mt-20" />
+    <!-- <BackGround className="-top-127px -right-127px bg-opacity-30 z-0" /> -->
     <AdsFullWidth>First ads here</AdsFullWidth>
+
     <Tivi articles={tiviArticles} className="mt-20" />
     <AdsFullWidth>Second ads here</AdsFullWidth>
     <LatestNews articles={tiviArticles} className="mt-20"/>
+    <Subscribe className="mt-20"/>
   </main>
+
 </BaseSEOLayout>
