@@ -19,9 +19,9 @@ const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List a
 
 import PostService from '~/services/PostService'
 const postService = new PostService(articles)
-const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-const highlightArticles = postService.getHomeHighlightItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
+const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.homePagePostLimit || 6)
+const highlightArticles = postService.getHomeHighlightItems().slice(0, AppConfig.homePageSettings.homePageHotNewsLimit || 10)
+const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homePageSettings.homePageTiviLimit || 6)
 
 
 const title = AppConfig.siteTitle
