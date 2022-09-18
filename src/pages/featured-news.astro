@@ -2,7 +2,7 @@
 import BaseSEOLayout from '~/layouts/BaseSEOLayout.astro'
 import AppConfig from '~/AppConfig'
 import MainNew from '~/containers/HomePage/MainNew'
-import HotNew from '~/containers/HomePage/HotNew'
+import HotNew from '~/containers/FeaturedNews/HotNew'
 import Tivi from '~/containers/HomePage/Tivi'
 import BackGround from '~/components/BackGround'
 import { AdsFullWidth } from '~/components/Ads'
@@ -13,6 +13,7 @@ const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List a
 import PostService from '~/services/PostService'
 import LatestNews from '~/containers/HomePage/LatestNews'
 import Subscribe from '~/containers/HomePage/Subscribe/index'
+import InDepthTopics from '~/containers/FeaturedNews/InDepthTopics/index'
 
 const postService = new PostService(articles)
 const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
@@ -27,9 +28,8 @@ const description = AppConfig.siteSlogan
 <BaseSEOLayout title={description} description={description} className="HomePage ">
     
     <main class="HomePage wrapper mt4 mb4 z-1 relative">
-      
-        <HotNew client:load  
-        articles={highlightArticles} className="mt-20" />
+        <HotNew articles={highlightArticles} className="mt-10" />
+        <InDepthTopics articles={highlightArticles} className="mt-10" />
         <!-- <BackGround className="-top-127px -right-127px bg-opacity-30 z-0" /> -->
         <AdsFullWidth>First ads here</AdsFullWidth>
 

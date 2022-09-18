@@ -9,7 +9,7 @@ export default function Tivi({ articles, className }: ArticleListProp) {
 
   return (
     <div className={`Tivi ${className ?? ''}`}>
-      <Heading2 name="OnChainZ TV" />
+      <Heading2 text="OnChainZ TV" />
       <div className="flex gap-x-8 mt-6">
         <LeftContent article={list[0]} />
         <RightContent articles={list.slice(1, 6)} />

@@ -1,7 +1,7 @@
 import { CardProps } from "~/types/CardComponentProps.type"
 
 
-export default function Card({ article, isNotShowAuthor, imageHeight }: CardProps) {
+export default function CardLarge({ article, isNotShowAuthor, imageHeight }: CardProps) {
   const author = article?.author
 
   return (

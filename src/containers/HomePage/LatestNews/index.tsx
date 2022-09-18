@@ -7,7 +7,7 @@ import './style.scss'
 export default function LatestNews({ articles, className }: ArticleListProp) {
   return (
     <div className={`LatestNews ${className ?? ''}`}>
-      <Heading2 name="Tin tức MỚI NHẤT" />
+      <Heading2 text="Tin tức MỚI NHẤT" />
       <div className="flex gap-x-8 mt-6">
         <div className="w-1/3">
           <Card article={articles[0]} isNotShowAuthor={true} />
