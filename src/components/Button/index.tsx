@@ -9,7 +9,7 @@ export function ButtonPrimary({ onClick, children, className }: Props) {
   </button>
 }
 export function ButtonOutline({ onClick, children, className }: Props) {
-  return <button className={`border-1 border-grey60 text-grey80 w-108px  flex justify-center items-center text-white text-base font-semibold cursor-pointer transition duration-300 ease-out hover:text-primary hover:bg-transparent hover:border-1 hover:border-primary ${className ?? ''}`}>
+  return <button className={`border-1 border-grey60 text-grey80 w-108px  flex justify-center items-center text-base font-semibold cursor-pointer transition duration-300 ease-out hover:text-primary hover:bg-transparent hover:border-1 hover:border-primary ${className ?? ''}`}>
     {children}
   </button>
 }

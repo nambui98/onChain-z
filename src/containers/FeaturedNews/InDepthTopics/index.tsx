@@ -27,10 +27,10 @@ export default function InDepthTopics({ articles, className }: ArticleListProp) 
                         ))}
                     </div>
                     <div className="flex gap-2 justify-center">
-                        <ButtonPrimary className='w-40px h-40px rounded-lg font-normal ' onClick={() => { }}>
+                        <ButtonPrimary className='w-40px h-40px rounded-lg font-normal' onClick={() => { }}>
                             1
                         </ButtonPrimary>
-                        <ButtonOutline className='w-40px h-40px rounded-lg font-normal text-grey80 hover:text-primary' onClick={() => { }}>
+                        <ButtonOutline className='w-40px h-40px rounded-lg font-normal' onClick={() => { }}>
                             2
                         </ButtonOutline>
                         <ButtonOutline className='w-40px h-40px rounded-lg font-normal' onClick={() => { }}>
