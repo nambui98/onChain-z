@@ -4,6 +4,7 @@ import AppConfig from '~/AppConfig'
 import MainHead from '../components/Site/MainHead.astro'
 import Footer from '../components/Footer/index.jsx'
 import Nav from '../components/Nav/index.jsx'
+import Menu from '../components/Menu/index.jsx'
 
 // apply windicss for the site
 import 'virtual:windi.css'
@@ -16,6 +17,7 @@ import "@egjs/preact-flicking/dist/flicking-inline.css";
 import "@egjs/flicking-plugins/dist/flicking-plugins.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
 import "@egjs/flicking-plugins/dist/arrow.css";
+import { AdsInline } from '~/components/Ads'
 
 
 
@@ -30,7 +32,21 @@ const pathname = Astro.url.pathname
   </head>
 
   <body class="BaseLayout relative">
-    <Nav client:load pathname={pathname}/>
+    <nav class="bg-transparent relative z-2">
+      <div class="max-w-1120px md:mx-auto flex justify-between items-center">
+        <a href="/">
+          <img src="/assets/images/logo.svg" alt="" />
+        </a>
+
+        <AdsInline>Top Ads here</AdsInline>
+      </div>
+      <div class={`h-62px border-1 border-primary border-opacity-20 border-r-0 border-l-0`}>
+        <div class="h-full max-w-1120px md:mx-auto">
+          <Menu currentPath={pathname} client:load/>
+        </div>
+      </div>
+    </nav>
+    <!-- <Nav client:load pathname={pathname}/> -->
     <section class={`${className} md:container max-w-1120px md:mx-auto`}>
       <slot />
     </section>
