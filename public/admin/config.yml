@@ -178,4 +178,14 @@ collections:
           - { label: 'Global title', name: 'siteTitle', widget: 'string' }
           - { label: 'Slogan', name: 'siteSlogan', widget: 'string' }
           - { label: 'Default Thumbnail', name: thumb, widget: image, class: 'thumb', required: false }
-          - { label: 'Home page settings', name: 'homePageSettings', widget: 'object', fields: [{ label: 'Number of posts on frontpage', name: frontPagePostLimit, widget: number, min: 1, max: 10 }] }
+          - {
+              label: 'Home page settings',
+              name: 'homePageSettings',
+              widget: 'object',
+              fields:
+                [
+                  { label: 'Number of posts on top', name: homePagePostLimit, widget: number, min: 1, max: 10 },
+                  { label: 'Number of HotNews posts', name: homePageHotNewsLimit, widget: number, min: 1, max: 10 },
+                  { label: 'Number of TV posts', name: homePageTiviLimit, widget: number, min: 1, max: 10 },
+                ],
+            }
