@@ -3,6 +3,8 @@
   "siteTitle": "OnChainZ",
   "siteSlogan": "The geek group for Web3 insights",
   "homePageSettings": {
-    "frontPagePostLimit": 6
+    "homePagePostLimit": 6,
+    "homePageHotNewsLimit": 10,
+    "homePageTiviLimit": 6
   }
 }

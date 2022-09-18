@@ -1,0 +1,42 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs'
+import ArticleHero from '../components/Article/ArticleHero'
+import ArticleMetadata from '../components/Article/ArticleMetadata'
+import { Heading1 } from '~/components/Heading'
+import BaseSEOLayout from './BaseSEOLayout.astro'
+
+const { content } = Astro.props
+
+const title = content?.title || 'Category layout'
+const links = [
+  {
+    name: 'Home',
+    href: '/',
+  },
+  {
+    name: 'Categories',
+    href: '/categories',
+  },
+]
+---
+
+<BaseSEOLayout lang={content.lang} title={title} description={content.description} className={'CategoryLayout'}>
+  <Breadcrumbs links={links} />
+
+  <Heading1>{title} {content.summary}</Heading1>
+  <ArticleHero content={content} />
+  <ArticleMetadata content={content} />
+
+  <div class="wrapper wrapper__readable">
+    <div class="content">
+      <slot />
+    </div>
+  </div>
+</BaseSEOLayout>
+
+<style lang="scss">
+  .content {
+    font-size: var(--f-u1);
+    line-height: 2;
+  }
+</style>

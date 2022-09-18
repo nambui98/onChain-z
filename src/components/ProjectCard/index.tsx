@@ -4,7 +4,7 @@ function ProjectCard({ project }) {
   const { frontmatter: meta } = project
 
   return (
-    <div class="box" style={`background-image:url(${meta.image})`}>
+    <div class="box w-2/5 flex flex-col gap-y-6" style={`background-image:url(${meta.image})`}>
       <div class="text-center space-y-2">
         <div class="space-y-5">
           <a href={project.url} title={meta.description}>
