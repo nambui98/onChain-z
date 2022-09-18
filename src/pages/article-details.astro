@@ -11,9 +11,8 @@ import { AdsFullWidth } from '~/components/Ads'
 const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List all Markdown posts in the repo.
 
 import PostService from '~/services/PostService'
-import LatestNews from '~/containers/HomePage/LatestNews'
-import Subscribe from '~/containers/HomePage/Subscribe/index'
-import InDepthTopics from '~/containers/FeaturedNews/InDepthTopics/index'
+import Detail from '~/containers/ArticleDetails/Detail'
+import Breadcrumbs from '~/components/Breadcrumbs'
 
 const postService = new PostService(articles)
 const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
@@ -23,13 +22,23 @@ const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homeP
 
 const title = AppConfig.siteTitle
 const description = AppConfig.siteSlogan
+const links = [
+  {
+    name: 'Trang chủ',
+    href: '/',
+  },
+  {
+    name: 'Tin tức nổi bật',
+    href: '/',
+  },
+]
 ---
 
 <BaseSEOLayout title={description} description={description} className="HomePage ">
     
     <main class="HomePage wrapper mt4 mb4 z-1 relative">
-        <HotNew articles={highlightArticles} className="mt-10" />
-        <InDepthTopics articles={highlightArticles} className="mt-10" />
+        <Breadcrumbs links={links}/>
+        <Detail article={highlightArticles[0]} articles={highlightArticles}/>
     </main>
 
 </BaseSEOLayout>

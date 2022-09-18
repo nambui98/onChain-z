@@ -16,7 +16,7 @@ export default function HotNew({ articles, className }: ArticleListProp) {
       <div className="flex mt-10">
         {list.slice(0, 4).map((r, index) => (
           <div className="flicking-panel w-1/3 px-3" key={index}>
-            <Card imageHeight='h-144px' article={r} isNotShowAuthor={false} />
+            <Card className='h-144px' article={r} isNotShowAuthor={false} />
           </div>
         ))}
       </div>

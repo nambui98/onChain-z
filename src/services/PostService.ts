@@ -14,6 +14,7 @@ export interface Post {
   image: string
   author?: Author
   publishedDate: string
+  description: string
 }
 
 export default class PostService {

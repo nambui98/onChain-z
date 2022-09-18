@@ -3,7 +3,7 @@ function Tag({ text, href, children }: { text: string; href?: string; children?:
   const link = href ?? `/tags/${text}`
 
   return (
-    <a className="tag" href={link} data-tag={text}>
+    <a className="tag bg-gray40 text-grey80 font-semibold text-sm py-2 px-4" href={link} data-tag={text}>
       {text}
       {children}
     </a>

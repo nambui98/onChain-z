@@ -16,7 +16,9 @@ export default defineConfig({
         primary: '#6F41FF',
         white: '#FFFFFF',
         pink: '#FC3FAF',
-        green: '#36EBF0'
+        green: '#36EBF0',
+        gray20: '#F9FAFC',
+        gray40: '#ECEDF1',
       },
       textColor: {
         primary: '#6F41FF',
@@ -42,6 +44,9 @@ export default defineConfig({
         primary: '#6F41FF',
         secondary: 'rgba(111,65,255, 0.2)',
         danger: '#e3342f',
+        grey60: '#B0B5C1',
+        gray100: '#383F47',
+        gray40: '#ECEDF1',
       }),
       placeholder: {
         primary: '#6F41FF',

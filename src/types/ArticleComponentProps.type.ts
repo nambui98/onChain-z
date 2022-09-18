@@ -12,3 +12,7 @@ export type ArticleProp = CommonProp & {
 export type ArticleListProp = CommonProp & {
   articles: Post[]
 }
+export type ArticleLDetailProp = CommonProp & {
+  articles: Post[],
+  article: Post
+}
