@@ -22,7 +22,7 @@ export default function Menu({ currentPath }: Props) {
         }
       </ul>
 
-      <div className="w-386px">
+      <div className="w-386px pl-15">
         <form className="w-full">
           <label class="relative block">
             <input ref={refInput} placeholder="Tìm kiếm..." type="text" className={`absolute right-0 transform -translate-y-1/2 top-0 p-0 py-10px bg-transparent border-0 border-b-1 border-primary text-sm font-semibold transition duration-1000 ease-out ${activeSearch ? 'w-full' : 'w-0'} placeholder-slate-400 focus:outline-none focus:border-0 focus:border-b-1 focus:border-primary focus:ring-0`} style={{
@@ -31,9 +31,7 @@ export default function Menu({ currentPath }: Props) {
             <button type="button" className="absolute right-0 top-1/2 transform -translate-y-1/2" onClick={() => { }}>
               <img onClick={() => {
                 refInput?.current?.focus();
-                // refInput?.current?.classList.add('!w-full');
                 setActiveSearch(!activeSearch);
-                // console.log("aaaaaaaaaaaaaaa");
               }} className="ml-auto w-24px h-24px cursor-pointer" src={activeSearch ? "/assets/icons/search-normal-active.png" : "/assets/icons/search-normal.png"} alt="" srcset={activeSearch ? "/assets/icons/search-normal-active.png" : "/assets/icons/search-normal.png"} />
             </button>
           </label>
