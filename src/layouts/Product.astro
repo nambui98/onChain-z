@@ -1,8 +1,9 @@
 ---
 import ArticleHero from '../components/Article/ArticleHero.jsx'
-import Button from '~/components/Button/index.jsx'
+// import Button from '~/components/Button/index.jsx'
 import Tag from '~/components/Tag/index.jsx'
 import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
+import { ButtonPrimary } from '~/components/Button/index.jsx';
 
 const { content } = Astro.props
 ---
@@ -20,7 +21,9 @@ const { content } = Astro.props
   </div>
   <footer class="text-center mt-6">
     <a href="/products">
-      <Button>View All</Button>
+          <ButtonPrimary onClick={() => { }}>
+                        View Related
+                    </ButtonPrimary>
     </a>
   </footer>
 </SimplePageLayout>
