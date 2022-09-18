@@ -7,13 +7,9 @@ import AppConfig from '~/AppConfig'
 function Footer() {
   return (
     <footer className={'AppFooter ' + styles.footer}>
-      <div class="leading-loose mb-6">
-        <a className={'btn '} role="button" href="/products">
-          Shop
-        </a>
-        <a className={'btn '} role="button" href="/tags">
-          Tags
-        </a>
+      <div class="leading-loose my-6">
+        <ButtonInline href="/products">Shop</ButtonInline>
+        <ButtonInline href="/tags">Tags</ButtonInline>
         <ButtonInline href="/categories">Categories</ButtonInline>
         <ButtonInline href="/categories/tv">TV</ButtonInline>
 

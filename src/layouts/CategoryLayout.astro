@@ -1,8 +1,8 @@
 ---
-import Button from '../components/Button'
 import Breadcrumbs from '../components/Breadcrumbs'
 import ArticleHero from '../components/Article/ArticleHero'
 import ArticleMetadata from '../components/Article/ArticleMetadata'
+import { Heading1 } from '~/components/Heading'
 import BaseSEOLayout from './BaseSEOLayout.astro'
 
 const { content } = Astro.props
@@ -14,12 +14,8 @@ const links = [
     href: '/',
   },
   {
-    name: 'Blog',
-    href: '/blog',
-  },
-  {
-    name: 'Authors',
-    href: '/authors',
+    name: 'Categories',
+    href: '/categories',
   },
 ]
 ---
@@ -27,7 +23,7 @@ const links = [
 <BaseSEOLayout lang={content.lang} title={title} description={content.description} className={'CategoryLayout'}>
   <Breadcrumbs links={links} />
 
-  <h1 class="heading1">{title}: {content.summary}</h1>
+  <Heading1>{title} {content.summary}</Heading1>
   <ArticleHero content={content} />
   <ArticleMetadata content={content} />
 

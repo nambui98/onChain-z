@@ -11,7 +11,7 @@ export function Button({ children }: { href?: string; children: any }) {
 export function ButtonInline({ href, children }: { href?: string; children: any }) {
   return (
     <a role="button" href={href}>
-      <button bg="blue-100 hover:blue-200" text="sm" font="light" p="y-2 x-4" border="2 rounded blue-200" role="button" className={'btn '}>
+      <button className={'btn '} bg="blue-100 hover:blue-200" text="sm" font="base" p="y-1 x-2" border="2 rounded blue-200">
         {children}
       </button>
     </a>

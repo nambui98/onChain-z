@@ -1,14 +1,28 @@
-type Props = {
-  name: String
+type CommonHtmlProp = {
+  text?: String
+  className?: String
+  children?: String
 }
 
-export default function Heading2({ name }: Props) {
+export function Heading1({ text, className, children }: CommonHtmlProp) {
   return (
-    <div className="flex items-baseline">
-      <div>
-        <img src="/assets/icons/rect.svg" className="align-baseline" alt="" />
+    <h1 className={`${className} flex items-baseline text-4xl font-bold text-primary`}>
+      <div className="mr-3">
+        <img src="/assets/icons/rect.svg" className="align-baseline" alt="heading icon" />
       </div>
-      <h2 className="text-2xl font-bold text-secondary ml-8px">{name}</h2>
-    </div>
+      {text}
+      {children}
+    </h1>
+  )
+}
+export function Heading2({ text, className, children }: CommonHtmlProp) {
+  return (
+    <h2 className={`${className} flex items-baseline text-2xl font-bold text-secondary`}>
+      <div className="mr-2">
+        <img src="/assets/icons/rect.svg" className="align-baseline" alt="heading icon" />
+      </div>
+      {text}
+      {children}
+    </h2>
   )
 }

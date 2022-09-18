@@ -1,10 +1,11 @@
-import Heading2 from '~/components/Heading'
+import { Heading2 } from '~/components/Heading'
+
 type Props = {}
 
-export default function Tivi({}: Props) {
+export default function LatestNews({}: Props) {
   return (
     <div className="LatestNews">
-      <Heading2 name="Tin tức MỚI NHẤT" />
+      <Heading2 text="Tin tức mới nhất" />
     </div>
   )
 }

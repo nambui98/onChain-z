@@ -83,11 +83,6 @@ a {
   box-sizing: border-box;
 }
 
-.Layout {
-  background-color: $white-color;
-  @apply font-sans font-semibold uppercase align-middle break-all;
-}
-
 .flicking-arrow-prev {
   width: 40px !important;
   height: 40px !important;
