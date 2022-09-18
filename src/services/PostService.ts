@@ -20,7 +20,13 @@ export default class PostService {
   protected store: any[] = []
 
   constructor(store: any) {
-    this.store = allPosts || store
+    this.store = store.map(this.convertNetlifyCMSArticleToLakdakArticle)
+    // console.log(this.store[0])
+  }
+
+  /** convert NetlifyCMS Article frontmatter format to our Lakdak Article plain object format */
+  convertNetlifyCMSArticleToLakdakArticle(na) {
+    return { url: na.url, ...na.frontmatter }
   }
 
   getAll() {
