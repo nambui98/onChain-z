@@ -122,7 +122,7 @@ collections:
   - name: 'authors'
     label: 'Authors'
     folder: 'src/pages/authors'
-    create: true
+    # create: true
     description: >
       Author/Editor of article.
     slug: '{{slug}}'
@@ -132,6 +132,22 @@ collections:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: '~/layouts/AuthorLayout.astro' }
       - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' } # basically is slug creation
       - { label: 'Summary', name: 'summary', widget: 'string', required: false }
+      - { label: 'Main Image', name: 'image', widget: 'image', allow_multiple: false, required: false }
+      - { label: 'Tags', name: 'tags', widget: list }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'categories'
+    label: 'Categories'
+    folder: 'src/pages/categories'
+    create: true
+    description: >
+      categories of article.
+    slug: '{{slug}}'
+    preview_path: '{{dirname}}/{{slug}}'
+    summary: "{{title | upper}} ~ {{body | truncate(50, '...') }}"
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: '~/layouts/CategoryLayout.astro' }
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' } # basically is slug creation
       - { label: 'Main Image', name: 'image', widget: 'image', allow_multiple: false, required: false }
       - { label: 'Tags', name: 'tags', widget: list }
       - { label: 'Body', name: 'body', widget: 'markdown' }
