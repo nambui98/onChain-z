@@ -6,6 +6,7 @@ export default function Menu({}: Props) {
   return (
     <div className="h-full flex items-center">
       <ul className="PrimaryNav with-indicator uppercase font-600 z-10">
+        {/* // TODO: Nam: cần bóc một NavItem ra làm component */}
         <li className="Nav-item">
           <a href="#">Tin tức coin</a>
         </li>
