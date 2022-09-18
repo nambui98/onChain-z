@@ -25,8 +25,9 @@ export default function Menu({ currentPath }: Props) {
       <div className="w-386px pl-15">
         <form className="w-full">
           <label class="relative block">
-            <input ref={refInput} placeholder="Tìm kiếm..." type="text" className={`absolute right-0 transform -translate-y-1/2 top-0 p-0 py-10px bg-transparent border-0 border-b-1 border-primary text-sm font-semibold transition duration-1000 ease-out ${activeSearch ? 'w-full' : 'w-0'} placeholder-slate-400 focus:outline-none focus:border-0 focus:border-b-1 focus:border-primary focus:ring-0`} style={{
-              transition: 'width .5s ease',
+            <input ref={refInput} placeholder="Tìm kiếm..." type="text" className={`absolute right-0 opa transform -translate-y-1/2 top-0 p-0 py-10px bg-transparent border-0 border-b-1 border-primary text-sm font-semibold transition duration-1000 ease-out ${activeSearch ? 'w-full' : 'w-0'} ${activeSearch ? 'opacity-100' : 'opacity-0'} placeholder-slate-400 focus:outline-none focus:border-0 focus:border-b-1 focus:border-primary focus:ring-0`} style={{
+              transition: 'all .5s ease',
+              transitionProperty: 'width, opacity',
             }} />
             <button type="button" className="absolute right-0 top-1/2 transform -translate-y-1/2" onClick={() => { }}>
               <img onClick={() => {
