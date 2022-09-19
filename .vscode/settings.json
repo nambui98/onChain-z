@@ -5,6 +5,7 @@
     "**/.next": true
   },
   "search.exclude": {
+    "**/.vscode": true,
     "**/yarn.lock": true,
     "**/package-lock.json": true,
     "**/pnpm-lock.yaml": true,
