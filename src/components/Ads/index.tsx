@@ -8,10 +8,6 @@ export function AdsFullWidth({ children }: Props) {
 }
 
 /** Ads, show full width of container */
-export function AdsInline({ children }: Props) {
-  return <div className="AdsInline Ads text-white bg-primary uppercase text-2xl px-131px py-31px z-1s">{children}</div>
-}
-/** Ads, show custom size of container */
-export function AdsCustomSize({ children, className }: Props) {
+export function AdsInline({ children, className }: Props) {
   return <div className={`AdsInline Ads text-white bg-primary uppercase text-2xl px-131px py-31px z-1s ${className ?? ''}`}>{children}</div>
 }
