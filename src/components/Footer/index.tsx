@@ -20,7 +20,7 @@ function Footer(props: CommonProp) {
       <div className="md:container max-w-1120px md:mx-auto flex justify-between">
         <div className="w-3/8">
           <a href="/" className="flex items-center text-28px font-bold text-grey">
-            <img src="/assets/images/logo.svg" className="mr-4px" alt="" />
+            <img src="/assets/images/logo.svg" className="mr-4px" alt="site logo" />
             {AppConfig.SiteName}
           </a>
           <p className="mt-6 text-grey80 text-xs font-semibold">Before we dive in to the your career, tell me a little bit about yourself and what’s important to you outside of work?</p>

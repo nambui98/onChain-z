@@ -9,34 +9,45 @@ type Props = {
 }
 
 export default function Menu({ currentPath }: Props) {
-  const [activeSearch, setActiveSearch] = useState(false);
-  const refInput = useRef(null);
+  const [activeSearch, setActiveSearch] = useState(false)
+  const refInput = useRef(null)
   return (
     <div className="h-full flex items-center">
       <ul className="PrimaryNav with-indicator uppercase font-600 z-10">
         {/* // TODO: Nam: cần bóc một NavItem ra làm component */}
-        {
-          menu_data.map((menu, index) => {
-            return <MenuItem key={index} info={menu} active={menu.path === currentPath} />
-          })
-        }
+        {menu_data.map((menu, index) => {
+          return <MenuItem key={index} info={menu} active={menu.path === currentPath} />
+        })}
       </ul>
 
       <div className="w-386px pl-15">
         <form className="w-full">
           <label class="relative block">
-            <input ref={refInput} placeholder="Tìm kiếm..." type="text" className={`absolute right-0 opa transform -translate-y-1/2 top-0 p-0 py-10px bg-transparent border-0 border-b-1 border-primary text-sm font-semibold transition duration-1000 ease-out ${activeSearch ? 'w-full' : 'w-0'} ${activeSearch ? 'opacity-100' : 'opacity-0'} placeholder-slate-400 focus:outline-none focus:border-0 focus:border-b-1 focus:border-primary focus:ring-0`} style={{
-              transition: 'all .5s ease',
-              transitionProperty: 'width, opacity',
-            }} />
-            <button type="button" className="absolute right-0 top-1/2 transform -translate-y-1/2" onClick={() => { }}>
-              <img onClick={() => {
-                refInput?.current?.focus();
-                setActiveSearch(!activeSearch);
-              }} className="ml-auto w-24px h-24px cursor-pointer" src={activeSearch ? "/assets/icons/search-normal-active.png" : "/assets/icons/search-normal.png"} alt="" srcset={activeSearch ? "/assets/icons/search-normal-active.png" : "/assets/icons/search-normal.png"} />
+            <input
+              ref={refInput}
+              placeholder="Tìm kiếm..."
+              type="text"
+              className={`absolute right-0 opa transform -translate-y-1/2 top-0 p-0 py-10px bg-transparent border-0 border-b-1 border-primary text-sm font-semibold transition duration-1000 ease-out ${
+                activeSearch ? 'w-full' : 'w-0'
+              } ${activeSearch ? 'opacity-100' : 'opacity-0'} placeholder-slate-400 focus:outline-none focus:border-0 focus:border-b-1 focus:border-primary focus:ring-0`}
+              style={{
+                transition: 'all .5s ease',
+                transitionProperty: 'width, opacity',
+              }}
+            />
+            <button type="button" className="absolute right-0 top-1/2 transform -translate-y-1/2" onClick={() => {}}>
+              <img
+                onClick={() => {
+                  refInput?.current?.focus()
+                  setActiveSearch(!activeSearch)
+                }}
+                className="ml-auto w-24px h-24px cursor-pointer"
+                src={activeSearch ? '/assets/icons/search-normal-active.png' : '/assets/icons/search-normal.png'}
+                alt="search icon"
+                srcset={activeSearch ? '/assets/icons/search-normal-active.png' : '/assets/icons/search-normal.png'}
+              />
             </button>
           </label>
-
         </form>
         {/* {
           activeSearch && <h1>aaaaaaaaa</h1>
@@ -44,7 +55,11 @@ export default function Menu({ currentPath }: Props) {
         <img onClick={() => {
           setActiveSearch(!activeSearch);
           console.log("aaaaaaaaaaaaaaa");
-        }} className="ml-auto w-24px h-24px cursor-pointer" src="/assets/icons/search-normal.png" alt="" srcset="/assets/icons/search-normal.png" /> */}
+        }} 
+          className="ml-auto w-24px h-24px cursor-pointer" 
+          src="/assets/icons/search-normal.png" 
+          alt="search icon"
+          srcset="/assets/icons/search-normal.png" /> */}
       </div>
     </div>
   )

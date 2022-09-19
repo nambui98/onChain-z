@@ -15,7 +15,7 @@ export function Heading2({ text, className }: Props) {
   return (
     <div className={`flex items-baseline ${className ?? ''}`}>
       <div>
-        <img src="/assets/icons/rect.svg" className="align-baseline" alt="" />
+        <img src="/assets/icons/rect.svg" className="align-baseline" alt="rectangle icon" />
       </div>
       <h2 className="text-2xl font-bold text-grey ml-8px">{text}</h2>
     </div>
