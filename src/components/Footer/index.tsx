@@ -1,10 +1,19 @@
 import AppConfig from '~/AppConfig'
 import * as packagejson from '../../../package.json'
-import { CommonProp } from '~/types/ArticleComponentProps.type'
+import { CommonLinkProp, CommonProp } from '~/types/ArticleComponentProps.type'
 
-const ShortLink = () => {
-  return <p className="text-xs font-semibold text-grey80 leading-20px mt-4">Short link no 001</p>
+const ShortLink = ({ href, children }: CommonLinkProp) => {
+  if (href) {
+    return (
+      <a href={href}>
+        <p className="text-xs font-semibold text-grey80 leading-20px mt-4">{children}</p>
+      </a>
+    )
+  }
+
+  return <p className="text-xs font-semibold text-grey80 leading-20px mt-4">{children}</p>
 }
+
 function Footer(props: CommonProp) {
   return (
     <footer className={'AppFooter ' + props.className ?? ''}>
@@ -18,26 +27,30 @@ function Footer(props: CommonProp) {
         </div>
         <div>
           <p className="text-sm font-semibold text-grey leading-22px">QUICK LINK 1</p>
-          {Array(4)
+          <ShortLink href="/categories">Categories</ShortLink>
+          <ShortLink href="/categories/tv">TV</ShortLink>
+          {Array(2)
             .fill(0)
             .map((r) => (
-              <ShortLink />
+              <ShortLink>Short link no 001</ShortLink>
             ))}
         </div>
         <div>
           <p className="text-sm font-semibold text-grey leading-22px">QUICK LINK 1</p>
+          <ShortLink href="/products">Shop</ShortLink>
           {Array(3)
             .fill(0)
             .map((r) => (
-              <ShortLink />
+              <ShortLink>Short link no 002</ShortLink>
             ))}
         </div>
         <div>
           <p className="text-sm font-semibold text-grey leading-22px">QUICK LINK 1</p>
+          <ShortLink href="/tags">Tags</ShortLink>
           {Array(3)
             .fill(0)
             .map((r) => (
-              <ShortLink />
+              <ShortLink>Short link no 003</ShortLink>
             ))}
         </div>
       </div>

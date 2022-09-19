@@ -5,6 +5,10 @@ export type CommonProp = {
   className?: string
   children?: any
 }
+/** Common HTML Link Prop */
+export type CommonLinkProp = CommonProp & {
+  href?: string
+}
 
 export type ArticleProp = CommonProp & {
   article: Post
