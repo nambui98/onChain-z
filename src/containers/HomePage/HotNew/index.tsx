@@ -34,10 +34,10 @@ export default function HotNew({ articles, className }: ArticleListProp) {
       </Flicking>
 
       <span className="flicking-arrow-prev bg-white flex items-center justify-center mt-[-20px]">
-        <img className="w-24px h-24px m-0" src="/assets/icons/arrow-left.svg" alt="" />
+        <img className="w-24px h-24px m-0" src="/assets/icons/arrow-left.svg" alt="scroll left" />
       </span>
       <span className="flicking-arrow-next bg-white flex items-center justify-center mt-[-20px]">
-        <img className="w-24px h-24px m-0" src="/assets/icons/arrow-right.svg" alt="" />
+        <img className="w-24px h-24px m-0" src="/assets/icons/arrow-right.svg" alt="scroll right" />
       </span>
     </div>
   )

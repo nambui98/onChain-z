@@ -1,4 +1,19 @@
 {
+  "files.exclude": {
+    "**/dist/": true,
+    "**/.vercel/": true,
+    "**/.next": true
+  },
+  "search.exclude": {
+    "**/.vscode": true,
+    "**/yarn.lock": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/node_modules": true,
+    "**/.vercel/": true,
+    "**/dist/": true
+  },
+
   "scss.lint.unknownAtRules": "ignore",
   "css.lint.unknownAtRules": "ignore",
   "editor.formatOnSave": true
