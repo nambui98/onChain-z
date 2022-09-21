@@ -12,6 +12,9 @@ export default defineConfig({
   },
   theme: {
     extend: {
+      screens: {
+        'sm-max': { 'max': '639px' },
+      },
       backgroundColor: {
         primary: '#6F41FF',
         white: '#FFFFFF',

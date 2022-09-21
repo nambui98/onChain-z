@@ -33,18 +33,22 @@ const pathname = Astro.url.pathname
 
   <body class="BaseLayout relative">
     <nav class="bg-transparent relative z-2">
-      <div class="max-w-1120px md:mx-auto flex justify-between items-center">
-        <a href="/">
-          <img src="/assets/images/logo.svg" alt="" />
+      <div class="max-w-1120px relative md:mx-auto sm-max:mx-4 flex justify-between items-center">
+        <a href="/" >
+          <img src="/assets/images/logo.svg" class="max-w-43px"  alt="" />
         </a>
 
-        <AdsInline>Top Ads here</AdsInline>
+        <AdsInline className="sm-max:w-full sm-max:ml-9 sm-max:my-2 sm-max:h-14">Top Ads here</AdsInline>
       </div>
-      <div class={`h-62px border-1 border-primary border-opacity-20 border-r-0 border-l-0`}>
-        <div class="h-full max-w-1120px md:mx-auto">
-          <Menu currentPath={pathname} client:load/>
+      <!-- <div class="relative"> -->
+
+        <div class={`h-62px  border-1 border-primary border-opacity-20 border-r-0 border-l-0 overflow-x-auto overflow-y-hidden`}>
+          <div class="h-full max-w-1120px  min-w-1120px  sm-max:max-w-920px sm-max:min-w-920px md:mx-auto">
+            <Menu currentPath={pathname} client:load/>
+             <!-- <div class="absolute top-10">aaa</div> -->
+          </div>
         </div>
-      </div>
+      <!-- </div> -->
     </nav>
     <!-- <Nav client:load pathname={pathname}/> -->
     <section class={`${className} md:container max-w-1120px md:mx-auto`}>

@@ -1,24 +1,38 @@
 import { Menu, MenuItemProps } from "~/types/MenuProps.type";
 
 
-export default function MenuItem({ info, active }: MenuItemProps) {
+export default function MenuItem({ info, active, onMouseOver, onMouseOut }: MenuItemProps & {
+    onMouseOver: Function
+    onMouseOut: Function
+}) {
     return (
-        <li className={`Nav-item ${active ? 'is-active' : ''}`}>
+        <li onMouseOver={(e) => {
+            onMouseOver(e.target.offsetLeft)
+            console.log(e.target.offsetLeft);
+
+        }} onMouseOut={() => {
+            onMouseOut()
+        }} className={`Nav-item ${active ? 'is-active' : ''}`}>
             {
-                !info.submenu ? <a href={info.path}>{info.name}</a>
-                    : <Submenu info={info} />
+                !info.submenu ? <a onMouseOver={(e) => {
+                    onMouseOver(e.target.offsetLeft)
+                }} href={info.path}>{info.name}</a>
+                    : <Submenu onMouseOver={onMouseOver} info={info} />
             }
         </li>
     )
 }
 
 function Submenu({
-    info
-}: { info: Menu }) {
-    return <a href={info.submenu ? '' : info.path} className="h-full ">
-        <div div className="group h-full ">
-            <button aria-haspopup="true" aria-controls="menu" class="h-full  outline-none focus:outline-none px-3  rounded-sm flex items-center min-w-32">
-                <span class="pr-1 uppercase font-600 flex-1">{info.name}</span>
+    info,
+    onMouseOver
+}: { info: Menu, onMouseOver: Function }) {
+    return <a href={info.submenu ? '' : info.path} className="h-full w-full">
+        <div div className="group h-full  w-full" onMouseOver={(e) => {
+            onMouseOver(e.target.offsetLeft)
+        }} >
+            <button aria-haspopup="true" aria-controls="menu" class="pointer-events-none h-full w-full outline-none focus:outline-none rounded-sm flex justify-center items-center min-w-32">
+                <span class="pr-1 uppercase font-600">{info.name}</span>
                 <span>
                     <svg
                         class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"

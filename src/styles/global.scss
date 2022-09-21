@@ -92,3 +92,38 @@ a {
     content: none !important;
   }
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color); 
+  border-radius: 8px;
+  transition: all .3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7141ffc0;
+}
+
+.grand-parent {
+  position:relative;
+}
+.parent {
+  overflow:hidden;
+}
+.child {
+  position:absolute; 
+  top:-10px; 
+  left:-5px;
+}
