@@ -45,7 +45,7 @@
 // Base
 body {
   @apply font-sans;
-  // background-color: #141618;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
