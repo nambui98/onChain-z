@@ -22,14 +22,18 @@ export default function Menu({ currentPath }: Props) {
     const index = menu_data.findIndex(object => {
       return object.path === currentPath;
     });
-    let offsetInit = (document.querySelectorAll('.Nav-item')[index] as any).offsetLeft;
-    setOffset(offsetInit)
-    refIndicator.current.style.left = 'calc(85px + ' + offsetInit + 'px)'
+    if (index < 0) {
+      refIndicator.current.style.display = 'none';
+    } else {
+      let offsetInit = (document.querySelectorAll('.Nav-item')[index] as any).offsetLeft;
+      setOffset(offsetInit)
+      refIndicator.current.style.left = 'calc(85px + ' + offsetInit + 'px)'
+    }
   }
 
   return (
-    <div className="h-full flex items-center">
-      <ul className="PrimaryNav with-indicator uppercase font-600 z-10">
+    <div className="h-full flex items-center z-10">
+      <ul className="PrimaryNav with-indicator uppercase font-600 z-2">
         {/* // TODO: Nam: cần bóc một NavItem ra làm component */}
         {
           menu_data.map((menu, index) => {
@@ -42,7 +46,7 @@ export default function Menu({ currentPath }: Props) {
           })
         }
       </ul>
-      <span ref={refIndicator} className={`h-2px w-34px bg-primary absolute bottom-0 `} style={{
+      <span ref={refIndicator} className={`h-2px w-34px bg-primary absolute bottom-0   z-2`} style={{
         transition: 'all .3s',
         transform: 'translateX(-50%)',
       }}></span>

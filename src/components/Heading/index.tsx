@@ -7,7 +7,7 @@ type Props = CommonProp & {
 export function Heading1({ text, className }: Props) {
   return (
     <div className={`flex items-baseline ${className ?? ''}`}>
-      <h2 className="text-32px font-bold text-grey ml-8px ">{text}</h2>
+      <h2 className="text-32px sm-max:text-2xl font-bold text-grey ml-8px ">{text}</h2>
     </div>
   )
 }

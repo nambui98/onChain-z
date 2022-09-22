@@ -21,13 +21,13 @@ export default function HotNew({ articles, className }: ArticleListProp) {
   if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>
 
   return (
-    <div className={`HotNews relative ${className ?? ''}`}>
+    <div className={`HotNews sm-max:px-4 relative ${className ?? ''}`}>
       <Heading2 text="Tin tức nổi bật" />
 
       <Flicking className="mt-6" gap={20} bound={true} infinite={true} infiniteThreshold={50} plugins={plugins}>
         {list.map((r, index) => (
-          <div className="flicking-panel w-1/3 px-3" key={index}>
-            <Card article={r} />
+          <div className="flicking-panel w-1/3 sm-max:w-280px px-3" key={index}>
+            <Card className='sm-max:h-157px' article={r} />
           </div>
         ))}
         {/* {panels.map(index => <Card className="flicking-panel w-500px" key={index}>{index + 1}</Card>)} */}

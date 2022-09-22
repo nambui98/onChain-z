@@ -57,6 +57,13 @@ export default defineConfig({
         grey: '#151515',
         grey80: '#646D84',
         grey60: '#B0B5C1',
+      },
+      gridTemplateColumns: {
+        'main': '448px 256px auto'
+      },
+      gridTemplateRows: {
+        'main': '180px 180px',
+        'mainMobile': '276px 180px auto'
       }
     },
   },

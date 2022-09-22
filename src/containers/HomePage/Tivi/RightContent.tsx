@@ -22,7 +22,7 @@ export default function RightContent({ articles }: ArticleListProp) {
   const list = articles
 
   return (
-    <div className="RightContent Widget w-2/5 flex flex-col gap-y-6">
+    <div className="RightContent Widget w-2/5 flex flex-col gap-y-6 sm-max:w-full sm-max:mt-4">
       {list.map((r, idx) => (
         <RightWidgetListItem article={r} />
       ))}

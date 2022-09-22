@@ -13,6 +13,10 @@ const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List a
 import PostService from '~/services/PostService'
 import Detail from '~/containers/ArticleDetails/Detail'
 import Breadcrumbs from '~/components/Breadcrumbs'
+import RelatedPosts from '~/containers/ArticleDetails/RelatedPosts'
+import LeftDetail from '~/containers/ArticleDetails/LeftDetail'
+import RightDetail from '~/containers/ArticleDetails/RightDetail'
+import { Account } from '~/components/Account'
 
 const postService = new PostService(articles)
 const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
@@ -36,9 +40,19 @@ const links = [
 
 <BaseSEOLayout title={description} description={description} className="HomePage ">
     
-    <main class="HomePage wrapper mt4 mb4 z-1 relative">
+    <main class="HomePage wrapper mt4 mb4 z-2 relative">
         <Breadcrumbs links={links}/>
-        <Detail article={highlightArticles[0]} articles={highlightArticles}/>
+        <!-- <Detail article={highlightArticles[0]} articles={highlightArticles}/> -->
+        <div class="ArticleDetails sm-max:px-4">
+            <div class="flex  border-b-1 border-gray40 pb-6 gap-8">
+            <div class="w-5/7 sm-max:w-full">
+                <Account client:load article={highlightArticles[0]} articles={articles} />
+                <LeftDetail article={highlightArticles[0]} />
+        </div>
+                <RightDetail article={highlightArticles[0]} articles={highlightArticles} className="w-2/7 sm-max:hidden" />
+            </div>
+            <RelatedPosts className="mt-10" articles={highlightArticles.slice(0, 3)} />
+        </div>
     </main>
 
 </BaseSEOLayout>

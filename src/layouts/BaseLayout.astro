@@ -33,12 +33,12 @@ const pathname = Astro.url.pathname
 
   <body class="BaseLayout relative">
     <nav class="bg-transparent relative z-2">
-      <div class="max-w-1120px relative md:mx-auto sm-max:mx-4 flex justify-between items-center">
+      <div class="max-w-1120px relative z-2 md:mx-auto sm-max:mx-4 flex justify-between items-center">
         <a href="/" >
-          <img src="/assets/images/logo.svg" class="max-w-43px"  alt="" />
+          <img src="/assets/images/logo.svg" class="max-w-43px  relative z-2"  alt="" />
         </a>
 
-        <AdsInline className="sm-max:w-full sm-max:ml-9 sm-max:my-2 sm-max:h-14">Top Ads here</AdsInline>
+        <AdsInline className="sm-max:w-full sm-max:ml-9 sm-max:my-2 sm-max:h-14  relative z-2">Top Ads here</AdsInline>
       </div>
       <!-- <div class="relative"> -->
 
@@ -54,7 +54,7 @@ const pathname = Astro.url.pathname
     <section class={`${className} md:container max-w-1120px md:mx-auto`}>
       <slot />
     </section>
-    <Footer className="mt-20 z-2 relative"/>
+    <Footer className="mt-20 z-2 relative sm-max:mt-10"/>
     
   </body>
 </html>

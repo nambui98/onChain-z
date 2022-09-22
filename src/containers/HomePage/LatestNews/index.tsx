@@ -22,20 +22,20 @@ const CardRelatedList = () => {
 
 export default function LatestNews({ articles, className }: ArticleListProp) {
   return (
-    <div className={`LatestNews ${className ?? ''}`}>
+    <div className={`LatestNews sm-max:px-4 ${className ?? ''}`}>
       <Heading2 text="Tin tức MỚI NHẤT" />
       <div className="flex gap-x-8 mt-6">
-        <div className="w-1/3">
+        <div className="w-1/3 sm-max:w-full">
           <Card article={articles[0]} isNotShowAuthor={true} />
           <Separator />
           <CardRelatedList />
         </div>
-        <div className="w-1/3">
+        <div className="w-1/3 sm-max:hidden">
           <Card article={articles[0]} isNotShowAuthor={true} />
           <Separator />
           <CardRelatedList />
         </div>
-        <div className="w-1/3">
+        <div className="w-1/3 sm-max:hidden">
           <Card article={articles[0]} isNotShowAuthor={true} />
           <Separator />
           <CardRelatedList />

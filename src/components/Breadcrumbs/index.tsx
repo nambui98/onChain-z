@@ -7,7 +7,7 @@ export default function Breadcrumbs({ links }) {
         {links.map((link, index) => {
           return (
             <>
-              <li class="Breadcrumb">
+              <li class="Breadcrumb text-sm text-grey80 font-semibold hover:text-primary">
                 {link.href ? (
                   <a key={index} color="inherit" href={link.href || ''}>
                     {link.name}
@@ -18,7 +18,7 @@ export default function Breadcrumbs({ links }) {
               </li>
               {index !== links.length - 1 && (
                 <li aria-hidden="true" class="">
-                  /
+                  <img src="/assets/icons/arrow-right2.svg" alt="" />
                 </li>
               )}
             </>

@@ -10,10 +10,10 @@ export default function RelatedPosts({ className, articles }: ArticleListProp) {
         <div className={`RelatedPosts relative ${className ?? ''}`}>
             <Heading2 text="BÀI VIẾT LIÊN QUAN" />
 
-            <div className="mt-6 flex" >
+            <div className="mt-6 flex relative overflow-x-auto" >
                 {list.map((r, index) => (
-                    <div className="flicking-panel w-1/3 px-3" key={index}>
-                        <Card article={r} />
+                    <div className=" w-1/3 mx-3 sm-max:min-w-17.5rem" key={index}>
+                        <Card classNameImage="  sm-max:w-17.5rem" article={r} />
                     </div>
                 ))}
             </div>

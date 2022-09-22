@@ -12,7 +12,7 @@ export default function Card({ article, isNotShowAuthor, className }: CardProps)
         className="Card group transition duration-300 ease-out cursor-pointer  bg-no-repeat bg-cover relative rounded-2xl"
       >
         <img className={`rounded-2xl w-full h-198px object-cover ${className}`} src={article?.image} alt={article?.title?.substring(0, 20)} />
-        <p className="mt-4 text-base  bottom-1.5rem  inset-x-1.5rem text-grey font-semibold transition duration-300 ease-out group-hover:text-primary">{article?.title}</p>
+        <p className="mt-4 text-base sm-max:text-sm sm-max:mt-2 bottom-1.5rem  inset-x-1.5rem text-grey font-semibold transition duration-300 ease-out group-hover:text-primary">{article?.title}</p>
 
         {author && !isNotShowAuthor ? (
           <div className="flex items-center mt-4">
