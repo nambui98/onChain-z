@@ -5,6 +5,7 @@ import MainHead from '../components/Site/MainHead.astro'
 import Footer from '../components/Footer/index.jsx'
 import Nav from '../components/Nav/index.jsx'
 import Menu from '../components/Menu/index.jsx'
+import MenuMobile from '../components/Menu/MenuMobile.jsx'
 
 // apply windicss for the site
 import 'virtual:windi.css'
@@ -32,25 +33,26 @@ const pathname = Astro.url.pathname
   </head>
 
   <body class="BaseLayout relative">
-    <nav class="bg-transparent relative z-2">
+    <nav class="bg-transparent relative sm-max:static  z-2">
       <div class="max-w-1120px relative z-2 md:mx-auto sm-max:mx-4 flex justify-between items-center">
         <a href="/" >
           <img src="/assets/images/logo.svg" class="max-w-43px  relative z-2"  alt="" />
         </a>
 
         <AdsInline className="sm-max:w-full sm-max:ml-9 sm-max:my-2 sm-max:h-14  relative z-2">Top Ads here</AdsInline>
+        <div  class="pl-1.375rem cursor-pointer hidden sm-max:block">
+          <MenuMobile currentPath={pathname} client:load/>
+        </div>
       </div>
       <!-- <div class="relative"> -->
 
-        <div class={`h-62px  border-1 border-primary border-opacity-20 border-r-0 border-l-0 overflow-x-auto overflow-y-hidden`}>
-          <div class="h-full max-w-1120px  min-w-1120px  sm-max:max-w-920px sm-max:min-w-920px md:mx-auto">
+        <div class={`h-62px sm-max:h-0  border-1 border-primary border-opacity-20 sm-max:border-b-0 border-r-0 border-l-0 overflow-x-auto overflow-y-hidden`}>
+          <div class="h-full  sm-max:hidden max-w-1120px  min-w-1120px  sm-max:max-w-920px sm-max:min-w-920px md:mx-auto">
             <Menu currentPath={pathname} client:load/>
-             <!-- <div class="absolute top-10">aaa</div> -->
+           
           </div>
         </div>
-      <!-- </div> -->
     </nav>
-    <!-- <Nav client:load pathname={pathname}/> -->
     <section class={`${className} md:container max-w-1120px md:mx-auto`}>
       <slot />
     </section>

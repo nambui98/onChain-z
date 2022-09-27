@@ -40,12 +40,13 @@ const links = [
 
 <BaseSEOLayout title={description} description={description} className="HomePage ">
     
-    <main class="HomePage wrapper mt4 mb4 z-2 relative">
+    <main class="HomePage wrapper mt4 mb4 z-2 relative sm-max:static">
         <Breadcrumbs links={links}/>
         <!-- <Detail article={highlightArticles[0]} articles={highlightArticles}/> -->
         <div class="ArticleDetails sm-max:px-4">
             <div class="flex  border-b-1 border-gray40 pb-6 gap-8">
             <div class="w-5/7 sm-max:w-full">
+                  {/* // TODO: Thach: em cần data tác giả của bài viết chuyền vào Account*/ }
                 <Account client:load article={highlightArticles[0]} articles={articles} />
                 <LeftDetail article={highlightArticles[0]} />
         </div>

@@ -6,6 +6,7 @@ import Tag from "~/components/Tag";
 import { ArticleProp, CommonProp } from "~/types/ArticleComponentProps.type"
 
 function createMarkup() {
+    {/* // TODO: Thach: em cần data dạng text html cho bài viết*/ }
     return {
         __html: `<div class="news-item detail content_text" data-id="/news/blokcheyn/12716539/" data-image="https://cnews24.ru/uploads/7ae/7ae963900aba6143dcb027f42aeda32794350e75_80.jpg" data-title="How The Incentives Of Proof-Of-Work Are More Fair Than Proof-Of-Stake">
             <img src="https://cnews24.ru/uploads/7ae/7ae963900aba6143dcb027f42aeda32794350e75_80.jpg" />
@@ -55,6 +56,9 @@ function createMarkup() {
                 </div>` };
 }
 export default function LeftDetail({ className, article }: ArticleProp) {
+    {/* // TODO: Thach: em cần data bài viết article*/ }
+    {/* // TODO: Thach: em cần data tag cho bài viết*/ }
+
     const tags = [
         { name: 'tin tức' },
         { name: 'blockchain' },

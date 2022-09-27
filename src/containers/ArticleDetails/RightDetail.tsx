@@ -4,6 +4,8 @@ import { ArticleLDetailProp, ArticleListProp, ArticleProp, CommonProp } from "~/
 
 
 export default function RightDetail({ className, articles, article }: ArticleLDetailProp) {
+    {/* // TODO: Thach: em cần data tác giả và bài viết cùng tác giả*/ }
+
     return (
         <div className={`${className ?? ''}`}>
             <AccountDetailArticle article={article} />

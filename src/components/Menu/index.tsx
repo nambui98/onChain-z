@@ -60,6 +60,7 @@ export default function Menu({ currentPath }: Props) {
             }} />
             <button type="button" className="absolute right-0 top-1/2 transform -translate-y-1/2" onClick={() => { }}>
               <img onClick={() => {
+                {/* // TODO: Thach: em cần api search bài viết param: name*/ }
                 refInput?.current?.focus();
                 setActiveSearch(!activeSearch);
               }} className="ml-auto sm-max:mr-4 w-24px h-24px cursor-pointer" src={activeSearch ? "/assets/icons/search-normal-active.png" : "/assets/icons/search-normal.png"} alt="" srcset={activeSearch ? "/assets/icons/search-normal-active.png" : "/assets/icons/search-normal.png"} />

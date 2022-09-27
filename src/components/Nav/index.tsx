@@ -12,7 +12,7 @@ function Nav({ pathname }: { pathname: string }) {
 
         <AdsInline>Top Ads here</AdsInline>
       </div>
-      <div className={`h-62px border-1 border-primary border-opacity-20 border-r-0 border-l-0`}>
+      <div className={`h-62px sm-max:hidden border-1 border-primary border-opacity-20 border-r-0 border-l-0`}>
         <div className="h-full max-w-1120px md:mx-auto">
           <Menu currentPath={pathname} />
         </div>

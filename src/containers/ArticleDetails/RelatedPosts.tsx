@@ -4,6 +4,7 @@ import { Heading2 } from "~/components/Heading"
 import { ArticleListProp } from "~/types/ArticleComponentProps.type"
 
 export default function RelatedPosts({ className, articles }: ArticleListProp) {
+    {/* // TODO: Thach: em cần data bài viết liên quan của bài viết*/ }
     const list = articles
     if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>
     return (

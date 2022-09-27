@@ -16,6 +16,7 @@ export default function HotNew({ articles, className }: ArticleListProp) {
   if (typeof window !== 'undefined') {
     plugins = [new AutoPlay({ duration: 2000, direction: 'NEXT', stopOnHover: false }), new Arrow({ parentEl: document.body })]
   }
+  {/* // TODO: Thach: em cần data post nổi bật */ }
 
   const list = articles
   if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>

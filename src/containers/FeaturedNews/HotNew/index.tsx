@@ -5,6 +5,7 @@ import { Heading1 } from '~/components/Heading'
 import { ArticleListProp } from '~/types/ArticleComponentProps.type'
 
 export default function HotNew({ articles, className }: ArticleListProp) {
+  {/* // TODO: Thach: em cần data post nổi bật*/ }
 
   const list = articles
   if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>

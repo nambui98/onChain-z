@@ -9,6 +9,8 @@ import CardLarge from '~/components/CardLarge'
 import { ButtonOutline, ButtonPrimary } from '~/components/Button'
 
 export default function InDepthTopics({ articles, className }: ArticleListProp) {
+
+  {/* // TODO: Thach: em cần data post chủ đề chuyên sâu và panigation*/ }
   const list = articles
   if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>
 
@@ -25,19 +27,20 @@ export default function InDepthTopics({ articles, className }: ArticleListProp) 
             ))}
           </div>
           <div className="flex gap-2 justify-center">
-            <ButtonPrimary className="w-40px h-40px rounded-lg font-normal" onClick={() => {}}>
+            {/* // TODO: Thach: panigation*/}
+            <ButtonPrimary className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
               1
             </ButtonPrimary>
-            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => {}}>
+            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
               2
             </ButtonOutline>
-            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => {}}>
+            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
               3
             </ButtonOutline>
-            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => {}}>
+            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
               ...
             </ButtonOutline>
-            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => {}}>
+            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
               50
             </ButtonOutline>
           </div>
@@ -58,7 +61,8 @@ export default function InDepthTopics({ articles, className }: ArticleListProp) 
                   type="email"
                   className="h-64px text-base font-semibold  w-full rounded-[32px] placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
                 />
-                <ButtonPrimary className="absolute" onClick={() => {}}>
+                {/* // TODO: Thach: em cần api subscribe param: email */}
+                <ButtonPrimary className="absolute" onClick={() => { }}>
                   Subscribe
                 </ButtonPrimary>
               </label>
