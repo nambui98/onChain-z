@@ -7,15 +7,22 @@ export default function MenuItem({ info, active, onMouseOver, onMouseOut }: Menu
 }) {
     return (
         <li onMouseOver={(e) => {
-            onMouseOver(e.target.offsetLeft)
-            console.log(e.target.offsetLeft);
+            if (e.target.offsetLeft > 100) {
+
+                onMouseOver(e.target.offsetLeft)
+            } else {
+                onMouseOver(e.target.offsetParent.offsetLeft)
+            }
+            console.log(e);
 
         }} onMouseOut={() => {
             onMouseOut()
         }} className={`Nav-item ${active ? 'is-active' : ''}`}>
             {
                 !info.submenu ? <a onMouseOver={(e) => {
-                    onMouseOver(e.target.offsetLeft)
+                    // e.preventDefault();
+                    onMouseOver(e.target.offsetParent.offsetLeft)
+
                 }} href={info.path}>{info.name}</a>
                     : <Submenu onMouseOver={onMouseOver} info={info} />
             }
@@ -29,7 +36,7 @@ function Submenu({
 }: { info: Menu, onMouseOver: Function }) {
     return <a href={info.submenu ? '' : info.path} className="h-full w-full">
         <div div className="group h-full  w-full" onMouseOver={(e) => {
-            onMouseOver(e.target.offsetLeft)
+            // onMouseOver(e.target.offsetLeft)
         }} >
             <button aria-haspopup="true" aria-controls="menu" class="pointer-events-none h-full w-full outline-none focus:outline-none rounded-sm flex justify-center items-center min-w-32">
                 <span class="pr-1 uppercase font-600">{info.name}</span>

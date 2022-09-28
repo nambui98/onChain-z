@@ -15,11 +15,11 @@ export const menu_data: Menu[] = [
         submenu: [
             {
                 name: 'Blockchain là gì?',
-                path: '/',
+                path: '/123',
             },
             {
                 name: 'Web3 là gì?',
-                path: '/',
+                path: '/333',
             }
         ]
     },

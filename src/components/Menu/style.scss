@@ -55,6 +55,18 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
     z-index: 0;
     flex:1;
     .Nav-item {
+           li > ul {
+        transform: translateX(100%) scale(0);
+      }
+      li:hover > ul {
+        transform: translateX(101%) scale(1);
+      }
+      li > button svg {
+        transform: rotate(-90deg);
+      }
+      li:hover > button svg {
+        transform: rotate(-270deg);
+      }
         &:last-child {
             // &:before, &:after {
             //     content: '';
@@ -135,15 +147,15 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
 %cf:after {
     clear: both;
 }
-   li > ul {
-        transform: translateX(100%) scale(0);
-      }
-      li:hover > ul {
-        transform: translateX(101%) scale(1);
-      }
-      li > button svg {
-        transform: rotate(-90deg);
-      }
-      li:hover > button svg {
-        transform: rotate(-270deg);
-      }
+
+.groupDropdown{
+    &:hover img{
+        transform: rotate(-180deg);
+    }
+    &:hover .submenu{
+        // min-height: 50px;
+        height: max-content;
+        // visibility: visible;
+        opacity: 1;
+    }
+}
