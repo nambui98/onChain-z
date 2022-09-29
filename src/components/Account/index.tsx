@@ -36,16 +36,18 @@ export function Account({ article, articles }: ArticleLDetailProp) {
 }
 export function AccountDetailArticle({ article }: ArticleProp) {
     return (
-        <div className="flex items-start justify-between bg-gray40 p-4 rounded-2xl">
+        <div className="flex items-start justify-between bg-gray40 p-4 md:p-4 sm:p-3 rounded-2xl flex-wrap">
             <div className="flex flex-col justify-start">
-                <img className="rounded-full w-64px h-64px object-cover" src={article.author?.image ?? article.image} alt={article.author?.name} />
-                <span className="text-base text-grey80 font-semibold mt-2">{article.author?.name ?? "Nguyễn Trung Quân"}</span>
+                <img className="rounded-full w-64px h-64px md:w-64px md:h-64px sm:w-36px sm:h-36px object-cover" src={article.author?.image ?? article.image} alt={article.author?.name} />
+                <span className="text-base md:text-base text-grey80 font-semibold mt-2 sm:text-sm">{article.author?.name ?? "Nguyễn Trung Quân"}</span>
+
             </div>
             <div className="flex flex-col justify-start ml-2" >
-                <ButtonOutlinePrimary onClick={() => { }} >
+                <ButtonOutlinePrimary className="md:w-108px sm:w-80px md:text-base sm:text-sm" onClick={() => { }} >
                     Theo dõi
                 </ButtonOutlinePrimary>
             </div>
+
         </div>
     )
 }

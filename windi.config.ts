@@ -59,7 +59,8 @@ export default defineConfig({
         grey60: '#B0B5C1',
       },
       gridTemplateColumns: {
-        'main': '448px 256px auto'
+        'main': 'minmax(300px, 448px) minmax(150px,256px) minmax(200px,352px)',
+        'main-sm': 'minmax(0, 1fr)',
       },
       gridTemplateRows: {
         'main': '180px 180px',

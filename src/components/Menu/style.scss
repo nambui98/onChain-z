@@ -149,13 +149,13 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
 }
 
 .groupDropdown{
-    &:hover img{
-        transform: rotate(-180deg);
-    }
-    &:hover .submenu{
-        // min-height: 50px;
-        height: max-content;
-        // visibility: visible;
-        opacity: 1;
-    }
+    // &:hover img{
+    //     transform: rotate(-180deg);
+    // }
+    // &:hover .submenu{
+    //     // min-height: 50px;
+    //     height: max-content;
+    //     // visibility: visible;
+    //     opacity: 1;
+    // }
 }

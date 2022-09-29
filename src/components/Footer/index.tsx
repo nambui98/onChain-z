@@ -17,7 +17,7 @@ const ShortLink = ({ href, children }: CommonLinkProp) => {
 function Footer(props: CommonProp) {
   return (
     <footer className={'AppFooter sm-max:px-4 ' + props.className ?? ''}>
-      <div className="md:container max-w-1120px md:mx-auto flex justify-between sm-max:flex-col">
+      <div className="md:container max-w-1120px flex justify-between sm-max:flex-col lg:m-auto sm:mx-3">
         <div className="w-3/8 sm-max:w-full">
           <a href="/" className="flex items-center text-28px font-bold text-grey">
             <img src="/assets/images/logo.svg" className="mr-4px" alt="site logo" />
