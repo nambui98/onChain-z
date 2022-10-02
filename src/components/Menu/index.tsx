@@ -34,7 +34,8 @@ export default function Menu({ currentPath }: Props) {
   return (
     <div className="h-full flex items-center z-10">
       <ul className="PrimaryNav with-indicator uppercase font-600 z-2">
-        {/* // TODO: Nam: cần bóc một NavItem ra làm component */}
+        {/* // TODO: Nam: cần bóc một NavItem ra làm component
+            // * * Success*/}
         {
           menu_data.map((menu, index) => {
             return <MenuItem onMouseOut={() => {

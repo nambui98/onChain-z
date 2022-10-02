@@ -11,7 +11,7 @@ export const menu_data: Menu[] = [
     },
     {
         name: 'Kiến thức',
-        path: '/',
+        path: '/knowledge',
         submenu: [
             {
                 name: 'Blockchain là gì?',
@@ -25,6 +25,6 @@ export const menu_data: Menu[] = [
     },
     {
         name: 'Chủ đề chuyên sâu',
-        path: '/'
+        path: '/in-depth-topics'
     },
 ]

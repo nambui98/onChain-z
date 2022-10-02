@@ -13,7 +13,7 @@ export default function Detail({ article, articles }: ArticleLDetailProp) {
                 <LeftDetail article={article} className="w-5/7 sm-max:w-full" />
                 <RightDetail article={article} articles={articles} className="w-2/7 sm-max:hidden" />
             </div>
-            <RelatedPosts className="mt-10" articles={articles.slice(0, 3)} />
+            <RelatedPosts className="mt-10" articles={articles.slice(0, 5)} />
         </div>
     )
 }

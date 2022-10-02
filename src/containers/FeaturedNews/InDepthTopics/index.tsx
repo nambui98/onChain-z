@@ -7,6 +7,7 @@ import { AdsFullWidth, AdsInline } from '~/components/Ads'
 import { Heading1 } from '~/components/Heading'
 import CardLarge from '~/components/CardLarge'
 import { ButtonOutline, ButtonPrimary } from '~/components/Button'
+import Pacing from '~/components/Pacing'
 
 export default function InDepthTopics({ articles, className }: ArticleListProp) {
 
@@ -18,7 +19,7 @@ export default function InDepthTopics({ articles, className }: ArticleListProp) 
     <div className={`HotNews relative ${className ?? ''}`}>
       <Heading1 text="chủ đề chuyên sâu" className="justify-center uppercase" />
       <div className="flex gap-8">
-        <div className="mt-10 w-3/5 flex flex-col">
+        <div className="mt-10 flex-1 flex flex-col">
           <div>
             {list.slice(0, 4).map((r, index) => (
               <div className="px-3" key={index}>
@@ -26,27 +27,10 @@ export default function InDepthTopics({ articles, className }: ArticleListProp) 
               </div>
             ))}
           </div>
-          <div className="flex gap-2 justify-center">
-            {/* // TODO: Thach: panigation*/}
-            <ButtonPrimary className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
-              1
-            </ButtonPrimary>
-            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
-              2
-            </ButtonOutline>
-            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
-              3
-            </ButtonOutline>
-            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
-              ...
-            </ButtonOutline>
-            <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
-              50
-            </ButtonOutline>
-          </div>
+          <Pacing />
         </div>
-        <div className="mt-10  w-352px ">
-          <AdsInline className="!p-0 h-240px flex items-center justify-center">Three ads here</AdsInline>
+        <div className="mt-10 w-352px sm:w-200px md:w-352px">
+          <AdsInline className="!p-0 h-240px flex items-center justify-center !w-full ">Three ads here</AdsInline>
           <div
             className={`Subscribe mt-6 p-x-6 h-196px bg-no-repeat bg-center bg-cover flex justify-center items-center flex-col`}
             style={{

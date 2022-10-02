@@ -24,7 +24,7 @@ export default function CardLarge({ article, isNotShowAuthor, isNotShowDescripti
           <></>
         )}
       </div>
-      <img className={`rounded-2xl w-full w-256px object-cover ${classNameImage ?? ''}`} src={article?.image} alt={article?.title?.substring(0, 20)} />
+      <img className={`rounded-2xl w-full w-256px object-cover  ml-8 ${classNameImage ?? ''}`} src={article?.image} alt={article?.title?.substring(0, 20)} />
 
     </div>
   )
