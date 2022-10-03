@@ -12,7 +12,7 @@ export default function Subscribe({ className }: CommonProp) {
             <form className="sm-max:w-full">
                 <label class="relative block">
 
-                    <input placeholder="Your email adress" type="email" className="h-3.875rem text-base font-semibold  w-448px md:w-448px sm:w-290px sm-max:w-full rounded-[32px] px-6 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500" />
+                    <input placeholder="Your email address" type="email" className="h-3.875rem text-base font-semibold  w-448px md:w-448px sm:w-290px sm-max:w-full rounded-[32px] px-6 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500" />
                     {/* // TODO: Thach: em cần api subscribe param: email*/}
                     <ButtonPrimary className="absolute" onClick={() => { }}>
                         Subscribe

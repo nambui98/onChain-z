@@ -24,6 +24,7 @@ const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homeP
 
 const title = AppConfig.siteTitle
 const description = AppConfig.siteSlogan
+const url =Astro.url
 ---
 
 <BaseSEOLayout title={description} description={description} className="HomePage ">
@@ -31,7 +32,7 @@ const description = AppConfig.siteSlogan
     <main class="FeaturedNew wrapper z-1 relative lg:m-0 sm:mx-3">
         <HotNew articles={highlightArticles} className="mt-10 sm-max:mt-6" />
         <ButtonOutlinePrimary onClick={()=>{}} className="mx-auto mt-6 hidden sm-max:block">Xem Thêm</ButtonOutlinePrimary>
-        <InDepthTopics articles={highlightArticles} className="mt-10 sm-max:mt-6 sm-max:hidden" />
+        <InDepthTopics url={url} articles={highlightArticles} className="mt-10 sm-max:mt-6 sm-max:hidden" />
     </main>
 
 </BaseSEOLayout>
