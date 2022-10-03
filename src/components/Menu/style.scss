@@ -1,7 +1,7 @@
-@use '../../styles/variables' as var;
+@use '../../styles/variables'as var;
 $menu-items: 4;
 $background-color: var.$black-color;
-$indicator-color:  var.$primary-color;
+$indicator-color: var.$primary-color;
 $transition-speed: 0.3s;
 $width: calc(100 / $menu-items) * 1%; // makes each item the right size
 $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
@@ -20,11 +20,13 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
     padding: 0;
     height: 100%;
     width: 170px; //dynamic width
-   
+
     cursor: pointer;
-    &:hover > a {
-    color: $indicator-color;
-        }
+
+    &:hover>a {
+        color: $indicator-color;
+    }
+
     &:first-child {
         border-radius: 3px 0 0 3px;
     }
@@ -33,7 +35,7 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
         border-radius: 0 3px 3px 0;
     }
 
-    &.is-active > a {
+    &.is-active>a {
         color: $indicator-color;
     }
 
@@ -44,30 +46,36 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
         transition: all $transition-speed;
         width: 100%;
         height: 100%;
-         display: flex;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
 .with-indicator {
     // position: relative;// the menu is "relative" to the absolute position last-child pseudo elements.
     z-index: 0;
-    flex:1;
+    flex: 1;
+
     .Nav-item {
-           li > ul {
-        transform: translateX(100%) scale(0);
-      }
-      li:hover > ul {
-        transform: translateX(101%) scale(1);
-      }
-      li > button svg {
-        transform: rotate(-90deg);
-      }
-      li:hover > button svg {
-        transform: rotate(-270deg);
-      }
+        li>ul {
+            transform: translateX(100%) scale(0);
+        }
+
+        li:hover>ul {
+            transform: translateX(101%) scale(1);
+        }
+
+        li>button svg {
+            transform: rotate(-90deg);
+        }
+
+        li:hover>button svg {
+            transform: rotate(-270deg);
+        }
+
         &:last-child {
+
             // &:before, &:after {
             //     content: '';
             //     display: block;
@@ -75,16 +83,16 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
             //     pointer-events: none;
             //     transition: left #{$transition-speed} ease;
             // }
-    //          &:before {
-    //     border: 2px solid $indicator-color;
-    //     // border-color: $indicator-color;
-    //     width: 50px;
-    //     height: 0;
-    //     top: 0;
-    //     left: (($width/2));
-    //     transform: translateX(-25px);
-    //     margin-left: -3px;
-    //   }
+            //          &:before {
+            //     border: 2px solid $indicator-color;
+            //     // border-color: $indicator-color;
+            //     width: 50px;
+            //     height: 0;
+            //     top: 0;
+            //     left: (($width/2));
+            //     transform: translateX(-25px);
+            //     margin-left: -3px;
+            //   }
             &:after {
                 background: $indicator-color;
                 // border: 2px solid black;
@@ -97,7 +105,7 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
                 // display: flex;
                 // justify-content: center;
                 // align-items: center;
-                  transform: translateX(calc($width + 55px));
+                transform: translateX(calc($width + 55px));
                 // left: ($width * 3) !important;
             }
         }
@@ -144,11 +152,12 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
     content: " ";
     display: table;
 }
+
 %cf:after {
     clear: both;
 }
 
-.groupDropdown{
+.groupDropdown {
     // &:hover img{
     //     transform: rotate(-180deg);
     // }
@@ -158,4 +167,18 @@ $menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
     //     // visibility: visible;
     //     opacity: 1;
     // }
+}
+
+.animationPlace {
+    &::placeholder {
+        transform: translateY(-50px);
+        transition: transform .5s ease;
+        transition-delay: .3s;
+    }
+    &.active {
+        &::placeholder {
+            transform: translateY(0px);
+        }
+    }
+
 }
