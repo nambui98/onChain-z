@@ -1,0 +1,27 @@
+---
+import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
+const title = 'All articles (PLACEHOLDER)'
+
+const list = (await Astro.glob('./**/*.md'))
+  //
+  .map((r) => r.frontmatter)
+---
+
+<SimplePageLayout title={title}>
+  <div class="grid">
+    {
+      list.map((r) => (
+        <a href={`/authors/${r.title.toLowerCase()}`}>
+          {r.title} <small>{r.summary}</small>
+        </a>
+      ))
+    }
+  </div>
+</SimplePageLayout>
+
+<style lang="scss">
+  .grid {
+    display: grid;
+    grid-gap: 3rem;
+  }
+</style>

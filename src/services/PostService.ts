@@ -57,4 +57,13 @@ export class CategoryService {
   getAll() {
     return this.store
   }
+
+  /** Link each category with its articles */
+  linkArticles(categories: any[], articles: any[]) {
+    return categories
+      ?.filter(({ title }) => !!title)
+      ?.map((cat) => {
+        return { ...cat, items: articles.filter((r) => r.frontmatter.category === cat.uuid) }
+      })
+  }
 }
