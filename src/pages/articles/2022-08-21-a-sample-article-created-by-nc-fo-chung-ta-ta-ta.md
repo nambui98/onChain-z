@@ -1,17 +1,18 @@
 ---
 layout: ~/layouts/ArticleLayout.astro
 title: A sample article created by NC fỏ chủng tá tà ta
-image: https://images.pexels.com/photos/289225/pexels-photo-289225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 tags:
   - sample
   - test
   - rating
 draft: false
-uuid: xAYj6RlnKDlKe3mcM5d6M
+image: https://images.pexels.com/photos/289225/pexels-photo-289225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+category: JV7FdAh5uV7W4R95oRoeF
 publishDate: 2022-08-21 21:59
 updateDate: 2022-08-21 21:59
 rating: 3
 medium: true
 devto: true
+uuid: xAYj6RlnKDlKe3mcM5d6M
 ---
 OK, here is the body
