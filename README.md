@@ -21,9 +21,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## NetlifyCMS
 
-Step 1: Add `local_backend: true` in your `config.yml` file in your `admin` folder 
-Step 2: Run `npx netlify-cms-proxy-server` from the root directory of your repository, it will work on port 8081
-Step 3: Run `npm dev` as usual, and navigate to `/admin/index.html`
+Step 1: `npx netlify-cms-proxy-server` from the root directory of your repository, it will work on port 8081
+Step 2: `npm run dev` as usual, and navigate to `/admin/index.html`
 
 Hook up Netlify CMS to your website, you're basically adding a tool for content editors to make commits to your site repository without touching code or learning Git.
 RelatedPost work via UUID

@@ -1,4 +1,4 @@
-# when using the default proxy server port
+# true to enable local NetlifyCMS, when using the default proxy server port
 local_backend: true
 
 backend:
@@ -77,15 +77,29 @@ collections:
       - { label: 'Thumbnail Image', name: 'thumbnail', widget: 'image', required: false, tagname: '' }
       - { label: 'Main Image', name: 'image', widget: 'image', required: false, allow_multiple: false }
       - { label: 'Author', name: 'author', widget: list }
-      - label: 'Relation'
-        required: false
-        name: 'relation'
-        hint: link to other article
-        widget: 'relationArticle'
-        collection: 'articles'
-        display_fields: ['title', 'publishDate', 'uuid']
-        search_fields: ['title', 'summary', 'body', 'tags']
-        value_field: 'uuid'
+      - {
+          label: 'Category',
+          required: false,
+          name: 'category',
+          hint: link to other article,
+          widget: 'relationArticle',
+          collection: 'categories',
+          display_fields: ['title'],
+          search_fields: ['title', 'body', 'tags'],
+          value_field: 'uuid',
+        }
+      - {
+          label: 'Relation',
+          required: false,
+          name: 'relation',
+          hint: link to other article,
+          widget: 'relationArticle',
+          collection: 'articles',
+          display_fields: ['title', 'publishDate', 'uuid'],
+          search_fields: ['title', 'summary', 'body', 'tags'],
+          value_field: 'uuid',
+        }
+
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
       - { label: 'Update Date', name: 'updateDate', widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
       - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', required: false }
@@ -141,7 +155,7 @@ collections:
   - name: 'categories'
     label: 'Categories'
     folder: 'src/pages/categories'
-    create: true
+    create: false
     description: >
       categories of article.
     slug: '{{slug}}'
@@ -153,6 +167,7 @@ collections:
       - { label: 'Main Image', name: 'image', widget: 'image', allow_multiple: false, required: false }
       - { label: 'Tags', name: 'tags', widget: list }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'UUID', name: 'uuid', widget: uuid }
 
   - name: 'faq'
     label: 'FAQ'
