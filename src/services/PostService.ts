@@ -23,11 +23,15 @@ export default class PostService {
   constructor(store: any) {
     this.store = store.map(this.convertRecord_NetlifyCMS_Lakdak)
     // console.log(this.store[0])
+
+    // TODO: loop articles, decorate author info, relatedArticles (relation, same tag)
+    // pivot to transform to categories
+    // pivot to transform to tags
   }
 
   /** convert NetlifyCMS Article frontmatter format to our Lakdak Article plain object format */
   convertRecord_NetlifyCMS_Lakdak(na) {
-    return { url: na.url, ...na.frontmatter }
+    return { url: na.url, ...na.frontmatter, body: na.compiledContent() }
   }
 
   getAll() {
