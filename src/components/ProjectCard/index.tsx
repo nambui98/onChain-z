@@ -1,7 +1,7 @@
 import Styles from './styles.module.scss'
 
 function ProjectCard({ project }) {
-  const { frontmatter: meta } = project
+  const meta = project?.frontmatter || project
 
   return (
     <div class="box w-2/5 flex flex-col gap-y-6" style={`background-image:url(${meta.image})`}>

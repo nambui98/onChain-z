@@ -155,7 +155,7 @@ collections:
   - name: 'categories'
     label: 'Categories'
     folder: 'src/pages/categories'
-    create: false
+    create: true
     description: >
       categories of article.
     slug: '{{slug}}'

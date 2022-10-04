@@ -63,7 +63,7 @@ export class CategoryService {
     return categories
       ?.filter(({ title }) => !!title)
       ?.map((cat) => {
-        return { ...cat, items: articles.filter((r) => r.frontmatter.category === cat.uuid) }
+        return { ...cat, items: articles.filter((r) => r.category === cat.uuid) }
       })
   }
 }

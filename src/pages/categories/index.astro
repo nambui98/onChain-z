@@ -1,6 +1,7 @@
 ---
 import uniq from 'lodash/uniq'
 import { CategoryService } from '~/services/PostService'
+import PostService from '~/services/PostService'
 
 import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
 import ProjectCard from '~/components/ProjectCard/index.jsx'
@@ -12,20 +13,22 @@ const articles = (await Astro.glob('../articles/**/*.md'))
   .filter(({ frontmatter }) => !!frontmatter.publishDate)
   .sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
 
-  
+const postService = new PostService(articles)
   
 const categories = (await Astro.glob('../categories/**/*.md'))
   .filter(({ frontmatter }) => !!frontmatter.title)
 
 const categoryService = new CategoryService(categories)
-const list = categoryService.linkArticles(categoryService.getAll(), articles)
+const list = categoryService.linkArticles(categoryService.getAll(), postService.getAll())
 
 ---
 <SimplePageLayout title={title}>
   {
     list.map((r) => (
       <>
-        <Heading2 className="mt-5 mb-2" text={r.title}></Heading2>        
+        <a href={r.url}>
+          <Heading2 className="mt-5 mb-2" text={r.title}></Heading2>
+        </a>        
         <div class="grid grid-col-3">
           {r.items?.map((item) => (
             <ProjectCard project={item} />
