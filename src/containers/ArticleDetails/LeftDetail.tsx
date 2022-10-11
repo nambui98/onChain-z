@@ -14,7 +14,7 @@ export default function LeftDetail({ className, article }: ArticleProp) {
         </div>
       </div>
       <div className="mt-10 flex gap-2 sm-max:flex-wrap">
-        {article.tags.map((t) => (
+        {article.tags?.map((t) => (
           <Tag text={t} />
         ))}
         <div className="ml-auto sm-max:ml-0">
