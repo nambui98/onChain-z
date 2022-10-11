@@ -10,6 +10,7 @@ export interface Author {
 export interface Post {
   id: string
   order?: number
+  url: string
   title: string
   image: string
   author?: Author

@@ -1,5 +1,5 @@
 ---
-layout: ~/layouts/Product.astro
+layout: ~/layouts/ArticleLayout.astro
 title: Heroku troubleshooting when adding Github account to auto-deploy
 client: Self
 publishDate: 2022-08-02 00:00:00
