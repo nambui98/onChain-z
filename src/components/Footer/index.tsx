@@ -6,7 +6,7 @@ const ShortLink = ({ href, children }: CommonLinkProp) => {
   if (href) {
     return (
       <a href={href} className="text-xs font-semibold text-grey80 leading-20px mt-4 sm-max:w-1/3 sm-max:mr-4">
-        <span >{children}</span>
+        <span>{children}</span>
       </a>
     )
   }
@@ -29,11 +29,8 @@ function Footer(props: CommonProp) {
           <p className="text-sm font-semibold text-grey leading-22px sm-max:mt-6 sm-max:w-full">QUICK LINK 1</p>
           <ShortLink href="/categories">Categories</ShortLink>
           <ShortLink href="/categories/tv">TV</ShortLink>
-          {Array(2)
-            .fill(0)
-            .map((r) => (
-              <ShortLink>Short link no 001</ShortLink>
-            ))}
+          <ShortLink href="/featured-news">Category</ShortLink>
+          <ShortLink href="/article-details">Article</ShortLink>
         </div>
         <div className="flex flex-col flex-wrap sm-max:flex-row">
           <p className="text-sm font-semibold text-grey leading-22px sm-max:mt-6 sm-max:w-full">QUICK LINK 1</p>
