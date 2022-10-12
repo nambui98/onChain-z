@@ -8,7 +8,7 @@ tags:
 draft: false
 author: Lockevn
 image: https://images.pexels.com/photos/2806150/pexels-photo-2806150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: JV7FdAh5uV7W4R95oRoeF
+category: tintuc666
 publishDate: 2022-08-21 22:01
 updateDate: 2022-08-21 22:01
 medium: true

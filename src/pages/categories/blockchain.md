@@ -3,7 +3,7 @@ layout: ~/layouts/CategoryLayout.astro
 title: Blockchain
 tags:
   - pro
-uuid: 4twBTM3z1DaYcQXGKaqkR
+uuid: blockchain666
 ---
 
 Các bài viết chuyên sâu về Blockchain

@@ -17,6 +17,7 @@ updateDate: 2022-07-16 01:25
 medium: false
 devto: false
 uuid: xAYj6RlnKDlKe3mcM5667
+category: tintuc666
 description: >
   We built an unofficial Mars Rover Landing site in celebration of NASA’s
   Perseverance Rover.

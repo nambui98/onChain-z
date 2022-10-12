@@ -7,7 +7,7 @@ tags:
   - dev
   - branding
 image: https://images.unsplash.com/photo-1548391350-1a529f6ea42d?fit=crop&w=1400&h=700&q=75
-category: m4jzI0EjUW3q0pM7y-NV-
+category: blockchain666
 publishDate: 2020-03-04 00:00:00
 updateDate: 2022-08-21 23:52
 uuid: aRqze1JzXKQtwOxm_XU77

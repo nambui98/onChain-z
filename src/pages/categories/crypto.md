@@ -3,7 +3,7 @@ layout: ~/layouts/CategoryLayout.astro
 title: Crypto
 tags:
   - hot
-uuid: ltFiKjucBdhzrk22_kChP
+uuid: crypto666
 ---
 
 Các bài viết về chủ đề tiền mã hoá
