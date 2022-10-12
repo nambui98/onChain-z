@@ -1,15 +1,11 @@
 import { AccountDetailArticle } from '~/components/Account'
 import CardLarge from '~/components/CardLarge'
-import { ArticleLDetailProp, ArticleListProp, ArticleProp, CommonProp } from '~/types/ArticleComponentProps.type'
+import { ArticleDetailProp, ArticleListProp, ArticleProp, CommonProp } from '~/types/ArticleComponentProps.type'
 
-export default function RightDetail({ className, articles, article }: ArticleLDetailProp) {
-  {
-    /* // TODO: Thach: em cần data tác giả và bài viết cùng tác giả*/
-  }
-
-  return (
+export default function RightDetail({ className, article, articles, author }: ArticleDetailProp) {
+  return author ? (
     <div className={`${className ?? ''}`}>
-      <AccountDetailArticle article={article} />
+      <AccountDetailArticle author={author} />
       <p className="mt-10 text-grey80 text-sm font-semibold">Bài viết cùng tác giả</p>
       <div>
         {articles?.slice(0, 4).map((r, index) => (
@@ -19,5 +15,7 @@ export default function RightDetail({ className, articles, article }: ArticleLDe
         ))}
       </div>
     </div>
+  ) : (
+    <></>
   )
 }

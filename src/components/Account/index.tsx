@@ -1,9 +1,12 @@
 import { useState } from 'preact/hooks'
-import { ArticleLDetailProp, ArticleProp } from '~/types/ArticleComponentProps.type'
+import { ArticleDetailProp, ArticleProp } from '~/types/ArticleComponentProps.type'
 import { ButtonOutlinePrimary, ButtonPrimary } from '../Button'
-import RightDetail from '../../containers/ArticleDetails/RightDetail'
-export function Account({ article, articles }: ArticleLDetailProp) {
+import { Author } from '~/services/ContentService'
+import RightDetail from '~/containers/ArticleDetails/RightDetail'
+
+export function Account({ article, articles }: ArticleDetailProp) {
   const [isShow, setIsShow] = useState(false)
+
   return (
     <div className="flex items-center">
       <img className="rounded-full w-12 h-12 object-cover" src={article.author?.image ?? article.image} alt={article.author?.name} />
@@ -36,12 +39,13 @@ export function Account({ article, articles }: ArticleLDetailProp) {
     </div>
   )
 }
-export function AccountDetailArticle({ article }: ArticleProp) {
+
+export function AccountDetailArticle({ author }: { author: Author }) {
   return (
     <div className="flex items-start justify-between bg-gray40 p-4 md:p-4 sm:p-3 rounded-2xl flex-wrap">
       <div className="flex flex-col justify-start">
-        <img className="rounded-full w-64px h-64px md:w-64px md:h-64px sm:w-36px sm:h-36px object-cover" src={article.author?.image ?? article.image} alt={article.author?.name} />
-        <span className="text-base md:text-base text-grey80 font-semibold mt-2 sm:text-sm">{article.author?.name ?? 'Nguyễn Trung Quân'}</span>
+        <img className="rounded-full w-64px h-64px md:w-64px md:h-64px sm:w-36px sm:h-36px object-cover" src={author?.image} alt={author?.title} />
+        <span className="text-base md:text-base text-grey80 font-semibold mt-2 sm:text-sm">{author?.title ?? 'Ẩn danh'}</span>
       </div>
       <div className="flex flex-col justify-start ml-2">
         <ButtonOutlinePrimary className="md:w-108px sm:w-80px md:text-base sm:text-sm" onClick={() => {}}>
