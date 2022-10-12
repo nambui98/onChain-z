@@ -1,9 +1,8 @@
 ---
 layout: ~/layouts/ArticleLayout.astro
-relation: aRqze1JzXKQtwOxm_XU77
 client: Self
 title: Sunny Beach with a good cocktail is greate for Summer
-thumbnail: ""
+thumbnail: ''
 image: https://ucarecdn.com/be140e36-503c-4e7c-95a3-9f1e22917fe4/
 tags:
   - design

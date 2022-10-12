@@ -11,6 +11,7 @@ tags:
   - dev
   - branding
   - astro
+  - block
 publishDate: 2022-08-15T18:25:52.846Z
 updateDate: 2022-07-16 01:25
 medium: false

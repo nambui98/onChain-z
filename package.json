@@ -9,6 +9,7 @@
   "author": "Lockevn",
   "license": "copyright Lockevn",
   "scripts": {
+    "startlocalcms": "npx netlify-cms-proxy-server",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
