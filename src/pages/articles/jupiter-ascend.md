@@ -3,6 +3,7 @@ layout: ~/layouts/ArticleLayout.astro
 title: Jupiter Ascend
 client: Self
 author: Lockevn
+uuid: xAYj6RlnKDlKe3mcM5666
 publishDate: 2020-03-02 00:00:00
 image: https://images.unsplash.com/photo-1547234935-80c7145ec969?fit=crop&w=1400&h=700&q=75
 description: |
