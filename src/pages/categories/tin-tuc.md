@@ -1,6 +1,6 @@
 ---
 layout: ~/layouts/CategoryLayout.astro
-title: Nổi bật
+title: Tin tức
 tags:
   - highlight
 uuid: JV7FdAh5uV7W4R95oRoeF

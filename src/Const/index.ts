@@ -2,29 +2,33 @@ import { Menu } from '~/types/MenuProps.type'
 
 export const menu_data: Menu[] = [
   {
-    name: 'Tin tức coin',
-    path: '/categories/tv',
+    name: 'Người mới',
+    path: '/categories/nguoi-moi',
   },
   {
-    name: 'Tin tức nổi bật',
-    path: '/categories/tv',
+    name: 'Blockchain',
+    path: '/categories/blockchain',
   },
   {
-    name: 'Kiến thức',
-    path: '/categories/knowledge',
-    submenu: [
-      {
-        name: 'Blockchain là gì?',
-        path: '/categories/deepdive',
-      },
-      {
-        name: 'Web3 là gì?',
-        path: '/categories/hotnews',
-      },
-    ],
+    name: 'Crypto',
+    path: '/categories/crypto',
   },
   {
-    name: 'Chủ đề chuyên sâu',
-    path: '/categories/deepdive',
+    name: 'Tin tức',
+    path: '/categories/tin-tuc',
   },
+  // {
+  //   name: 'Kiến thức',
+  //   path: '/categories/knowledge',
+  //   submenu: [
+  //     {
+  //       name: 'Blockchain là gì?',
+  //       path: '/categories/deepdive',
+  //     },
+  //     {
+  //       name: 'Web3 là gì?',
+  //       path: '/categories/hotnews',
+  //     },
+  //   ],
+  // },
 ]

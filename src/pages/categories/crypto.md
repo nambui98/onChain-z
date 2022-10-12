@@ -1,8 +1,9 @@
 ---
 layout: ~/layouts/CategoryLayout.astro
-title: HotNews
+title: Crypto
 tags:
   - hot
 uuid: ltFiKjucBdhzrk22_kChP
 ---
-C﻿hứa các bài viết nóng nhất, thời sự nhất hiện tại
+
+Các bài viết về chủ đề tiền mã hoá
