@@ -88,17 +88,6 @@ collections:
           search_fields: ['title', 'body', 'tags'],
           value_field: 'uuid',
         }
-      - {
-          label: 'Relation',
-          required: false,
-          name: 'relation',
-          hint: link to other article,
-          widget: 'relationArticle',
-          collection: 'articles',
-          display_fields: ['title', 'publishDate', 'uuid'],
-          search_fields: ['title', 'summary', 'body', 'tags'],
-          value_field: 'uuid',
-        }
 
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
       - { label: 'Update Date', name: 'updateDate', widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
