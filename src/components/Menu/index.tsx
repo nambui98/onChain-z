@@ -79,7 +79,7 @@ export default function Menu({ currentPath }: Props) {
               <img
                 onClick={() => {
                   {
-                    /* // TODO: Thach: em cần api search bài viết param: name*/
+                    /* // TODO: Thach: em cần api search bài viết param: name  // link qua trang /search */
                   }
                   refInput?.current?.focus()
                   setActiveSearch(!activeSearch)

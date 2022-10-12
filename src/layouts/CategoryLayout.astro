@@ -24,14 +24,9 @@ const title = content?.title || AppConfig.siteTitle || 'Category layout'
 const description = AppConfig.siteSlogan
 const url =Astro.url
 
-
-
-
 const contentService = new ContentService()
-const currentCategory = contentService.getCategory(content.uuid)
-const highlightArticles = currentCategory.articles
-
-
+const highlightArticles = contentService.getArticles_HomeHighlightItems()
+// TODO: Thach: em cần data post chủ đề chuyên sâu, chờ Hơn define category
 ---
 
 <BaseSEOLayout lang={content.lang} title={title} description={description} className="HomePage CategoryLayout">

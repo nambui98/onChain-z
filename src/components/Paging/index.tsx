@@ -36,6 +36,7 @@ export default function Paging({ className, total, pageSize, currentPage, origin
   return (
     <div className={`flex gap-2 justify-center ${className ?? ''}`}>
       {/* // TODO: Thach: paging */}
+      {/* // TODO: cái này cần gì ở anh nhỉ? */}
       {listPage.map((page, index) => {
         if (typeof page !== 'string' && page === currentPage) {
           return (

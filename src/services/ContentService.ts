@@ -46,9 +46,8 @@ export class ContentService {
     categories = this.linkArticles(categories, articles)
 
     authors = Object.values(authors).map(this.convertAuthor_NetlifyCMS_Lakdak)
-
     authors = this.linkArticlesToAuthor(authors, articles)
-    // TODO: loop articles, decorate author info, relatedArticles (relation, same tag)
+
     // decorate author field with authorDTO
     articles.map((a) => {
       const authorDto = self.getAuthor(a.author, authors)

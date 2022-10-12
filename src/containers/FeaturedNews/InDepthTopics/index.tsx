@@ -10,13 +10,10 @@ import { ButtonOutline, ButtonPrimary } from '~/components/Button'
 import Paging from '~/components/Paging'
 
 export default function InDepthTopics({ articles, className, url }: ArticleListProp & { url: any }) {
-  {
-    /* // TODO: Thach: em cần data post chủ đề chuyên sâu*/
-  }
   const list = articles
   if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>
   {
-    /* // TODO: Thach: Paging: URL param ?page=numberPage */
+    /* // TODO: Thach: Paging: URL param ?page=numberPage, chỗ này ko hiểu làm như nào */
   }
   let pageIndexActive = parseInt(url.searchParams.get('page'))
   let currentURLOrigin = url.origin + url.pathname
@@ -51,7 +48,8 @@ export default function InDepthTopics({ articles, className, url }: ArticleListP
                   type="email"
                   className="h-64px text-base font-semibold  w-full rounded-[32px] placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
                 />
-                {/* // TODO: Thach: em cần api subscribe param: email */}
+                {/* // TODO: Thach: em cần api subscribe param: email, chưa có tính năng này */}
+                {/* // TODO: dùng subscribe như một component chung thôi, hiện tại đang ở 2 chỗ khác nhau */}
                 <ButtonPrimary className="absolute" onClick={() => {}}>
                   Subscribe
                 </ButtonPrimary>

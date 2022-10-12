@@ -16,9 +16,9 @@ export default function HotNew({ articles, className }: ArticleListProp) {
   if (typeof window !== 'undefined') {
     plugins = [new AutoPlay({ duration: 2000, direction: 'NEXT', stopOnHover: false }), new Arrow({ parentEl: document.body })]
   }
-  {/* // TODO: Thach: em cần data post nổi bật */ }
 
   const list = articles
+
   if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>
 
   return (
@@ -28,7 +28,7 @@ export default function HotNew({ articles, className }: ArticleListProp) {
       <Flicking className="mt-6" gap={20} bound={true} infinite={true} infiniteThreshold={50} plugins={plugins}>
         {list.map((r, index) => (
           <div className="flicking-panel w-1/3 sm-max:w-280px px-3" key={index}>
-            <Card className='sm-max:h-157px' article={r} />
+            <Card className="sm-max:h-157px" article={r} />
           </div>
         ))}
         {/* {panels.map(index => <Card className="flicking-panel w-500px" key={index}>{index + 1}</Card>)} */}
