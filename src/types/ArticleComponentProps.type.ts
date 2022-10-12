@@ -1,4 +1,4 @@
-import { Post } from '~/services/ContentService'
+import { Author, Post } from '~/services/ContentService'
 
 /** Common HTML Prop */
 export type CommonProp = {
@@ -17,7 +17,8 @@ export type ArticleProp = CommonProp & {
 export type ArticleListProp = CommonProp & {
   articles: Post[]
 }
-export type ArticleLDetailProp = CommonProp & {
+export type ArticleDetailProp = CommonProp & {
   articles: Post[]
   article: Post
+  author?: Author
 }
