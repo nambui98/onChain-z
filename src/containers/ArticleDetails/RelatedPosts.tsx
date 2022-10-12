@@ -4,11 +4,8 @@ import { Heading2 } from '~/components/Heading'
 import { ArticleListProp } from '~/types/ArticleComponentProps.type'
 
 export default function RelatedPosts({ className, articles }: ArticleListProp) {
-  {
-    /* // TODO: Thach: data bài viết liên quan, relation, same tags */
-  }
-
   const list = articles
+
   if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>
   return (
     <div className={`RelatedPosts relative ${className ?? ''}`}>
