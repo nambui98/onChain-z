@@ -11,7 +11,7 @@ import HotNew from '~/containers/FeaturedNews/HotNew'
 import Tivi from '~/containers/HomePage/Tivi'
 import BackGround from '~/components/BackGround'
 import { AdsFullWidth } from '~/components/Ads'
-import PostService from '~/services/PostService'
+import { ContentService } from '~/services/ContentService'
 import LatestNews from '~/containers/HomePage/LatestNews'
 import Subscribe from '~/containers/HomePage/Subscribe/index'
 import InDepthTopics from '~/containers/FeaturedNews/InDepthTopics/index'
@@ -24,14 +24,12 @@ const title = content?.title || AppConfig.siteTitle || 'Category layout'
 const description = AppConfig.siteSlogan
 const url =Astro.url
 
-const articles = await Astro.glob('/src/pages/categories/**/*.md') // Data Fetching: List all Markdown posts in the repo.
-
-const postService = new PostService(articles)
-const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-const highlightArticles = postService.getHomeHighlightItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
 
 
+
+const contentService = new ContentService()
+const currentCategory = contentService.getCategory(content.uuid)
+const highlightArticles = currentCategory.articles
 
 
 ---

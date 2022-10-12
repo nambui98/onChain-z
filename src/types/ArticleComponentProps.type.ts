@@ -1,4 +1,4 @@
-import { Post } from '~/services/PostService'
+import { Post } from '~/services/ContentService'
 
 /** Common HTML Prop */
 export type CommonProp = {

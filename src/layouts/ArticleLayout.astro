@@ -7,7 +7,9 @@ import Tivi from '~/containers/HomePage/Tivi'
 import BackGround from '~/components/BackGround'
 import { AdsFullWidth } from '~/components/Ads'
 
-import PostService from '~/services/PostService'
+import { ContentService } from '~/services/ContentService'
+
+
 import Detail from '~/containers/ArticleDetails/Detail'
 import Breadcrumbs from '~/components/Breadcrumbs'
 import RelatedPosts from '~/containers/ArticleDetails/RelatedPosts'
@@ -19,18 +21,17 @@ import ArticleHero from '../components/Article/ArticleHero'
 import ArticleMetadata from '../components/Article/ArticleMetadata'
 import { ButtonPrimary } from '~/components/Button'
 
-
-const articles = await Astro.glob('./**/*.md') // Data Fetching: List all Markdown posts in the repo.
-const postService = new PostService(articles)
-const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-const highlightArticles = postService.getHomeHighlightItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-
-
 const { content } = Astro.props
 
+const currentAuthor = content.author
+
+const contentService = new ContentService()
+const highlightArticles = contentService.getArticles_HomeHighlightItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
+const authorArticles = contentService.getAuthor(currentAuthor)?.articles
+
 const title = content?.title || AppConfig.siteTitle || 'Article layout'
-const description = AppConfig.siteSlogan
+const description = content.description || AppConfig.siteSlogan
+
 
 const links = [
   {
@@ -45,16 +46,15 @@ const links = [
 ---
 
 
-<BaseSEOLayout lang={content.lang} title={title} description={content.description} className={'ArticleLayout'}>
+<BaseSEOLayout lang={content.lang} title={title} description={description} className={'ArticleLayout'}>
 
   <main class="Detail wrapper mt4 mb4 z-2 relative sm-max:static lg:m-0 sm:mx-3">
     <Breadcrumbs links={links}/>
     <!-- <Detail article={highlightArticles[0]} articles={highlightArticles}/> -->
     <div class="ArticleDetails sm-max:px-4">
         <div class="flex  border-b-1 border-gray40 pb-6 gap-8">
-        <div class="w-5/7 sm-max:w-full">
-              {/* // TODO: Thach: em cần data tác giả của bài viết chuyền vào Account*/ }
-            <Account client:load article={highlightArticles[0]} articles={articles} />
+        <div class="w-5/7 sm-max:w-full">              
+            <Account client:load article={highlightArticles[0]} articles={authorArticles} />
             <LeftDetail article={highlightArticles[0]} />
     </div>
             <RightDetail article={highlightArticles[0]} articles={highlightArticles} className="w-2/7 sm-max:hidden" />

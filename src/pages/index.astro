@@ -7,25 +7,22 @@ import Tivi from '~/containers/HomePage/Tivi'
 import BackGround from '~/components/BackGround'
 import { AdsFullWidth } from '~/components/Ads'
 
-
-const articles = await Astro.glob('./articles/**/*.md') // Data Fetching: List all Markdown posts in the repo.
-
-import PostService from '~/services/PostService'
+import { ContentService } from '~/services/ContentService'
 import LatestNews from '~/containers/HomePage/LatestNews'
 import Subscribe from '~/containers/HomePage/Subscribe/index'
 
-const postService = new PostService(articles)
-const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.homePagePostLimit || 6)
-const highlightArticles = postService.getHomeHighlightItems().slice(0, AppConfig.homePageSettings.homePageHotNewsLimit || 10)
-const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homePageSettings.homePageTiviLimit || 6)
+const { content } = Astro.props
 
+const contentService = new ContentService()
+const mainArticles = contentService.getPublishedArticles().slice(0, AppConfig.homePageSettings.homePagePostLimit || 6)
+const highlightArticles = contentService.getArticles_HomeHighlightItems().slice(0, AppConfig.homePageSettings.homePageHotNewsLimit || 10)
+const tiviArticles = contentService.getArticles_HomeTVWidgetItems().slice(0, AppConfig.homePageSettings.homePageTiviLimit || 6)
 
-const title = AppConfig.siteTitle
-const description = AppConfig.siteSlogan
-
+const title = content?.title || AppConfig.siteTitle
+const description = content?.description ||  AppConfig.siteSlogan
 ---
 
-<BaseSEOLayout title={description} description={description} className="HomePage ">
+<BaseSEOLayout title={title} description={description} className="HomePage ">
   <div class="absolute inset-0 overflow-hidden  sm-max:hidden ">
 
     <BackGround className="-top-127px -right-127px bg-opacity-30 z-0 " />

@@ -29,7 +29,6 @@ function Footer(props: CommonProp) {
           <p className="text-sm font-semibold text-grey leading-22px sm-max:mt-6 sm-max:w-full">QUICK LINK 1</p>
           <ShortLink href="/categories">Categories</ShortLink>
           <ShortLink href="/categories/tv">TV</ShortLink>
-          <ShortLink href="/featured-news">Category</ShortLink>
           <ShortLink href="/article-details">Sample Article</ShortLink>
         </div>
         <div className="flex flex-col flex-wrap sm-max:flex-row">

@@ -1,7 +1,6 @@
 ---
 import uniq from 'lodash/uniq'
-import { CategoryService } from '~/services/PostService'
-import PostService from '~/services/PostService'
+import { ContentService } from '~/services/ContentService'
 
 import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
 import ProjectCard from '~/components/ProjectCard/index.jsx'
@@ -9,17 +8,8 @@ import { Heading2 } from '~/components/Heading'
 
 const title = 'All Categories'
 
-const articles = (await Astro.glob('../articles/**/*.md'))
-  .filter(({ frontmatter }) => !!frontmatter.publishDate)
-  .sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
-
-const postService = new PostService(articles)
-  
-const categories = (await Astro.glob('../categories/**/*.md'))
-  .filter(({ frontmatter }) => !!frontmatter.title)
-
-const categoryService = new CategoryService(categories)
-const list = categoryService.linkArticles(categoryService.getAll(), postService.getAll())
+const contentService = new ContentService()
+const list = contentService.getCategories()
 
 ---
 <SimplePageLayout title={title}>

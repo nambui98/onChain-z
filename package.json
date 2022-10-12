@@ -1,6 +1,6 @@
 {
   "name": "@lockevn/gurucore-jam-site",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "releasenote": "Use NetlifyCMS Article in Lakdak. Disable cypress netlify. use absoluted import path",
   "description": "NetlifyCMS on Astro.build for a blazing fast site",
   "productName": "Lakdak",

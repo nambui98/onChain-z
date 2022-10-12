@@ -7,7 +7,7 @@ export const menu_data: Menu[] = [
   },
   {
     name: 'Tin tức nổi bật',
-    path: '/featured-news',
+    path: '/categories/tv',
   },
   {
     name: 'Kiến thức',

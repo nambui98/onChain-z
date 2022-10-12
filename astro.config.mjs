@@ -7,7 +7,7 @@ import WindiCSS from 'vite-plugin-windicss'
 // @ts-ignore
 import netlify from '@astrojs/netlify/functions'
 // import vercel from "@astrojs/vercel/serverless"
-import "@egjs/preact-flicking/dist/flicking.css";
+import '@egjs/preact-flicking/dist/flicking.css'
 // // Or, if you have to support IE9
 // import "@egjs/preact-flicking/dist/flicking-inline.css";
 // import "@egjs/flicking-plugins/dist/flicking-plugins.css";
@@ -23,13 +23,13 @@ export default defineConfig({
     ssr: {
       // Example: Force a broken package to skip SSR processing, if needed
       external: ['@egjs/preact-flicking'],
-    }
+    },
     // ssr: {
     //   noExternal: ['package-name'],
     // }
   },
 
-  output: 'server',
+  output: 'server', // https://docs.astro.build/en/guides/server-side-rendering/
   // adapter: vercel(),
   adapter: netlify(),
 })
