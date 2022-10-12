@@ -17,7 +17,6 @@ export default function MenuItem({
         } else {
           onMouseOver(e.target.offsetParent.offsetLeft)
         }
-        // console.log(e);
       }}
       onMouseOut={() => {
         onMouseOut()

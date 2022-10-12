@@ -7,15 +7,19 @@ import { AdsFullWidth, AdsInline } from '~/components/Ads'
 import { Heading1 } from '~/components/Heading'
 import CardLarge from '~/components/CardLarge'
 import { ButtonOutline, ButtonPrimary } from '~/components/Button'
-import Pacing from '~/components/Pacing'
+import Paging from '~/components/Paging'
 
 export default function InDepthTopics({ articles, className, url }: ArticleListProp & { url: any }) {
-  {/* // TODO: Thach: em cần data post chủ đề chuyên sâu*/ }
+  {
+    /* // TODO: Thach: em cần data post chủ đề chuyên sâu*/
+  }
   const list = articles
   if (!list || list.length <= 0) return <AdsFullWidth>EMPTY</AdsFullWidth>
-  {/* // TODO: Thach: PACING: URL param ?page=numberPage*/ }
-  let pageIndexActive = parseInt(url.searchParams.get('page'));
-  let currentURLOrigin = url.origin + url.pathname;
+  {
+    /* // TODO: Thach: Paging: URL param ?page=numberPage */
+  }
+  let pageIndexActive = parseInt(url.searchParams.get('page'))
+  let currentURLOrigin = url.origin + url.pathname
 
   return (
     <div className={`HotNews relative ${className ?? ''}`}>
@@ -29,7 +33,7 @@ export default function InDepthTopics({ articles, className, url }: ArticleListP
               </div>
             ))}
           </div>
-          <Pacing total={100} currentPage={pageIndexActive === 0 || !pageIndexActive ? 1 : pageIndexActive} pageSize={4} originURL={currentURLOrigin} />
+          <Paging total={100} currentPage={pageIndexActive === 0 || !pageIndexActive ? 1 : pageIndexActive} pageSize={4} originURL={currentURLOrigin} />
         </div>
         <div className="mt-10 w-352px sm:w-200px md:w-352px">
           <AdsInline className="!p-0 h-240px flex items-center justify-center !w-full ">Three ads here</AdsInline>
@@ -48,7 +52,7 @@ export default function InDepthTopics({ articles, className, url }: ArticleListP
                   className="h-64px text-base font-semibold  w-full rounded-[32px] placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
                 />
                 {/* // TODO: Thach: em cần api subscribe param: email */}
-                <ButtonPrimary className="absolute" onClick={() => { }}>
+                <ButtonPrimary className="absolute" onClick={() => {}}>
                   Subscribe
                 </ButtonPrimary>
               </label>

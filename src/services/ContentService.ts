@@ -32,37 +32,31 @@ export class ContentService {
     categories = Object.values(categories)
       .filter(({ frontmatter }) => !!frontmatter.title)
       .map(this.convertCategory_NetlifyCMS_Lakdak)
-
     categories = this.linkArticles(categories, articles)
 
     authors = Object.values(authors).map(this.convertAuthor_NetlifyCMS_Lakdak)
-    console.log('-----------------------------')
     authors = this.linkArticlesToAuthor(authors, articles)
-    console.log(authors)
+    // TODO: loop articles, decorate author info, relatedArticles (relation, same tag)
+
+    // TODO: loop articles, relatedArticles (relation, same tag)
+
+    // TODO: pivot to transform to tags
+    let tags = []
 
     this.store = {
       categories,
       articles,
       authors,
+      tags,
     }
-    // this.store = store.map(this.convertRecord_NetlifyCMS_Lakdak)
-
-    // console.log(this.store)
-
-    // TODO: loop articles, decorate author info, relatedArticles (relation, same tag)
-    // pivot to transform to categories
-    // pivot to transform to tags
 
     // const posts = RawRepo.articles
     //   .sort((a, b) => {
-    //     // console.log(a.frontmatter)
     //     const aDate = new Date(b.frontmatter.publishDate)
     //     const bDate = new Date(a.frontmatter.publishDate)
     //     return aDate.getTime() - bDate.getTime()
     //   })
     //   .slice(0, 5)
-
-    // this.store = store.map(this.convertRecord_NetlifyCMS_Lakdak)
   }
 
   /** convert NetlifyCMS Article frontmatter format to our Lakdak Article plain object format */
@@ -106,9 +100,6 @@ export class ContentService {
       .filter(({ publishDate }) => !!publishDate)
       .sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
 
-    // console.log('============')
-    // console.log(this.store.articles[0])
-
     // const unresolved = posts.map(async (post) => {
     //   const slug = post.frontmatter.slug || post.file.split('/')[post.file.split('/').length - 2]
 
@@ -140,8 +131,6 @@ export class ContentService {
   }
 
   getAuthor(id) {
-    console.log(this.store.authors)
-
     return this.store.authors.filter((a) => a.uuid === id)[0]
   }
 }
