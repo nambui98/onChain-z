@@ -23,8 +23,8 @@
             { className: 'pageBody' },
             h('div', { className: 'cover' }, h('h1', {}, entry.getIn(['data', 'title'])), this.props.widgetFor('image')),
             h('p', {}, h('small', {}, 'Written ' + entry.getIn(['data', 'publishDate']))),
-            h('div', { className: 'text' }, this.props.widgetFor('body')),
-            h('div', { className: 'relation' }, this.props.widgetFor('relation'))
+            h('div', { className: 'text' }, this.props.widgetFor('body'))
+            // h('div', { className: 'relation' }, this.props.widgetFor('relation'))
           )
         },
       })

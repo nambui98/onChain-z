@@ -1,0 +1,50 @@
+---
+import AppConfig from '~/AppConfig'
+import { ContentService } from '~/services/ContentService'
+
+import SimplePageLayout from './SimplePageLayout.astro'
+import Breadcrumbs from '~/components/Breadcrumbs'
+import RelatedPosts from '~/containers/ArticleDetails/RelatedPosts'
+
+const { content } = Astro.props
+
+const contentService = new ContentService()
+
+const clip = content
+const relatedArticles = contentService.getRelateArticles(content).slice(0, 3)
+
+const title = content?.title || AppConfig.siteTitle || 'Clip layout'
+const description = content.description || AppConfig.siteSlogan
+const links = [
+  {
+    name: 'Trang chủ',
+    href: '/',
+  },
+  {
+    name: 'OnchainZ TV',
+    href: '/clips',
+  },
+]
+
+// TODO: Nam implement trang xem chi tiet một clip tại đây nhé
+---
+
+<SimplePageLayout lang={content.lang} title={title} description={description} className={'ClipLayout'}>
+  <Breadcrumbs links={links}/>
+  <main data-id={clip.uuid}>
+    <img src={clip.thumbnail ?? AppConfig.DefaultVideoThumbnail} alt="Default Video Thumbnail" />
+    <div>{clip.publishedDate}</div>
+    <div>{clip.tags}</div>
+    
+    <RelatedPosts className="mt-10" articles={relatedArticles} />    
+</main>
+</SimplePageLayout>
+
+<style scoped lang="scss">
+  .content {
+    font-size: var(--f-u1);
+    line-height: 2;
+  }
+</style> 
+
+

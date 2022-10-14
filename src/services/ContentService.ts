@@ -26,6 +26,17 @@ export interface Post {
   description: string
 }
 
+export interface Clip {
+  uuid: string
+  url: string
+  title: string
+  thumbnail: string
+  tags?: string[]
+  order?: number
+  category?: string
+  publishedDate: string
+}
+
 export class ContentService {
   protected store: any = {}
 
@@ -37,6 +48,7 @@ export class ContentService {
     let articles: any[] = import.meta.glob('/src/pages/articles/**/*.md', { eager: true })
     let categories: any[] = import.meta.glob('/src/pages/categories/**/*.md', { eager: true })
     let authors: any[] = import.meta.glob('/src/pages/authors/**/*.md', { eager: true })
+    let clips: any[] = import.meta.glob('/src/pages/clips/**/*.md', { eager: true })
 
     articles = Object.values(articles).map(this.convertArticle_NetlifyCMS_Lakdak)
 
@@ -47,6 +59,8 @@ export class ContentService {
 
     authors = Object.values(authors).map(this.convertAuthor_NetlifyCMS_Lakdak)
     authors = this.linkArticlesToAuthor(authors, articles)
+
+    clips = Object.values(clips).map(this.convertClip_NetlifyCMS_Lakdak)
 
     // decorate author field with authorDTO
     articles.map((a) => {
@@ -81,6 +95,7 @@ export class ContentService {
       articles,
       authors,
       tags,
+      clips,
     }
   }
 
@@ -95,6 +110,10 @@ export class ContentService {
   }
   /** convert NetlifyCMS Article frontmatter format to our Lakdak Article plain object format */
   protected convertAuthor_NetlifyCMS_Lakdak(na) {
+    return { url: na.url, ...na.frontmatter }
+  }
+  /** convert NetlifyCMS Article frontmatter format to our Lakdak Article plain object format */
+  protected convertClip_NetlifyCMS_Lakdak(na) {
     return { url: na.url, ...na.frontmatter }
   }
 
@@ -144,12 +163,12 @@ export class ContentService {
   }
 
   getArticles() {
-    return this.store.articles
+    return this.store.articles.filter((a) => a)
   }
 
   /** only return published item, order by publishDate */
-  getPublishedArticles(articles) {
-    let ret = (articles || this.getArticles()).filter(({ publishDate }) => !!publishDate)
+  getPublishedArticles(articles?) {
+    let ret = (articles || this.getArticles()).filter((a) => a).filter(({ publishDate }) => !!publishDate)
 
     ret = this.sortArticlesByPublishDate(ret)
     return uniqBy(ret, 'uuid')
@@ -175,17 +194,17 @@ export class ContentService {
 
     let ret = []
     for (const tagName of article.tags) {
-      ret = concat(ret, this.store.tags[tagName].articles)
+      ret = concat(ret, this.store.tags[tagName]?.articles)
     }
 
     return this.getPublishedArticles(ret)
   }
 
-  getArticles_HomeHighlightItems() {
-    return getRandomItems(this.store.articles, 10)
+  getArticles_HomeHighlightItems(tagName?) {
+    return this.store.tags[tagName || 'highlight']?.articles
   }
   getArticles_HomeTVWidgetItems() {
-    return getRandomItems(this.store.articles, 6)
+    return this.store.clips
   }
 
   getCategory(id) {

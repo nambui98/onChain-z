@@ -1,4 +1,4 @@
-import { Menu, MenuItemProps } from '~/types/MenuProps.type'
+import { Menu, MenuItemProps } from '~/types/types'
 
 export default function MenuItem({
   info,

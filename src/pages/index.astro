@@ -4,7 +4,7 @@ import AppConfig from '~/AppConfig'
 import MainNew from '~/containers/HomePage/MainNew'
 import HotNew from '~/containers/HomePage/HotNew'
 import Tivi from '~/containers/HomePage/Tivi'
-import BackGround from '~/components/BackGround'
+import Background from '~/components/Backgroundd'
 import { AdsFullWidth } from '~/components/Ads'
 
 import { ContentService } from '~/services/ContentService'
@@ -14,9 +14,10 @@ import Subscribe from '~/containers/HomePage/Subscribe/index'
 const { content } = Astro.props
 
 const contentService = new ContentService()
-const mainArticles = contentService.getPublishedArticles().slice(0, AppConfig.homePageSettings.homePagePostLimit || 6)
-const highlightArticles = contentService.getArticles_HomeHighlightItems().slice(0, AppConfig.homePageSettings.homePageHotNewsLimit || 10)
-const tiviArticles = contentService.getArticles_HomeTVWidgetItems().slice(0, AppConfig.homePageSettings.homePageTiviLimit || 6)
+const mainArticles = contentService.getPublishedArticles()?.slice(0, AppConfig.homePageSettings.homePagePostLimit || 6)
+const latestArticles = contentService.getPublishedArticles()?.slice(0, AppConfig.homePageSettings.homePagePostLimit || 6)
+const highlightArticles = contentService.getArticles_HomeHighlightItems()?.slice(0, AppConfig.homePageSettings.homePageHotNewsLimit || 10)
+const tiviClips = contentService.getArticles_HomeTVWidgetItems()?.slice(0, AppConfig.homePageSettings.homePageTiviLimit || 6)
 
 const title = content?.title || AppConfig.siteTitle
 const description = content?.description ||  AppConfig.siteSlogan
@@ -25,9 +26,9 @@ const description = content?.description ||  AppConfig.siteSlogan
 <BaseSEOLayout title={title} description={description} className="HomePage ">
   <div class="absolute inset-0 overflow-hidden  sm-max:hidden ">
 
-    <BackGround className="-top-127px -right-127px bg-opacity-30 z-0 " />
-    <BackGround className="h-758px w-758px top-1264px -left-132px bg-opacity-30 z-0 bg-pink" />
-    <BackGround className="h-938px w-938px -bottom-29px -right-400px bg-opacity-30 z-0 bg-green" />
+    <Background className="-top-127px -right-127px bg-opacity-30 z-0 " />
+    <Background className="h-758px w-758px top-1264px -left-132px bg-opacity-30 z-0 bg-pink" />
+    <Background className="h-938px w-938px -bottom-29px -right-400px bg-opacity-30 z-0 bg-green" />
       <div class="absolute inset-0 backdrop-filter backdrop-blur-120px z-0">
   </div>
   </div>
@@ -35,12 +36,12 @@ const description = content?.description ||  AppConfig.siteSlogan
   <main class="HomePage wrapper mt4 mb4 z-1 relative  lg:m-0 sm:mx-3">
     <MainNew articles={mainArticles} className="mt-12 sm-max:mt-6"/>
     <HotNew  articles={highlightArticles} className="mt-20 sm-max:mt-10" />
-    <!-- <BackGround className="-top-127px -right-127px bg-opacity-30 z-0" /> -->
+    <!-- <Background className="-top-127px -right-127px bg-opacity-30 z-0" /> -->
     <AdsFullWidth className="sm-max:w-full sm-max:mt-10">First ads here</AdsFullWidth>
 
-    <Tivi articles={tiviArticles} className="mt-20 sm-max:mt-10" />
+    <Tivi clips={tiviClips} className="mt-20 sm-max:mt-10" />
     <AdsFullWidth className="sm-max:w-full sm-max:mt-10">Second ads here</AdsFullWidth>
-    <LatestNews articles={tiviArticles} className="mt-20 sm-max:mt-10"/>
+    <LatestNews articles={latestArticles} className="mt-20 sm-max:mt-10"/>
     <Subscribe className="mt-20 sm-max:mt-10"/>
   </main>
 

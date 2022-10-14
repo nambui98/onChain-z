@@ -1,22 +1,11 @@
 ---
-import Breadcrumbs from '../components/Breadcrumbs'
-import ArticleHero from '../components/Article/ArticleHero'
-import ArticleMetadata from '../components/Article/ArticleMetadata'
-import { Heading1 } from '~/components/Heading'
-import BaseSEOLayout from './BaseSEOLayout.astro'
-import BaseSEOLayout from '~/layouts/BaseSEOLayout.astro'
 import AppConfig from '~/AppConfig'
-import MainNew from '~/containers/HomePage/MainNew'
+
+import BaseSEOLayout from '~/layouts/BaseSEOLayout.astro'
 import HotNew from '~/containers/FeaturedNews/HotNew'
-import Tivi from '~/containers/HomePage/Tivi'
-import BackGround from '~/components/BackGround'
-import { AdsFullWidth } from '~/components/Ads'
 import { ContentService } from '~/services/ContentService'
-import LatestNews from '~/containers/HomePage/LatestNews'
-import Subscribe from '~/containers/HomePage/Subscribe/index'
 import InDepthTopics from '~/containers/FeaturedNews/InDepthTopics/index'
 import { ButtonOutline, ButtonOutlinePrimary, ButtonPrimary } from '~/components/Button'
-
 
 const { content } = Astro.props
 

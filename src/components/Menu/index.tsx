@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { menu_data } from '~/Const'
-import { Menu } from '~/types/MenuProps.type'
+import { Menu } from '~/types/types'
 import MenuItem from './MenuItem'
 import './style.scss'
 

@@ -13,9 +13,28 @@ tags:
   - heroku
   - devop
   - tip
+  - highlight
   - block
 ---
 
+Heroku Setting, phải authenticated as Lockevn (admin of PKF), thì mới connect được github với Heroku
+
+Dù là dùng chung acc Heroku, nhưng Duyld có thể authenticated với Heroku (và ko có đủ quyền với Github PKF)
+Heroku Setting, phải authenticated as Lockevn (admin of PKF), thì mới connect được github với Heroku
+
+Dù là dùng chung acc Heroku, nhưng Duyld có thể authenticated với Heroku (và ko có đủ quyền với Github PKF)
+Heroku Setting, phải authenticated as Lockevn (admin of PKF), thì mới connect được github với Heroku
+
+Dù là dùng chung acc Heroku, nhưng Duyld có thể authenticated với Heroku (và ko có đủ quyền với Github PKF)
+Heroku Setting, phải authenticated as Lockevn (admin of PKF), thì mới connect được github với Heroku
+
+Dù là dùng chung acc Heroku, nhưng Duyld có thể authenticated với Heroku (và ko có đủ quyền với Github PKF)
+Heroku Setting, phải authenticated as Lockevn (admin of PKF), thì mới connect được github với Heroku
+
+Dù là dùng chung acc Heroku, nhưng Duyld có thể authenticated với Heroku (và ko có đủ quyền với Github PKF)
+Heroku Setting, phải authenticated as Lockevn (admin of PKF), thì mới connect được github với Heroku
+
+Dù là dùng chung acc Heroku, nhưng Duyld có thể authenticated với Heroku (và ko có đủ quyền với Github PKF)
 Heroku Setting, phải authenticated as Lockevn (admin of PKF), thì mới connect được github với Heroku
 
 Dù là dùng chung acc Heroku, nhưng Duyld có thể authenticated với Heroku (và ko có đủ quyền với Github PKF)
