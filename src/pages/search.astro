@@ -2,12 +2,10 @@
 import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
 import { Heading3 } from '~/components/Heading'
 import { ContentService } from '~/services/ContentService'
-import { CardLarge } from '~/components/Article/ArticleCardView'
+import { ArticleCardLarge } from '~/components/Article/ArticleCardView'
 
 const contentService = new ContentService()
 const articles = contentService.getPublishedArticles()
-
-// console.log(articles)
 
 let title = 'Kết quả tìm kiếm'
 
@@ -28,7 +26,7 @@ const list = articles
     {
       list?.map((r) => (
         <section class="search-result-item mt-3 mb-8">
-          <CardLarge classNameImage="h-168px w-256px" article={r} isNotShowAuthor={false} />
+          <ArticleCardLarge classNameImage="h-168px w-256px" article={r} isNotShowAuthor={false} />
         </section>
       ))
     }

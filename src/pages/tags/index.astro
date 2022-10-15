@@ -4,7 +4,7 @@ import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
 import uniq from 'lodash/uniq'
 import { Heading2 } from '~/components/Heading/index.jsx'
 import { ContentService } from '~/services/ContentService'
-import { CardLarge } from '~/components/Article/ArticleCardView'
+import { ArticleCardLarge } from '~/components/Article/ArticleCardView'
 
 const title = 'All Tags/Topics'
 
@@ -27,7 +27,7 @@ console.log(tags)
       <>
         <Heading2 className="mt-5 mb-2">{tag.title}</Heading2>
         {tag.items.map((item) => (
-          <CardLarge article={item} />
+          <ArticleCardLarge article={item} />
         ))}
       </>
     ))
