@@ -1,0 +1,42 @@
+---
+import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
+import { Heading3 } from '~/components/Heading'
+import { ContentService } from '~/services/ContentService'
+import CardLarge from '~/components/CardLarge'
+
+const contentService = new ContentService()
+const articles = contentService.getPublishedArticles()
+
+// console.log(articles)
+
+let title = 'Kết quả tìm kiếm'
+
+const searchQuery = Astro.url.searchParams.get('q')
+const list = articles
+  .filter((x) => (x.title + ' ' + x.body).indexOf(searchQuery) >= 0)
+  .map((r) => ({
+    ...r,
+    id: r.id || r.uuid,
+    desc: r.body,
+    thumbnail: r.thumbnail || r.image || `https://picsum.photos/id/${r.id}/400/200`,
+  }))
+---
+
+<SimplePageLayout title={title}>
+  <section class="search-result">
+    <p><i>{list?.length || 0}</i> kết quả cho từ khoá: <i>"{searchQuery}"</i></p>
+    {
+      list?.map((r) => (
+        <section class="search-result-item mt-3 mb-8">
+          <CardLarge classNameImage="h-168px w-256px" article={r} isNotShowAuthor={false} />
+        </section>
+      ))
+    }
+  </section>
+</SimplePageLayout>
+
+<style scoped lang="scss">
+  // SAMPLES: Scoped component styles
+  .search-result-item {
+  }
+</style>

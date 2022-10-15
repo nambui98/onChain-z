@@ -11,21 +11,20 @@ const { content } = Astro.props
 
 const title = content?.title || AppConfig.siteTitle || 'Category layout'
 const description = AppConfig.siteSlogan
-const url =Astro.url
+const url = Astro.url
 
 const contentService = new ContentService()
 const highlightArticles = contentService.getArticles_HomeHighlightItems()
-// TODO: Thach: em cần data post chủ đề chuyên sâu, chờ Hơn define category
 ---
 
 <BaseSEOLayout lang={content.lang} title={title} description={description} className="HomePage CategoryLayout">
   <main class="FeaturedNew wrapper z-1 relative lg:m-0 sm:mx-3">
     <HotNew articles={highlightArticles} className="mt-10 sm-max:mt-6" />
-    <ButtonOutlinePrimary onClick={()=>{}} className="mx-auto mt-6 hidden sm-max:block">Xem Thêm</ButtonOutlinePrimary>
+    <ButtonOutlinePrimary onClick={() => {}} className="mx-auto mt-6 hidden sm-max:block">Xem Thêm</ButtonOutlinePrimary>
     <InDepthTopics url={url} articles={highlightArticles} className="mt-10 sm-max:mt-6 sm-max:hidden" />
   </main>
 </BaseSEOLayout>
 
+<style scoped lang="scss">
 
-<style scoped lang="scss">  
 </style>

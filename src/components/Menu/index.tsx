@@ -14,6 +14,7 @@ export default function Menu({ currentPath }: Props) {
   const [offset, setOffset] = useState<number>()
   const refInput = useRef(null)
   const refIndicator = useRef(null)
+
   useEffect(() => {
     resetInitIndicator()
     // debugger
@@ -75,12 +76,18 @@ export default function Menu({ currentPath }: Props) {
                 transitionProperty: 'width, opacity',
               }}
             />
-            <button type="button" className="absolute right-0 top-1/2 transform -translate-y-1/2" onClick={() => {}}>
+            <button
+              type="button"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2"
+              onClick={() => {
+                // TODO: Nam: tách thành component SearchBox riêng, khi ấn enter hay click nút search thì redirect qua trang /search?q=keyword
+                if (activeSearch) {
+                  document.location = '/search?q=' + 'month'
+                }
+              }}
+            >
               <img
                 onClick={() => {
-                  {
-                    /* // TODO: Thach: em cần api search bài viết param: name  // link qua trang /search */
-                  }
                   refInput?.current?.focus()
                   setActiveSearch(!activeSearch)
                 }}

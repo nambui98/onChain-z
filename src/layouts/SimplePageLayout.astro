@@ -14,7 +14,7 @@ title = title || frontmatter?.title || 'Simple page layout'
 
 <BaseSEOLayout lang={lang} title={title} description={description} className={className}>
     <div class="SimplePageLayout wrapper">
-        <Heading1 className="mt-5" text={title}/>
+        <Heading1 className="my-8" text={title}/>
         <slot />
     </div>
 </BaseSEOLayout>
