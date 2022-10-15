@@ -1,5 +1,5 @@
 import { ContentService } from '~/services/ContentService'
-import { CardProps } from '~/types/CardComponentProps.type'
+import { CardProps } from '~/types/types'
 
 export default function CardLarge({ article, isNotShowAuthor, isNotShowDescription, classNameImage, classNameTitle }: CardProps) {
   const author = article?.author

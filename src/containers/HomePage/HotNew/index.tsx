@@ -4,7 +4,7 @@ import InfiniteFlicking from './InfiniteFlicking'
 
 import Flicking from '@egjs/preact-flicking'
 import { AutoPlay, Arrow } from '@egjs/flicking-plugins'
-import Card from '~/components/Card'
+import { ArticleCardTitleBelow } from '~/components/Article/ArticleCardView'
 import './style.scss'
 
 import { ArticleListProp } from '~/types/types'
@@ -28,7 +28,7 @@ export default function HotNew({ articles, className }: ArticleListProp) {
       <Flicking className="mt-6" gap={20} bound={true} infinite={true} infiniteThreshold={50} plugins={plugins}>
         {list.map((r, index) => (
           <div className="flicking-panel w-1/3 sm-max:w-280px px-3" key={index}>
-            <Card className="sm-max:h-157px" article={r} />
+            <ArticleCardTitleBelow className="sm-max:h-157px" article={r} />
           </div>
         ))}
         {/* {panels.map(index => <Card className="flicking-panel w-500px" key={index}>{index + 1}</Card>)} */}

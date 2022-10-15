@@ -1,4 +1,4 @@
-import Card from '~/components/Card'
+import { ArticleCardTitleBelow } from '~/components/Article/ArticleCardView'
 import { Heading2 } from '~/components/Heading'
 
 import { ArticleListProp } from '~/types/types'
@@ -26,17 +26,17 @@ export default function LatestNews({ articles, className }: ArticleListProp) {
       <Heading2 text="Tin tức MỚI NHẤT" />
       <div className="flex gap-x-8 mt-6">
         <div className="w-1/3 sm-max:w-full">
-          <Card article={articles[0]} isNotShowAuthor={true} />
+          <ArticleCardTitleBelow article={articles[0]} isNotShowAuthor={true} />
           <Separator />
           <CardRelatedList />
         </div>
         <div className="w-1/3 sm-max:hidden">
-          <Card article={articles[0]} isNotShowAuthor={true} />
+          <ArticleCardTitleBelow article={articles[0]} isNotShowAuthor={true} />
           <Separator />
           <CardRelatedList />
         </div>
         <div className="w-1/3 sm-max:hidden">
-          <Card article={articles[0]} isNotShowAuthor={true} />
+          <ArticleCardTitleBelow article={articles[0]} isNotShowAuthor={true} />
           <Separator />
           <CardRelatedList />
         </div>

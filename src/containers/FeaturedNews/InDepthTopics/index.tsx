@@ -1,5 +1,5 @@
 import { AutoPlay, Arrow } from '@egjs/flicking-plugins'
-import Card from '~/components/Card'
+import { ArticleCardTitleBelow } from '~/components/Article/ArticleCardView'
 // import './style.scss'
 
 import { ArticleListProp } from '~/types/types'
