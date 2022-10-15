@@ -5,7 +5,7 @@ import { ArticleListProp } from '~/types/types'
 import './style.scss'
 
 const Separator = () => {
-  return <hr className="border-primary bg-primary  border-2 my-6"></hr>
+  return <hr className="border-primary bg-primary border-2 my-6"></hr>
 }
 
 const CardRelatedList = () => {

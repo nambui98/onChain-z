@@ -2,7 +2,7 @@
 import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
 import { Heading3 } from '~/components/Heading'
 import { ContentService } from '~/services/ContentService'
-import CardLarge from '~/components/CardLarge'
+import { CardLarge } from '~/components/Article/ArticleCardView'
 
 const contentService = new ContentService()
 const articles = contentService.getPublishedArticles()

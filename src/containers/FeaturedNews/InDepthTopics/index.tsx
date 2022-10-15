@@ -1,13 +1,14 @@
+import { ArticleListProp } from '~/types/types'
+
 import { AutoPlay, Arrow } from '@egjs/flicking-plugins'
 import { ArticleCardTitleBelow } from '~/components/Article/ArticleCardView'
-// import './style.scss'
 
-import { ArticleListProp } from '~/types/types'
 import { AdsFullWidth, AdsInline } from '~/components/Ads'
 import { Heading1 } from '~/components/Heading'
-import CardLarge from '~/components/CardLarge'
+import { ArticleCardLarge } from '~/components/Article/ArticleCardView'
 import { ButtonOutline, ButtonPrimary } from '~/components/Button'
 import Paging from '~/components/Paging'
+// import './style.scss'
 
 export default function InDepthTopics({ articles, className, url }: ArticleListProp & { url: any }) {
   const list = articles
@@ -26,7 +27,7 @@ export default function InDepthTopics({ articles, className, url }: ArticleListP
           <div>
             {list.slice(0, 4).map((r, index) => (
               <div className="px-3" key={index}>
-                <CardLarge classNameImage="h-168px w-256px" article={r} isNotShowAuthor={false} />
+                <ArticleCardLarge classNameImage="h-168px w-256px" article={r} isNotShowAuthor={false} />
               </div>
             ))}
           </div>

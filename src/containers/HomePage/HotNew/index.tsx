@@ -31,7 +31,6 @@ export default function HotNew({ articles, className }: ArticleListProp) {
             <ArticleCardTitleBelow className="sm-max:h-157px" article={r} />
           </div>
         ))}
-        {/* {panels.map(index => <Card className="flicking-panel w-500px" key={index}>{index + 1}</Card>)} */}
       </Flicking>
 
       <span className="flicking-arrow-prev bg-white flex items-center justify-center mt-[-20px]">

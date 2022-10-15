@@ -1,5 +1,5 @@
 import { AccountDetailArticle } from '~/components/Account'
-import CardLarge from '~/components/CardLarge'
+import { ArticleCardLarge } from '~/components/Article/ArticleCardView'
 import { ArticleDetailProp, ArticleListProp, ArticleProp, CommonProp } from '~/types/types'
 
 export default function RightDetail({ className, article, articles, author }: ArticleDetailProp) {
@@ -10,7 +10,7 @@ export default function RightDetail({ className, article, articles, author }: Ar
       <div>
         {articles?.slice(0, 4).map((r, index) => (
           <div className="py-4 border-b-1 border-gray100" key={index}>
-            <CardLarge classNameImage="h-72px w-72px md:h-72px md:w-72px sm:w-52px sm:h-52px" classNameTitle={'text-xs'} article={r} isNotShowDescription={true} />
+            <ArticleCardLarge classNameImage="h-72px w-72px md:h-72px md:w-72px sm:w-52px sm:h-52px" classNameTitle={'text-xs'} article={r} isNotShowDescription={true} />
           </div>
         ))}
       </div>
