@@ -1,0 +1,40 @@
+---
+import ProjectCard from '~/components/ProjectCard/index.jsx'
+import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
+import uniq from 'lodash/uniq'
+import { Heading2 } from '~/components/Heading/index.jsx'
+import { ContentService } from '~/services/ContentService'
+import CardLarge from '~/components/CardLarge'
+
+const title = 'All Tags/Topics'
+
+const contentService = new ContentService()
+
+let tagsMap = contentService.getTags()
+const tags = Object.keys(tagsMap)
+  .sort()
+  .map((tag) => ({
+    title: tag,
+    path: `/tags/${tag}`,
+    items: tagsMap[tag].articles,
+  }))
+console.log(tags)
+---
+
+<SimplePageLayout title={title}>
+  {
+    tags.map((tag) => (
+      <>
+        <Heading2 className="mt-5 mb-2">{tag.title}</Heading2>
+        {tag.items.map((item) => (
+          <CardLarge article={item} />
+        ))}
+      </>
+    ))
+  }
+</SimplePageLayout>
+
+<!-- Example scoped style -->
+<style lang="scss" scoped>
+
+</style>

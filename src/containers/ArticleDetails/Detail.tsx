@@ -1,4 +1,4 @@
-import { ArticleDetailProp, ArticleProp } from '~/types/ArticleComponentProps.type'
+import { ArticleDetailProp, ArticleProp } from '~/types/types'
 import LeftDetail from './LeftDetail'
 import RelatedPosts from './RelatedPosts'
 import RightDetail from './RightDetail'

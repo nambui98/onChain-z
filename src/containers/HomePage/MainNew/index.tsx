@@ -1,4 +1,5 @@
-import { ArticleListProp } from '~/types/ArticleComponentProps.type'
+import { ArticleCardViewTitleInside } from '~/components/Article/ArticleCardView'
+import { ArticleListProp } from '~/types/types'
 
 export default function MainNews({ articles, className }: ArticleListProp) {
   {
@@ -33,16 +34,7 @@ export default function MainNews({ articles, className }: ArticleListProp) {
         </a>
       </div>
 
-      <div
-        className=" row-span-1 sm-max:row-span-1 sm-max:col-span-1 bg-no-repeat bg-cover relative rounded-2xl"
-        style={{
-          backgroundImage: `url(${thirdItem?.image})`,
-        }}
-      >
-        <a href={thirdItem?.url} className="text-xl absolute bottom-0 rounded-2xl p-4 bg-gradient-to-t from-[#1e1e1e53] to-#1e1e1ea7 sm-max:text-xs text-white font-semibold">
-          {thirdItem?.title}
-        </a>
-      </div>
+      <ArticleCardViewTitleInside article={thirdItem} />
 
       <ul class=" mt-4 sm-max:mt-7px list-outside list-disc ml-5 row-span-1 sm-max:col-span-2">
         {list.slice(0, list.length - 1).map((post, index) => (

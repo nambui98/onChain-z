@@ -1,6 +1,6 @@
 import { AccountDetailArticle } from '~/components/Account'
 import CardLarge from '~/components/CardLarge'
-import { ArticleDetailProp, ArticleListProp, ArticleProp, CommonProp } from '~/types/ArticleComponentProps.type'
+import { ArticleDetailProp, ArticleListProp, ArticleProp, CommonProp } from '~/types/types'
 
 export default function RightDetail({ className, article, articles, author }: ArticleDetailProp) {
   return author ? (

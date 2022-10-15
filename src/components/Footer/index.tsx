@@ -1,6 +1,6 @@
 import AppConfig from '~/AppConfig'
 import * as packagejson from '../../../package.json'
-import { CommonLinkProp, CommonProp } from '~/types/ArticleComponentProps.type'
+import { CommonLinkProp, CommonProp } from '~/types/types'
 
 const ShortLink = ({ href, children }: CommonLinkProp) => {
   if (href) {

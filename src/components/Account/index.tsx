@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks'
-import { ArticleDetailProp, ArticleProp } from '~/types/ArticleComponentProps.type'
+import { ArticleDetailProp, ArticleProp } from '~/types/types'
 import { ButtonOutlinePrimary, ButtonPrimary } from '../Button'
 import { Author } from '~/services/ContentService'
 import RightDetail from '~/containers/ArticleDetails/RightDetail'

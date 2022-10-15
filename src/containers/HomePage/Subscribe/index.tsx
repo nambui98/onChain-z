@@ -1,5 +1,5 @@
 import { ButtonPrimary } from '~/components/Button'
-import { CommonProp } from '~/types/ArticleComponentProps.type'
+import { CommonProp } from '~/types/types'
 
 export default function Subscribe({ className }: CommonProp) {
   return (

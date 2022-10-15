@@ -1,4 +1,4 @@
-import { CommonProp } from '~/types/ArticleComponentProps.type'
+import { CommonProp } from '~/types/types'
 
 type Props = CommonProp
 

@@ -2,7 +2,7 @@ import Card from '~/components/Card'
 
 import { AdsFullWidth } from '~/components/Ads'
 import { Heading1 } from '~/components/Heading'
-import { ArticleListProp } from '~/types/ArticleComponentProps.type'
+import { ArticleListProp } from '~/types/types'
 
 export default function HotNew({ articles, className }: ArticleListProp) {
   const list = articles

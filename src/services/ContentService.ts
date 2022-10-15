@@ -218,4 +218,8 @@ export class ContentService {
   getAuthor(id, authors?) {
     return (authors || this.store.authors)?.filter((a) => a.title === id)[0]
   }
+
+  getTags() {
+    return this.store.tags
+  }
 }

@@ -1,7 +1,7 @@
 import Card from '~/components/Card'
 import { Heading2 } from '~/components/Heading'
 
-import { ArticleListProp } from '~/types/ArticleComponentProps.type'
+import { ArticleListProp } from '~/types/types'
 import './style.scss'
 
 const Separator = () => {

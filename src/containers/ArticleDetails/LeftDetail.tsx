@@ -2,7 +2,7 @@ import { Account } from '~/components/Account'
 import { ButtonOutlinePrimary } from '~/components/Button'
 import { Heading1 } from '~/components/Heading'
 import Tag from '~/components/Tag'
-import { ArticleProp, CommonProp } from '~/types/ArticleComponentProps.type'
+import { ArticleProp, CommonProp } from '~/types/types'
 
 export default function LeftDetail({ className, article }: ArticleProp) {
   return (

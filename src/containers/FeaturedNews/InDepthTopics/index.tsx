@@ -2,7 +2,7 @@ import { AutoPlay, Arrow } from '@egjs/flicking-plugins'
 import Card from '~/components/Card'
 // import './style.scss'
 
-import { ArticleListProp } from '~/types/ArticleComponentProps.type'
+import { ArticleListProp } from '~/types/types'
 import { AdsFullWidth, AdsInline } from '~/components/Ads'
 import { Heading1 } from '~/components/Heading'
 import CardLarge from '~/components/CardLarge'
