@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './ArticleHero.module.scss'
 
 export default function ArticleHero({ content, children = null }) {

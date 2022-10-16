@@ -1,3 +1,5 @@
+
+import React from 'react'
 import { AccountDetailArticle } from "~/components/Account"
 import CardLarge from "~/components/CardLarge"
 import { ArticleLDetailProp, ArticleListProp, ArticleProp, CommonProp } from "~/types/ArticleComponentProps.type"

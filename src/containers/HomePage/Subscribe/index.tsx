@@ -1,3 +1,4 @@
+import React from 'react'
 import { ButtonPrimary } from "~/components/Button";
 import { CommonProp } from "~/types/ArticleComponentProps.type";
 

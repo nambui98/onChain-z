@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './ArticleMetadata.module.scss'
 import Tag from '~/components/Tag/index.jsx'
 

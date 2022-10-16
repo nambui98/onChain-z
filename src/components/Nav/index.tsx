@@ -1,3 +1,4 @@
+import React from 'react'
 import Menu from '../Menu'
 import { AdsInline } from '~/components/Ads'
 import styles from './styles.module.scss'

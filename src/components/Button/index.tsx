@@ -1,3 +1,4 @@
+import React from 'react'
 import { CommonProp } from "~/types/ArticleComponentProps.type";
 
 type Props = CommonProp & {
@@ -14,7 +15,7 @@ export function ButtonOutline({ onClick, children, className }: Props) {
   </button>
 }
 export function ButtonOutlinePrimary({ onClick, children, className }: Props) {
-  return <button className={`border-1 py-2 border-primary rounded-xl text-primary w-108px  flex justify-center items-center text-white text-base font-semibold cursor-pointer transition duration-300 ease-out hover:text-primary hover:bg-primary hover:text-white ${className ?? ''}`}>
+  return <button onClick={onClick} className={`border-1 py-2 border-primary rounded-xl text-primary w-108px  flex justify-center items-center text-white text-base font-semibold cursor-pointer transition duration-300 ease-out hover:text-primary hover:bg-primary hover:text-white ${className ?? ''}`}>
     {children}
   </button>
 }

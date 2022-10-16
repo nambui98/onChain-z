@@ -1,3 +1,4 @@
+import React from 'react'
 import { ArticleListProp } from '~/types/ArticleComponentProps.type'
 
 export default function MainNews({ articles, className }: ArticleListProp) {

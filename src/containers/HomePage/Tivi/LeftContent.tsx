@@ -1,3 +1,4 @@
+import React from 'react'
 import Video from '~/components/Video'
 import { ArticleProp } from '~/types/ArticleComponentProps.type'
 

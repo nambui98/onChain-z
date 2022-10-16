@@ -1,3 +1,4 @@
+import React from 'react'
 import Card from '~/components/Card'
 import { Heading2 } from '~/components/Heading'
 

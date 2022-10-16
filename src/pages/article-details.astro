@@ -19,9 +19,9 @@ import RightDetail from '~/containers/ArticleDetails/RightDetail'
 import { Account } from '~/components/Account'
 
 const postService = new PostService(articles)
-const mainArticles = postService.getAll().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-const highlightArticles = postService.getHomeHighlightItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
-const tiviArticles = postService.getHomeTVWidgetItems().slice(0, AppConfig.homePageSettings.frontPagePostLimit || 6)
+const mainArticles = postService.getAll().slice(0, (AppConfig.homePageSettings as any).frontPagePostLimit || 6)
+const highlightArticles = postService.getHomeHighlightItems().slice(0,  (AppConfig.homePageSettings as any).frontPagePostLimit || 6)
+const tiviArticles = postService.getHomeTVWidgetItems().slice(0,  (AppConfig.homePageSettings as any).frontPagePostLimit || 6)
 
 
 const title = AppConfig.siteTitle
@@ -36,6 +36,7 @@ const links = [
     href: '/',
   },
 ]
+const href = Astro.url.href
 ---
 
 <BaseSEOLayout title={description} description={description} className="HomePage ">
@@ -48,9 +49,9 @@ const links = [
             <div class="w-5/7 sm-max:w-full">
                   {/* // TODO: Thach: em cần data tác giả của bài viết chuyền vào Account*/ }
                 <Account client:load article={highlightArticles[0]} articles={articles} />
-                <LeftDetail article={highlightArticles[0]} />
+                <LeftDetail client:load article={highlightArticles[0]} href={href}/>
         </div>
-                <RightDetail article={highlightArticles[0]} articles={highlightArticles} className="w-2/7 sm-max:hidden" />
+                <RightDetail  article={highlightArticles[0]} articles={highlightArticles} className="w-2/7 sm-max:hidden" />
             </div>
             <RelatedPosts className="mt-10" articles={highlightArticles.slice(0, 3)} />
         </div>

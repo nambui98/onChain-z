@@ -1,3 +1,4 @@
+import React from 'react'
 import AppConfig from '~/AppConfig'
 import * as packagejson from '../../../package.json'
 import { CommonLinkProp, CommonProp } from '~/types/ArticleComponentProps.type'

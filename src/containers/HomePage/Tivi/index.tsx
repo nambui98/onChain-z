@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { Heading2 } from '~/components/Heading'
 import { ArticleListProp } from '~/types/ArticleComponentProps.type'
 import LeftContent from './LeftContent'

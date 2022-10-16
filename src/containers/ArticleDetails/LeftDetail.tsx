@@ -1,10 +1,33 @@
 
+import { useState } from "preact/hooks";
 import { Account } from "~/components/Account";
 import { ButtonOutlinePrimary } from "~/components/Button";
 import { Heading1 } from "~/components/Heading"
+import Modal from "~/components/Modal";
 import Tag from "~/components/Tag";
 import { ArticleProp, CommonProp } from "~/types/ArticleComponentProps.type"
-
+import {
+    EmailShareButton,
+    FacebookIcon,
+    FacebookShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton
+} from "react-share";
 function createMarkup() {
     {/* // TODO: Thach: em cần data dạng text html cho bài viết*/ }
     return {
@@ -55,9 +78,10 @@ function createMarkup() {
    
                 </div>` };
 }
-export default function LeftDetail({ className, article }: ArticleProp) {
+export default function LeftDetail({ className, article, href }: ArticleProp & { href: string }) {
     {/* // TODO: Thach: em cần data bài viết article*/ }
     {/* // TODO: Thach: em cần data tag cho bài viết*/ }
+    console.log(href);
 
     const tags = [
         { name: 'tin tức' },
@@ -65,6 +89,8 @@ export default function LeftDetail({ className, article }: ArticleProp) {
         { name: 'crypto' },
         { name: 'kiến thức' },
     ]
+
+    const [openModal, setOpenModal] = useState(false);
     return (
         <>
             <div className="pt-6 mt-6 border-t-1 border-gray40">
@@ -81,10 +107,22 @@ export default function LeftDetail({ className, article }: ArticleProp) {
                     <Tag text={t.name} />
                 ))}
                 <div className="ml-auto sm-max:ml-0">
-                    <ButtonOutlinePrimary className="group w-162px h-38px sm-max:mt-6" onClick={() => { }}>
+                    <ButtonOutlinePrimary className="group w-162px h-38px sm-max:mt-6" onClick={() => {
+                        debugger
+                        setOpenModal(true)
+                    }}>
                         <img src="/assets/icons/export.svg" className="mr-2 transition duration-300 ease-out filter group-hover:brightness-0 group-hover:invert" alt="" />
                         Chia sẻ bài viết
                     </ButtonOutlinePrimary>
+                    <Modal open={openModal} setOpen={setOpenModal} title="Chia sẻ">
+                        <div class="grid grid-cols-4 gap-4">
+                            <div>
+
+                                <FacebookShareButton url={href} quote={"https://www.npmjs.com/package/react-share"} >  <  FacebookIcon /></FacebookShareButton></div>
+
+                            <div>09</div>
+                        </div>
+                    </Modal>
                 </div>
 
             </div>

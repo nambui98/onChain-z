@@ -1,3 +1,4 @@
+import React from 'react'
 /** Tag with link */
 function Tag({ text, href, children }: { text: string; href?: string; children?: any }) {
   const link = href ?? `/tags/${text}`
