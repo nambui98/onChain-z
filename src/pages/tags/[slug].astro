@@ -1,0 +1,24 @@
+---
+import SimplePageLayout from '~/layouts/SimplePageLayout.astro'
+import { ContentService } from '~/services/ContentService'
+import { ArticleCardLarge } from '~/components/Article/ArticleCardView'
+
+const { slug } = Astro.params
+
+const title = `Article for tag: "${slug}"`
+
+const contentService = new ContentService()
+let tagsMap = contentService.getTags()
+const items = tagsMap[slug].articles
+---
+
+<SimplePageLayout title={title}>
+  <section>
+    {items.map((item) => <ArticleCardLarge article={item} />)}
+  </section>
+</SimplePageLayout>
+
+<!-- Example scoped style -->
+<style lang="scss" scoped>
+
+</style>

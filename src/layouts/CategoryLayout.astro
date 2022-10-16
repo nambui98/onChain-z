@@ -17,11 +17,11 @@ const contentService = new ContentService()
 const highlightArticles = contentService.getArticles_HomeHighlightItems()
 ---
 
-<BaseSEOLayout lang={content.lang} title={title} description={description} className="HomePage CategoryLayout">
-  <main class="FeaturedNew wrapper z-1 relative lg:m-0 sm:mx-3">
-    <HotNew articles={highlightArticles} className="mt-10 sm-max:mt-6" />
+<BaseSEOLayout lang={content.lang} title={title} description={description} className="CategoryLayout">
+  <main class="wrapper z-1 relative lg:m-0 sm:mx-3">
+    <HotNew articles={highlightArticles.slice(0, 4)} className="mt-10 sm-max:mt-6" />
     <ButtonOutlinePrimary onClick={() => {}} className="mx-auto mt-6 hidden sm-max:block">Xem Thêm</ButtonOutlinePrimary>
-    <InDepthTopics url={url} articles={highlightArticles} className="mt-10 sm-max:mt-6 sm-max:hidden" />
+    <InDepthTopics url={url} articles={highlightArticles.slice(4, 20)} className="mt-10 sm-max:mt-6 sm-max:hidden" />
   </main>
 </BaseSEOLayout>
 

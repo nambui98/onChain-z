@@ -26,14 +26,13 @@ function Footer(props: CommonProp) {
           <p className="mt-6 text-grey80 text-xs font-semibold sm-max:mt-4">Before we dive in to the your career, tell me a little bit about yourself and what’s important to you outside of work?</p>
         </div>
         <div className="flex flex-col flex-wrap sm-max:flex-row">
-          <p className="text-sm font-semibold text-grey leading-22px sm-max:mt-6 sm-max:w-full">QUICK LINK 1</p>
+          <p className="text-sm font-semibold text-grey leading-22px sm-max:mt-6 sm-max:w-full">Sample</p>
           <ShortLink href="/categories">Categories</ShortLink>
-          <ShortLink href="/categories/tv">TV</ShortLink>
-          <ShortLink href="/article-details">Sample Article</ShortLink>
+          <ShortLink href="/tags">Tags</ShortLink>
+          <ShortLink href="/products">Shop</ShortLink>
         </div>
         <div className="flex flex-col flex-wrap sm-max:flex-row">
           <p className="text-sm font-semibold text-grey leading-22px sm-max:mt-6 sm-max:w-full">QUICK LINK 1</p>
-          <ShortLink href="/products">Shop</ShortLink>
           {Array(3)
             .fill(0)
             .map((r) => (
@@ -42,7 +41,7 @@ function Footer(props: CommonProp) {
         </div>
         <div className="flex flex-col flex-wrap sm-max:flex-row">
           <p className="text-sm font-semibold text-grey leading-22px sm-max:mt-6 sm-max:w-full">QUICK LINK 1</p>
-          <ShortLink href="/tags">Tags</ShortLink>
+
           {Array(3)
             .fill(0)
             .map((r) => (

@@ -4,7 +4,7 @@ import { ArticleListProp } from '~/types/types'
 export default function MainNews({ articles, className }: ArticleListProp) {
   {
     // TODO: Thach: em cần data post chính
-    // TODO: component này ko dùng, ko cần làm đúng ko?
+    // TODO: Nam? component này ko dùng, ko cần làm đúng ko?
   }
   const list = articles
   const firstItem = list[0]

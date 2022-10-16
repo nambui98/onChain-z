@@ -1,8 +1,5 @@
 import { ArticleListProp } from '~/types/types'
 
-import { AutoPlay, Arrow } from '@egjs/flicking-plugins'
-import { ArticleCardTitleBelow } from '~/components/Article/ArticleCardView'
-
 import { AdsFullWidth, AdsInline } from '~/components/Ads'
 import { Heading1 } from '~/components/Heading'
 import { ArticleCardLarge } from '~/components/Article/ArticleCardView'
@@ -16,7 +13,9 @@ export default function InDepthTopics({ articles, className, url }: ArticleListP
   {
     /* // TODO: Thach: Paging: URL param ?page=numberPage, chỗ này ko hiểu làm như nào */
   }
-  let pageIndexActive = parseInt(url.searchParams.get('page'))
+  const pageIndexActive = parseInt(url.searchParams.get('page'))
+  const currentPage = pageIndexActive === 0 || !pageIndexActive ? 1 : pageIndexActive
+
   let currentURLOrigin = url.origin + url.pathname
 
   return (
@@ -31,10 +30,12 @@ export default function InDepthTopics({ articles, className, url }: ArticleListP
               </div>
             ))}
           </div>
-          <Paging total={100} currentPage={pageIndexActive === 0 || !pageIndexActive ? 1 : pageIndexActive} pageSize={4} originURL={currentURLOrigin} />
+          <Paging total={100} currentPage={currentPage} pageSize={4} originURL={currentURLOrigin} />
         </div>
         <div className="mt-10 w-352px sm:w-200px md:w-352px">
           <AdsInline className="!p-0 h-240px flex items-center justify-center !w-full ">Three ads here</AdsInline>
+
+          {/* // TODO: Nam: nên dùng subscribe như một component chung thôi, hiện tại đang ở 2 chỗ khác nhau */}
           <div
             className={`Subscribe mt-6 p-x-6 h-196px bg-no-repeat bg-center bg-cover flex justify-center items-center flex-col`}
             style={{
@@ -49,8 +50,7 @@ export default function InDepthTopics({ articles, className, url }: ArticleListP
                   type="email"
                   className="h-64px text-base font-semibold  w-full rounded-[32px] placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
                 />
-                {/* // TODO: Thach: em cần api subscribe param: email, chưa có tính năng này */}
-                {/* // TODO: dùng subscribe như một component chung thôi, hiện tại đang ở 2 chỗ khác nhau */}
+                {/* // TODO: Thach: em cần api subscribe param: email. Hiện chưa có tính năng này */}
                 <ButtonPrimary className="absolute" onClick={() => {}}>
                   Subscribe
                 </ButtonPrimary>

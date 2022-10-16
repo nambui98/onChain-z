@@ -25,7 +25,9 @@ console.log(tags)
   {
     tags.map((tag) => (
       <>
-        <Heading2 className="mt-5 mb-2">{tag.title}</Heading2>
+        <Heading2 className="mt-5 mb-2">
+          <a href={`/tags/${tag.title}`}>{tag.title}</a>
+        </Heading2>
         {tag.items.map((item) => (
           <ArticleCardLarge article={item} />
         ))}

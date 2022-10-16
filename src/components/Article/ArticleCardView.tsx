@@ -46,7 +46,7 @@ export function ArticleCardTitleBelow({ article, isNotShowAuthor, className }: C
 
   return (
     //   <div className="w-1/3">index</div>
-    <a className="Card" href={article.url}>
+    <a className="ArticleCardTitleBelow Card" href={article.url}>
       <div className="group transition duration-300 ease-out cursor-pointer  bg-no-repeat bg-cover relative rounded-2xl">
         <img className={`rounded-2xl w-full h-198px object-cover ${className}`} src={article?.image} alt={article?.title?.substring(0, 20)} />
         <img
@@ -74,7 +74,7 @@ export function ArticleCardLarge({ article, isNotShowAuthor, isNotShowDescriptio
   const author = article?.author
 
   return (
-    <div className="Card group transition duration-300 ease-out cursor-pointer  bg-no-repeat bg-cover relative flex justify-between items-start mb-6">
+    <div className="ArticleCardLarge Card group transition duration-300 ease-out cursor-pointer  bg-no-repeat bg-cover relative flex justify-between items-start mb-6">
       <div>
         <a href={article.url} className={`text-base  bottom-1.5rem  inset-x-1.5rem text-grey font-semibold transition duration-300 ease-out group-hover:text-primary ${classNameTitle ?? ''}`}>
           {article?.title}
