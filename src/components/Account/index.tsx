@@ -6,6 +6,7 @@ export function Account({ article, articles }: ArticleLDetailProp) {
     const [isShow, setIsShow] = useState(false)
     return (
         <div className="flex items-center">
+
             <img className="rounded-full w-12 h-12 object-cover" src={article.author?.image ?? article.image} alt={article.author?.name} />
             <div className="flex flex-col justify-start ml-2" >
 

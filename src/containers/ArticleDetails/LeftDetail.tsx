@@ -1,33 +1,16 @@
 
-import { useState } from "preact/hooks";
-import { Account } from "~/components/Account";
-import { ButtonOutlinePrimary } from "~/components/Button";
-import { Heading1 } from "~/components/Heading"
+// import { useState } from "preact/hooks";
+import { ButtonOutline, ButtonOutlinePrimary, CopyButton } from "~/components/Button";
+import { Heading1 } from "~/components/Heading";
 import Modal from "~/components/Modal";
-import Tag from "~/components/Tag";
-import { ArticleProp, CommonProp } from "~/types/ArticleComponentProps.type"
+import { useState } from 'preact/hooks';
 import {
-    EmailShareButton,
-    FacebookIcon,
-    FacebookShareButton,
-    HatenaShareButton,
-    InstapaperShareButton,
-    LineShareButton,
-    LinkedinShareButton,
-    LivejournalShareButton,
-    MailruShareButton,
-    OKShareButton,
-    PinterestShareButton,
-    PocketShareButton,
-    RedditShareButton,
-    TelegramShareButton,
-    TumblrShareButton,
-    TwitterShareButton,
-    ViberShareButton,
-    VKShareButton,
-    WhatsappShareButton,
-    WorkplaceShareButton
+    FacebookIcon, FacebookShareButton, TelegramIcon,
+    TelegramShareButton, TwitterIcon,
+    TwitterShareButton
 } from "react-share";
+import Tag from "~/components/Tag";
+import { ArticleProp } from "~/types/ArticleComponentProps.type";
 function createMarkup() {
     {/* // TODO: Thach: em cần data dạng text html cho bài viết*/ }
     return {
@@ -92,8 +75,9 @@ export default function LeftDetail({ className, article, href }: ArticleProp & {
 
     const [openModal, setOpenModal] = useState(false);
     return (
-        <>
+        <di>
             <div className="pt-6 mt-6 border-t-1 border-gray40">
+                {/* <Toaster /> */}
                 <Heading1 text={article.title} className="leading-44px" />
                 <div className="mt-6">
 
@@ -116,16 +100,18 @@ export default function LeftDetail({ className, article, href }: ArticleProp & {
                     </ButtonOutlinePrimary>
                     <Modal open={openModal} setOpen={setOpenModal} title="Chia sẻ">
                         <div class="grid grid-cols-4 gap-4">
-                            <div>
-
-                                <FacebookShareButton url={href} quote={"https://www.npmjs.com/package/react-share"} >  <  FacebookIcon /></FacebookShareButton></div>
-
-                            <div>09</div>
+                            <FacebookShareButton url={href} quote={""} >  <  FacebookIcon /></FacebookShareButton>
+                            <TelegramShareButton url={href} quote={""}>
+                                <TelegramIcon />
+                            </TelegramShareButton>
+                            <TwitterShareButton url={href} quote={""}>
+                                <TwitterIcon />
+                            </TwitterShareButton>
+                            <CopyButton href={href} />
                         </div>
                     </Modal>
                 </div>
-
             </div>
-        </>
+        </di>
     )
 }
