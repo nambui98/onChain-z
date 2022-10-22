@@ -1,0 +1,9 @@
+.content{
+    @apply leading-7 text-base font-normal;
+    h2{
+        @apply text-lg font-bold my-2;
+    }
+    img{
+        @apply mx-auto;
+    }
+}

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Menu, MenuItemProps } from '~/types/types'
 
 export default function MenuItem({

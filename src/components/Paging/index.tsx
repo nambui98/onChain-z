@@ -1,3 +1,4 @@
+import React from 'react';
 import { CommonProp } from '~/types/types'
 import { ButtonOutline, ButtonPrimary } from '../Button'
 
@@ -41,7 +42,7 @@ export default function Paging({ className, total, pageSize, currentPage, origin
         if (typeof page !== 'string' && page === currentPage) {
           return (
             <a href={originURL + '?page=' + page}>
-              <ButtonPrimary className="w-40px h-40px rounded-lg font-normal" onClick={() => {}}>
+              <ButtonPrimary className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
                 {page}
               </ButtonPrimary>
             </a>
@@ -49,7 +50,7 @@ export default function Paging({ className, total, pageSize, currentPage, origin
         } else {
           return (
             <a href={originURL + '?page=' + getURL(page, currentPage, listPage[index + 1])}>
-              <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => {}}>
+              <ButtonOutline className="w-40px h-40px rounded-lg font-normal" onClick={() => { }}>
                 {page}
               </ButtonOutline>
             </a>

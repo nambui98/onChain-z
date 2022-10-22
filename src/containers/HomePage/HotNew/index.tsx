@@ -1,5 +1,5 @@
 // import Flicking from "@egjs/preact-flicking";
-
+import React from 'react';
 import InfiniteFlicking from './InfiniteFlicking'
 
 import Flicking from '@egjs/preact-flicking'

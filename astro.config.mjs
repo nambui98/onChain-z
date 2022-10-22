@@ -12,7 +12,7 @@ import '@egjs/preact-flicking/dist/flicking.css'
 // import "@egjs/preact-flicking/dist/flicking-inline.css";
 // import "@egjs/flicking-plugins/dist/flicking-plugins.css";
 export default defineConfig({
-  integrations: [preact()],
+  integrations: [preact({ compat: true })],
 
   // Set "renderers" to "[]" to disable all default, builtin component support.
   // renderers: [],

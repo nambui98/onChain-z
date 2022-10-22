@@ -1,3 +1,4 @@
+import React from 'react';
 import { CommonProp } from '~/types/types'
 
 type Props = CommonProp

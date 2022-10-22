@@ -1,3 +1,4 @@
+import React from 'react';
 import { AdsFullWidth } from '~/components/Ads'
 import { ArticleCardTitleBelow } from '~/components/Article/ArticleCardView'
 

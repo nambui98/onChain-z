@@ -1,3 +1,4 @@
+import React from 'react';
 import Styles from './ArticleCardView.module.scss'
 import { CardProps } from '~/types/types'
 import { ContentService } from '~/services/ContentService'

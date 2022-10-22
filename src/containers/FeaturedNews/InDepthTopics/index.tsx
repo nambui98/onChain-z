@@ -1,3 +1,4 @@
+import React from 'react';
 import { ArticleListProp } from '~/types/types'
 
 import { AdsFullWidth, AdsInline } from '~/components/Ads'
@@ -51,7 +52,7 @@ export default function InDepthTopics({ articles, className, url }: ArticleListP
                   className="h-64px text-base font-semibold  w-full rounded-[32px] placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
                 />
                 {/* // TODO: Thach: em cần api subscribe param: email. Hiện chưa có tính năng này */}
-                <ButtonPrimary className="absolute" onClick={() => {}}>
+                <ButtonPrimary className="absolute" onClick={() => { }}>
                   Subscribe
                 </ButtonPrimary>
               </label>

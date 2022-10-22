@@ -1,3 +1,4 @@
+import React from 'react';
 import { ArticleCardTitleBelow } from '~/components/Article/ArticleCardView'
 import { Heading2 } from '~/components/Heading'
 

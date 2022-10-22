@@ -1,4 +1,4 @@
-
+import React from 'react';
 import AppConfig from '~/AppConfig'
 import Video from '~/components/Video';
 import { Clip } from '~/services/ContentService'

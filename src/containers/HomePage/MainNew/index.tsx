@@ -1,3 +1,4 @@
+import React from 'react';
 import { ArticleCardViewTitleInside } from '~/components/Article/ArticleCardView'
 import { ArticleListProp } from '~/types/types'
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import AppConfig from '~/AppConfig'
 import { Clip } from '~/services/ContentService'
 
