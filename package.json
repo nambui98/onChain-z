@@ -42,5 +42,9 @@
   "overrides": {
     "react": "npm:@preact/compat@latest",
     "react-dom": "npm:@preact/compat@latest"
+  },
+  "resolutions": {
+    "react": "npm:@preact/compat@latest",
+    "react-dom": "npm:@preact/compat@latest"  
   }
 }
