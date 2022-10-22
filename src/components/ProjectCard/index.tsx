@@ -1,3 +1,4 @@
+import React from 'react';
 import Styles from './styles.module.scss'
 
 function ProjectCard({ project }) {

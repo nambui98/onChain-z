@@ -1,3 +1,4 @@
+import React from 'react';
 import Styles from './styles.module.scss'
 import Tag from '~/components/Tag/index.jsx'
 

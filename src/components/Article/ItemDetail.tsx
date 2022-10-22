@@ -1,3 +1,4 @@
+import React from 'react';
 import { formatDistance, format } from 'date-fns'
 // import ReactMarkdown from "react-markdown"
 
