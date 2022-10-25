@@ -33,7 +33,7 @@ export function Account({ article, articles }: ArticleDetailProp) {
           <div className="text-sm font-semibold text-grey">Thông tin tác giả</div>
           <img src="/assets/icons/close-circle.svg" className="cursor-pointer ml-auto" onClick={() => setIsShow(false)} alt="" />
 
-          <RightDetail className="w-full mt-1.125rem" article={article} articles={articles} />
+          <RightDetail className="w-full mt-1.125rem" author={article.author} article={article} articles={articles} />
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@ export function AccountDetailArticle({ author }: { author: Author }) {
         <span className="text-base md:text-base text-grey80 font-semibold mt-2 sm:text-sm">{author?.title ?? 'Ẩn danh'}</span>
       </div>
       <div className="flex flex-col justify-start ml-2">
-        <ButtonOutlinePrimary className="md:w-108px sm:w-80px md:text-base sm:text-sm" onClick={() => {}}>
+        <ButtonOutlinePrimary className="md:w-108px sm:w-80px md:text-base sm:text-sm" onClick={() => { }}>
           Theo dõi
         </ButtonOutlinePrimary>
       </div>

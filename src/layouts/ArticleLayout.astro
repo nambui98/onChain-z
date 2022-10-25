@@ -44,10 +44,11 @@ const links = [
     <div class="ArticleDetails sm-max:px-4">
       <div class="flex  border-b-1 border-gray40 pb-6 gap-8">
       <div class="w-5/7 sm-max:w-full">
-        <Account article={article} articles={authorArticles} />
+        <Account article={article} articles={authorArticles} client:load/>
         <!-- <LeftDetail href={href} article={article} />      -->
         <div class={`pt-6 mt-6 border-t-1 border-gray40`}>
-        <Heading1 text={article.title} className="leading-44px" />
+        <Heading1 text={article.title} className="leading-44px" classTitle={"leading-44px"} />
+        <img src={article.image} class="max-width-full my-10 rounded-md" alt="">
         <div class="mt-6">
           <div class="content" set:html={ article.body }></div>
         </div>

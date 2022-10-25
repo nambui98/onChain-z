@@ -16,7 +16,7 @@ export default function LeftDetail({ className, article, href }: ArticleProp & {
   return (
     <>
       <div className={`${className ?? ''} pt-6 mt-6 border-t-1 border-gray40`}>
-        <Heading1 text={article.title} className="leading-44px" />
+        <Heading1 text={article.title} className="leading-44px" classTitle={"leading-44px"} />
         <div className="mt-6">
           <div className="content" dangerouslySetInnerHTML={{ __html: article.body }}></div>
         </div>
